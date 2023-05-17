@@ -1,0 +1,45 @@
+name: dashboard_rskg_mobile
+version: 1.0.0+1
+publish_to: none
+description: A new Flutter project.
+environment: 
+  sdk: '>=2.19.6 <4.0.0'
+
+dependencies: 
+  cupertino_icons: ^1.0.2
+  get: 4.6.5
+  flutter_svg: ^1.1.0
+  dropdown_button2: ^2.1.2
+  appbar_animated: 0.0.3
+  crypto: ^3.0.3
+  dio: 5.1.1
+  # drop_down_list: 0.0.5
+  text_scroll: ^0.2.0
+  calendar_timeline: ^1.1.2
+  dropdown_search: 5.0.6
+  carousel_slider: ^4.1.1
+  flutter_onboarding_screen: 2.0.2
+  flutter_onboarding_slider: 1.0.9
+  flutter_staggered_grid_view: 0.6.2
+  get_storage: ^2.1.1
+  google_fonts: ^4.0.4
+  image_picker: ^0.8.7+4
+  intl: 0.18.1
+  shimmer_animation: ^2.1.0
+  fl_chart: ^0.62.0
+
+  flutter:
+    sdk: flutter
+
+dev_dependencies: 
+  flutter_lints: ^2.0.0
+  flutter_test: 
+    sdk: flutter
+
+flutter: 
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/images/icons/
+
