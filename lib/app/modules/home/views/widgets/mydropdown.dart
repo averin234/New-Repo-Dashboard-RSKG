@@ -1,6 +1,7 @@
 import 'package:dashboard_rskg_mobile/app/modules/home/controllers/home_controller.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
 class WidgetTitle3 extends GetView<HomeController> {
@@ -54,6 +55,7 @@ class WidgetTitle3 extends GetView<HomeController> {
                       .toList(),
                   value: controller.selectedValue.value,
                   onChanged: (value) {
+                    HapticFeedback.lightImpact();
                     controller.selectedValue.value = value!;
                   },
                   buttonStyleData: ButtonStyleData(

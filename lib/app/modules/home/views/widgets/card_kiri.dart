@@ -1,5 +1,6 @@
 import 'package:dashboard_rskg_mobile/app/routes/app_pages.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
@@ -20,6 +21,7 @@ class CardKiri extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
+        HapticFeedback.lightImpact();
         Get.toNamed(Routes.CHARTZ, parameters: {'title': title});
       },
       child: Container(
