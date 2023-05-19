@@ -67,35 +67,6 @@ class HomeView extends GetView<HomeController> {
           ),
         ],
       ),
-    );
-  }
-
-  String greetings() {
-    final hour = DateTime.now().hour;
-
-    if (hour <= 12) {
-      return 'Selamat Pagi';
-    } else if (hour <= 17) {
-      return 'Selamat Siang';
-    }
-    return 'Selamat Malam';
-  }
-}
-
-class HomePage extends StatefulWidget {
-  const HomePage({super.key});
-
-  @override
-  HomePageState createState() => HomePageState();
-}
-
-class HomePageState extends State<HomePage> {
-  var currentIndex = 0;
-
-  @override
-  Widget build(BuildContext context) {
-    double screenWidth = MediaQuery.of(context).size.width;
-    return Scaffold(
       bottomNavigationBar: Container(
         margin: const EdgeInsets.all(20),
         height: Get.width * .155,

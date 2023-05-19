@@ -33,7 +33,7 @@ class _CardKiriState extends State<CardKiri> {
           HapticFeedback.lightImpact();
           Get.toNamed(Routes.CHARTZ, parameters: {'title': widget.title});
         },
-        onHover: (value) => setState(() {
+        onFocusChange: (value) => setState(() {
           isTapped = value;
         }),
         style: TextButton.styleFrom(
