@@ -16,6 +16,7 @@ class HomeView extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       body: CustomScrollView(
         slivers: [
           SliverAppBar(
@@ -75,10 +76,9 @@ class HomeView extends GetView<HomeController> {
 
     if(hour <= 12){
       return 'Selamat Pagi';
-    } else if (hour <= 17){
+    } else if (hour <= 13){
       return 'Selamat Siang';
-    }
-    return 'Selamat Malam';
+    } return 'Selamat Sore';
   }
 }
 

@@ -6,7 +6,7 @@ class DashBoard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SingleChildScrollView(
+    return SingleChildScrollView(
       child: Column(
         children: [
           // GridView.builder(
@@ -41,7 +41,7 @@ class DashBoard extends StatelessWidget {
             imageKiri: 'assets/images/icons/labro.svg',
             titleKiri: "Laboratorium",
             valueKiri: "200",
-            imageKanan: 'assets/images/icons/resep.svg',
+            imageKanan: 'assets/images/icons/resep2.svg',
             titleKanan: "Jumlah Resep",
             valueKanan: "120",
           ),

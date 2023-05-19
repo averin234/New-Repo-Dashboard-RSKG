@@ -38,7 +38,7 @@ class _CardKiriState extends State<CardKiri> {
         }),
         style: TextButton.styleFrom(
           elevation: isTapped ? 3 : 0,
-          backgroundColor: Color(widget.color ?? 0xfff6f5f5),
+          backgroundColor: Color(widget.color ?? 0xffecf8ff),
           padding: const EdgeInsets.all(20),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(20),
