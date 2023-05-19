@@ -4,7 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
-class CardKanan extends StatelessWidget {
+class CardKanan extends StatefulWidget {
   final String title;
   final String value;
   final String image;
@@ -16,27 +16,34 @@ class CardKanan extends StatelessWidget {
     required this.image,
     this.color,
   });
-  final bool isTapped = false;
+
+  @override
+  State<CardKanan> createState() => _CardKananState();
+}
+
+class _CardKananState extends State<CardKanan> {
+  bool isTapped = false;
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () {
-        HapticFeedback.lightImpact();
-        Get.toNamed(Routes.CHARTZ, parameters: {'title': title});
-      },
-      child: Container(
-        width: MediaQuery.of(context).size.width / 2 - 19,
-        margin: const EdgeInsets.only(left: 16.0),
-        padding:
-            const EdgeInsets.only(right: 16, left: 16, bottom: 20, top: 10),
-        decoration: BoxDecoration(
-          color: Color(color ?? 0xfff6f5f5),
-          borderRadius: const BorderRadius.only(
-            topRight: Radius.circular(20.0),
-            bottomRight: Radius.circular(20.0),
-            topLeft: Radius.circular(20.0),
-            bottomLeft: Radius.circular(20.0),
+    return Container(
+      padding: const EdgeInsets.only(left: 5, right: 10),
+      width: MediaQuery.of(context).size.width / 2,
+      child: TextButton(
+        onPressed: () {
+          HapticFeedback.lightImpact();
+          Get.toNamed(Routes.CHARTZ, parameters: {'title': widget.title});
+        },
+        onFocusChange: (value) => setState(() {
+          isTapped = value;
+          print(isTapped);
+        }),
+        style: TextButton.styleFrom(
+          elevation: isTapped ? 3 : 0,
+          backgroundColor: Color(widget.color ?? 0xfff6f5f5),
+          padding: const EdgeInsets.all(20),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(20),
           ),
         ),
         child: Column(
@@ -49,7 +56,7 @@ class CardKanan extends StatelessWidget {
                 radius: 32,
                 backgroundColor: Colors.white,
                 child: SvgPicture.asset(
-                  image,
+                  widget.image,
                   height: 30,
                   width: 30,
                   color: Colors.blue,
@@ -57,7 +64,7 @@ class CardKanan extends StatelessWidget {
               ),
             ),
             Text(
-              value,
+              widget.value,
               style: const TextStyle(
                 fontSize: 20.0,
                 color: Colors.brown,
@@ -65,7 +72,7 @@ class CardKanan extends StatelessWidget {
               ),
             ),
             Text(
-              title,
+              widget.title,
               style: const TextStyle(
                 fontSize: 15.0,
                 color: Color(0xff4babe7),
@@ -79,6 +86,8 @@ class CardKanan extends StatelessWidget {
 }
 
 class MyCustomWidget extends StatefulWidget {
+  const MyCustomWidget({super.key});
+
   @override
   _MyCustomWidgetState createState() => _MyCustomWidgetState();
 }
@@ -102,20 +111,20 @@ class _MyCustomWidgetState extends State<MyCustomWidget>
           },
           onTap: () {},
           child: AnimatedContainer(
-            duration: Duration(milliseconds: 300),
+            duration: const Duration(milliseconds: 300),
             curve: Curves.fastLinearToSlowEaseIn,
             height: isTapped ? 55 : 60,
             width: isTapped ? 150 : 160,
             decoration: BoxDecoration(
               color: Colors.white,
-              borderRadius: BorderRadius.all(
+              borderRadius: const BorderRadius.all(
                 Radius.circular(30),
               ),
               boxShadow: [
                 BoxShadow(
                   color: Colors.black.withOpacity(0.3),
                   blurRadius: 30,
-                  offset: Offset(3, 7),
+                  offset: const Offset(3, 7),
                 ),
               ],
             ),

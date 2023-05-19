@@ -4,6 +4,7 @@ class HomeController extends GetxController {
   //TODO: Implement HomeController
 
   final selectedValue = ''.obs;
+  final isTapped = false.obs;
   final List<String> items = [
     'January',
     'Febuari',

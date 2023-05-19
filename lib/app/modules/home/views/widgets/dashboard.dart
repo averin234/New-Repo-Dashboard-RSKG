@@ -6,9 +6,19 @@ class DashBoard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
+    return const SingleChildScrollView(
       child: Column(
         children: [
+          // GridView.builder(
+          //   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+          //       crossAxisCount: 3),
+          //   shrinkWrap: true,
+          //   itemBuilder: (context, index) => const CardKanan(
+          //     title: 'Total Pasien',
+          //     value: '1.345',
+          //     image: 'assets/images/icons/total_pasien.svg',
+          //   ),
+          // ),
           CardWidget(
             imageKiri: 'assets/images/icons/total_pasien.svg',
             titleKiri: "Total Pasien",
