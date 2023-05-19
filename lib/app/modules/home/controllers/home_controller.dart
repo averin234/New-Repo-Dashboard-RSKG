@@ -1,3 +1,4 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class HomeController extends GetxController {
@@ -19,6 +20,13 @@ class HomeController extends GetxController {
     'November',
     'Desember',
   ];
+  List<IconData> listOfIcons = [
+    Icons.home_rounded,
+    Icons.favorite_rounded,
+    Icons.settings_rounded,
+    Icons.person_rounded,
+  ];
+  RxInt currentIndex = 0.obs;
   @override
   void onInit() {
     selectedValue.value = items.first;
