@@ -5,7 +5,7 @@ class WidgetTitlePoli2 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Padding(
+    return Padding(
       padding: EdgeInsets.fromLTRB(20, 0, 10, 0),
       child: Row(
         children: [

@@ -20,7 +20,7 @@ class WidgetTitle3 extends GetView<HomeController> {
               () => DropdownButtonHideUnderline(
                 child: DropdownButton2(
                   isExpanded: true,
-                  hint: const Row(
+                  hint: Row(
                     children: [
                       SizedBox(
                         width: 10,

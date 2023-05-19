@@ -11,7 +11,7 @@ class _WidgetTitlelogoState extends State<WidgetTitlelogo> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(20, 30, 10, 0),
+      padding: const EdgeInsets.fromLTRB(0, 10, 10, 0),
       child: Row(
         children: [
           Image.asset(
@@ -23,7 +23,7 @@ class _WidgetTitlelogoState extends State<WidgetTitlelogo> {
             width: 10,
           ),
           Container(
-            child: const Column(
+            child: Column(
               children: [
                 Text(
                   "Rumah Sakit Khusus Ginjal",
@@ -38,12 +38,7 @@ class _WidgetTitlelogoState extends State<WidgetTitlelogo> {
                 ),
               ],
             ),
-          ),
-
-          const SizedBox(
-            width: 10,
-          ),
-          // Icon(Icons.arrow_forward_ios_outlined, size: 15,)
+          ), // Icon(Icons.arrow_forward_ios_outlined, size: 15,)
         ],
       ),
     );

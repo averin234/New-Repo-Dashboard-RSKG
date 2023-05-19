@@ -25,7 +25,7 @@ class AppPages {
       binding: SplashBinding(),
     ),
     GetPage(
-      transition: Transition.rightToLeftWithFade,
+      transition: Transition.cupertino,
       name: _Paths.CHARTZ,
       page: () => const ChartzView(),
       binding: ChartzBinding(),
