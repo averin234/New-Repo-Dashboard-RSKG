@@ -1,9 +1,12 @@
+import 'package:dashboard_rskg_mobile/app/modules/home/views/bottom/home.dart';
 import 'package:dashboard_rskg_mobile/app/modules/home/views/widgets/card.pendapatan.dart';
 import 'package:dashboard_rskg_mobile/app/modules/home/views/widgets/logo.dart';
 import 'package:dashboard_rskg_mobile/app/modules/home/views/widgets/dashboard.dart';
 import 'package:dashboard_rskg_mobile/app/modules/home/views/widgets/static_lainnya.dart';
 import 'package:dashboard_rskg_mobile/app/modules/home/views/widgets/title2.dart';
 import 'package:dashboard_rskg_mobile/app/modules/home/views/widgets/title3.dart';
+import 'package:dashboard_rskg_mobile/app/modules/jenis_pasien/views/jenis_pasien_view.dart';
+import 'package:dashboard_rskg_mobile/app/modules/user/views/user_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -15,7 +18,7 @@ class HomeView extends GetView<HomeController> {
   const HomeView({Key? key}) : super(key: key);
 
   static const TextStyle optionStyle =
-  TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
+      TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static const List<Widget> _widgetOptions = <Widget>[
     Text(
       'Index 0: Home',
@@ -35,74 +38,34 @@ class HomeView extends GetView<HomeController> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      body: CustomScrollView(
-        slivers: [
-          SliverAppBar(
-            floating: true,
-            pinned: true,
-            snap: true,
-            stretch: true,
-            centerTitle: true,
-            title: Text(greetings()),
-            actions: const [
-              // Icon(
-              //     onPressed: () => Navigator.of(context)
-              //         .push(MaterialPageRoute(builder: (_) => const SearchPage())),
-              //     icon: const Icon(Icons.search))
-            ],
-            bottom: AppBar(
-              toolbarHeight: 100,
-              automaticallyImplyLeading: false,
-              elevation: 1,
-              title:  Column(
-                children: [
-                  WidgetTitlelogo(),
-                  SizedBox(
-                    height: 5,
-                  )
-                ],
-              ),
+      body: Obx(
+        () => controller.currentIndex.value == 0
+            ? const HomeBottom()
+            : controller.currentIndex.value == 1
+                ? const JenisPasienView()
+                : const UserView(),
+      ),
+      bottomNavigationBar: Obx(() {
+        return BottomNavigationBar(
+          items: const <BottomNavigationBarItem>[
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home),
+              label: 'Home',
             ),
-          ),
-          // Other Sliver Widgets
-          SliverList(
-            delegate: SliverChildListDelegate([
-              Column(
-                children: [
-                  SizedBox(
-                    height: 10,
-                  ),
-                  WidgetTitlePendapatan(),
-                  WidgetTitlePoli1(),
-                  DashBoard(),
-                  SizedBox(
-                    height: 10,
-                  ),
-                  WidgetTitlePoli2(),
-                  StaticLainnya(),
-                ],
-              ),
-            ]),
-          ),
-        ],
-      ),
-      bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.business),
-            label: 'Business',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.school),
-            label: 'School',
-          ),
-        ],
-        selectedItemColor: Colors.blue,
-      ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.business),
+              label: 'Business',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.school),
+              label: 'School',
+            ),
+          ],
+          selectedItemColor: Colors.blue,
+          currentIndex: controller.currentIndex.value,
+          onTap: (value) => controller.currentIndex.value = value,
+        );
+      }),
       // bottomNavigationBar: Container(
       //   margin: EdgeInsets.all(20),
       //   height: Get.width * .155,
@@ -173,16 +136,5 @@ class HomeView extends GetView<HomeController> {
       //   ),
       // ),
     );
-  }
-
-  String greetings() {
-    final hour = DateTime.now().hour;
-
-    if (hour <= 12) {
-      return 'Selamat Pagi';
-    } else if (hour <= 17) {
-      return 'Selamat Siang';
-    }
-    return 'Selamat Malam';
   }
 }

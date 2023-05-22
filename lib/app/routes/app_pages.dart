@@ -12,6 +12,8 @@ import '../modules/splash/bindings/splash_binding.dart';
 import '../modules/splash/views/splash_view.dart';
 import '../modules/user/bindings/user_binding.dart';
 import '../modules/user/views/user_view.dart';
+import '../modules/wrapper/bindings/wrapper_binding.dart';
+import '../modules/wrapper/views/wrapper_view.dart';
 
 part 'app_routes.dart';
 
@@ -51,6 +53,11 @@ class AppPages {
       name: _Paths.JENIS_PASIEN,
       page: () => const JenisPasienView(),
       binding: JenisPasienBinding(),
+    ),
+    GetPage(
+      name: _Paths.WRAPPER,
+      page: () => const WrapperView(),
+      binding: WrapperBinding(),
     ),
   ];
 }

@@ -9,6 +9,7 @@ abstract class Routes {
   static const DETAIL_UMUM = _Paths.DETAIL_UMUM;
   static const USER = _Paths.USER;
   static const JENIS_PASIEN = _Paths.JENIS_PASIEN;
+  static const WRAPPER = _Paths.WRAPPER;
 }
 
 abstract class _Paths {
@@ -19,4 +20,5 @@ abstract class _Paths {
   static const DETAIL_UMUM = '/detail-umum';
   static const USER = '/user';
   static const JENIS_PASIEN = '/jenis-pasien';
+  static const WRAPPER = '/wrapper';
 }

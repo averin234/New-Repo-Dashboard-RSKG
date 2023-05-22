@@ -4,7 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
-class CardKiri extends StatefulWidget {
+class CardKiri extends StatelessWidget {
   final String title;
   final String value;
   final String image;
@@ -18,39 +18,19 @@ class CardKiri extends StatefulWidget {
   });
 
   @override
-  State<CardKiri> createState() => _CardKiriState();
-}
-
-class _CardKiriState extends State<CardKiri> {
-  bool isTapped = false;
-  @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
-        color: Colors.transparent,
-        borderRadius: BorderRadius.circular(5),
-        boxShadow: [
-          BoxShadow(
-            color: const Color(0xccdadada).withOpacity(0.5),
-            spreadRadius: 1,
-            blurRadius: 20,
-            offset: const Offset(2, 1),
-          ),
-        ],
-      ),
       padding: const EdgeInsets.only(left: 10, right: 5),
       width: MediaQuery.of(context).size.width / 2,
       child: TextButton(
         onPressed: () {
           HapticFeedback.lightImpact();
-          Get.toNamed(Routes.CHARTZ, parameters: {'title': widget.title});
+          Get.toNamed(Routes.CHARTZ, parameters: {'title': title});
         },
-        onFocusChange: (value) => setState(() {
-          isTapped = value;
-        }),
         style: TextButton.styleFrom(
-          elevation: isTapped ? 3 : 0,
-          backgroundColor: Color(widget.color ?? 0xfff6f5f5),
+          elevation: 2,
+          shadowColor: Colors.grey[100],
+          backgroundColor: Color(color ?? 0xfff6f5f5),
           padding: const EdgeInsets.all(20),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(20),
@@ -66,7 +46,7 @@ class _CardKiriState extends State<CardKiri> {
                 radius: 32,
                 backgroundColor: Colors.white,
                 child: SvgPicture.asset(
-                  widget.image,
+                  image,
                   height: 30,
                   width: 30,
                   color: Colors.blue,
@@ -74,7 +54,7 @@ class _CardKiriState extends State<CardKiri> {
               ),
             ),
             Text(
-              widget.value,
+              value,
               style: const TextStyle(
                 fontSize: 25.0,
                 color: Colors.brown,
@@ -82,7 +62,7 @@ class _CardKiriState extends State<CardKiri> {
               ),
             ),
             Text(
-              widget.title,
+              title,
               style: const TextStyle(
                 fontSize: 15.0,
                 color: Color(0xff4babe7),
