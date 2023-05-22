@@ -23,10 +23,6 @@ class HomeBottom extends StatelessWidget {
           centerTitle: true,
           title: Text(greetings()),
           actions: const [
-            // Icon(
-            //     onPressed: () => Navigator.of(context)
-            //         .push(MaterialPageRoute(builder: (_) => const SearchPage())),
-            //     icon: const Icon(Icons.search))
           ],
           bottom: AppBar(
             toolbarHeight: 100,
@@ -45,7 +41,20 @@ class HomeBottom extends StatelessWidget {
         // Other Sliver Widgets
         SliverList(
           delegate: SliverChildListDelegate([
-            Column(
+            Container(
+              decoration: BoxDecoration(
+                color: Color(0xffecf8ff),
+                borderRadius: BorderRadius.circular(0),
+                boxShadow: [
+                  BoxShadow(
+                    color: const Color(0xffecf8ff).withOpacity(0.5),
+                    spreadRadius: 0,
+                    blurRadius: 10,
+                    offset: const Offset(2, 1),
+                  ),
+                ],
+              ),
+            child : Column(
               children: const [
                 SizedBox(
                   height: 10,
@@ -59,6 +68,7 @@ class HomeBottom extends StatelessWidget {
                 WidgetTitlePoli2(),
                 StaticLainnya(),
               ],
+            ),
             ),
           ]),
         ),

@@ -11,6 +11,7 @@ class _WidgetTitlePendapatanState extends State<WidgetTitlePendapatan> {
   @override
   Widget build(BuildContext context) {
     return Card(
+      elevation: 0,
       child : Padding(
       padding: const EdgeInsets.fromLTRB(0, 10, 10, 10),
       child: Row(

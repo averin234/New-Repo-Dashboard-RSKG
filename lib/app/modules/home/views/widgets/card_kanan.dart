@@ -20,7 +20,7 @@ class CardKanan extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.only(left: 5, right: 10),
+      padding: const EdgeInsets.only(left: 10, right: 5),
       width: MediaQuery.of(context).size.width / 2,
       child: TextButton(
         onPressed: () {
@@ -28,9 +28,9 @@ class CardKanan extends StatelessWidget {
           Get.toNamed(Routes.CHARTZ, parameters: {'title': title});
         },
         style: TextButton.styleFrom(
-          elevation: 2,
+          elevation: 10,
           shadowColor: Colors.grey[100],
-          backgroundColor: Color(color ?? 0xfff6f5f5),
+          backgroundColor: Color(0xff41b2fd),
           padding: const EdgeInsets.all(20),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(20),
@@ -57,16 +57,33 @@ class CardKanan extends StatelessWidget {
               value,
               style: const TextStyle(
                 fontSize: 25.0,
-                color: Colors.brown,
+                color: Colors.white,
                 fontWeight: FontWeight.bold,
               ),
             ),
-            Text(
-              title,
-              style: const TextStyle(
-                fontSize: 15.0,
-                color: Color(0xff4babe7),
-              ),
+            Container(
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(10),
+                  boxShadow: [
+                    BoxShadow(
+                      color: const Color(0xffecf8ff).withOpacity(0.5),
+                      spreadRadius: 0,
+                      blurRadius: 10,
+                      offset: const Offset(2, 1),
+                    ),
+                  ],
+                ),
+                child : Padding(padding: EdgeInsets.all(6),
+                  child : Text(
+                    title,
+                    style: const TextStyle(
+                      fontSize: 15.0,
+                      color: Color(0xff4babe7),
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                )
             ),
           ],
         ),

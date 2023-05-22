@@ -25,7 +25,7 @@ class DashBoard extends StatelessWidget {
             imageKanan: 'assets/images/icons/pasien_poli.svg',
             titleKanan: "Pasien Poliklinik",
             valueKanan: "460",
-            color: 0xffe2f4ff,
+            color: 0xffe3f4ff,
           ),
           SizedBox(height: 15),
           CardWidget(
@@ -35,7 +35,7 @@ class DashBoard extends StatelessWidget {
             imageKanan: 'assets/images/icons/igd.svg',
             titleKanan: "Pasien IGD",
             valueKanan: "242",
-            color: 0xffe2f4ff,
+            color: 0xffe3f4ff,
           ),
           SizedBox(height: 15),
           CardWidget(

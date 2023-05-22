@@ -11,7 +11,10 @@ class WidgetTitle3 extends GetView<HomeController> {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
-      child: Row(
+      child : Container(
+      child : Column(
+      children: [
+        Row(
         children: [
           const SizedBox(
             height: 90,
@@ -101,6 +104,9 @@ class WidgetTitle3 extends GetView<HomeController> {
             ),
           ),
         ],
+      ),
+      ]
+    ),
       ),
     );
   }
