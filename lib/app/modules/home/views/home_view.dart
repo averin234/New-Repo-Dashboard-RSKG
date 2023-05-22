@@ -25,11 +25,11 @@ class HomeView extends GetView<HomeController> {
       style: optionStyle,
     ),
     Text(
-      'Index 1: Business',
+      'Index 1: Jenis Pasien',
       style: optionStyle,
     ),
     Text(
-      'Index 2: School',
+      'Index 2: Profile',
       style: optionStyle,
     ),
   ];
@@ -53,11 +53,11 @@ class HomeView extends GetView<HomeController> {
               label: 'Home',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.business),
+              icon: Icon(Icons.area_chart),
               label: 'Business',
             ),
             BottomNavigationBarItem(
-              icon: Icon(Icons.school),
+              icon: Icon(Icons.person),
               label: 'School',
             ),
           ],
