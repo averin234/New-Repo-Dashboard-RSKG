@@ -11,19 +11,7 @@ class WidgetTitlePoli1 extends StatelessWidget {
       padding: EdgeInsets.fromLTRB(20, 0, 10, 0),
       child: Row(
         children: [
-          Expanded(
-            child: Text(
-              "Dasboard",
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-            ),
-          ),
-          SizedBox(
-            width: 10,
-          ),
           WidgetTitle3(),
-          SizedBox(
-            width: 10,
-          ),
           // Icon(Icons.arrow_forward_ios_outlined, size: 15,)
         ],
       ),

@@ -22,7 +22,7 @@ class HomeController extends GetxController {
   ];
   List<IconData> listOfIcons = [
     Icons.home_rounded,
-    Icons.favorite_rounded,
+    Icons.add_chart_rounded,
     Icons.settings_rounded,
     Icons.person_rounded,
   ];

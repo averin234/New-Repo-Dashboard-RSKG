@@ -35,22 +35,22 @@ class ChartzView extends GetView<ChartzController> {
       Padding(padding: EdgeInsets.all(10),
           child : MyDropDown(items: controller.listTahun),
       ),
-          const SizedBox(
+          SizedBox(
             height: 10,
           ),
           Text(
             controller.title.toUpperCase(),
-            style: const TextStyle(
+            style: TextStyle(
               color: Colors.black,
               fontSize: 18,
               fontWeight: FontWeight.bold,
             ),
             textAlign: TextAlign.center,
           ),
-          const SizedBox(
+          SizedBox(
             height: 10,
           ),
-          const Expanded(
+          Expanded(
             child: Padding(
               padding: EdgeInsets.symmetric(horizontal: 8),
               child: AspectRatio(
@@ -76,10 +76,10 @@ class ChartzView extends GetView<ChartzController> {
                     borderRadius: BorderRadius.circular(5),
                     boxShadow: [
                       BoxShadow(
-                        color: const Color(0xffecf8ff).withOpacity(0.5),
+                        color: Color(0xffecf8ff).withOpacity(0.5),
                         spreadRadius: 0,
                         blurRadius: 10,
-                        offset: const Offset(2, 1),
+                        offset: Offset(2, 1),
                       ),
                     ],
                   ),
@@ -103,10 +103,10 @@ class ChartzView extends GetView<ChartzController> {
                     borderRadius: BorderRadius.circular(5),
                     boxShadow: [
                       BoxShadow(
-                        color: const Color(0xffecf8ff).withOpacity(0.5),
+                        color: Color(0xffecf8ff).withOpacity(0.5),
                         spreadRadius: 0,
                         blurRadius: 10,
-                        offset: const Offset(2, 1),
+                        offset: Offset(2, 1),
                       ),
                     ],
                   ),
@@ -130,10 +130,10 @@ class ChartzView extends GetView<ChartzController> {
                     borderRadius: BorderRadius.circular(5),
                     boxShadow: [
                       BoxShadow(
-                        color: const Color(0xffecf8ff).withOpacity(0.5),
+                        color: Color(0xffecf8ff).withOpacity(0.5),
                         spreadRadius: 0,
                         blurRadius: 10,
-                        offset: const Offset(2, 1),
+                        offset: Offset(2, 1),
                       ),
                     ],
                   ),
@@ -157,10 +157,10 @@ class ChartzView extends GetView<ChartzController> {
                     borderRadius: BorderRadius.circular(5),
                     boxShadow: [
                       BoxShadow(
-                        color: const Color(0xffecf8ff).withOpacity(0.5),
+                        color: Color(0xffecf8ff).withOpacity(0.5),
                         spreadRadius: 0,
                         blurRadius: 10,
-                        offset: const Offset(2, 1),
+                        offset: Offset(2, 1),
                       ),
                     ],
                   ),
@@ -173,42 +173,42 @@ class ChartzView extends GetView<ChartzController> {
                         fontSize: 14.0,
                         color: Colors.black45,
                         fontWeight: FontWeight.bold)),]),),
-          const SizedBox(
+          SizedBox(
             height: 10,
           ),
       Padding(padding:
-      const EdgeInsets.only(left: 5, right: 5),
+      EdgeInsets.only(left: 5, right: 5),
           child : WidgetListView(),
       ),
-          const SizedBox(
+         SizedBox(
             height: 5,
           ),
           Padding(padding:
-          const EdgeInsets.only(left: 5, right: 5),
+           EdgeInsets.only(left: 5, right: 5),
           child : WidgetListView2(),
           ),
-          const SizedBox(
+          SizedBox(
             height: 5,
           ),
       Padding(padding:
-      const EdgeInsets.only(left: 5, right: 5),
+      EdgeInsets.only(left: 5, right: 5),
          child : WidgetListView3(),
       ),
-          const SizedBox(
+          SizedBox(
             height: 5,
           ),
       Padding(padding:
-      const EdgeInsets.only(left: 5, right: 5),
+      EdgeInsets.only(left: 5, right: 5),
          child : WidgetListView4(),
       ),
-          const SizedBox(
+          SizedBox(
             height: 5,
           ),
       Padding(padding:
-      const EdgeInsets.only(left: 5, right: 5),
+      EdgeInsets.only(left: 5, right: 5),
        child : WidgetListView5(),
       ),
-          const SizedBox(
+          SizedBox(
             height: 50,
           ),
         ],

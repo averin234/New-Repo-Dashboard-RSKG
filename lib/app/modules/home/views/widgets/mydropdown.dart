@@ -60,7 +60,7 @@ class WidgetTitle3 extends GetView<HomeController> {
                   },
                   buttonStyleData: ButtonStyleData(
                     height: 40,
-                    width: 160,
+                    width: 310,
                     padding: const EdgeInsets.only(left: 14, right: 14),
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(14),
@@ -78,7 +78,7 @@ class WidgetTitle3 extends GetView<HomeController> {
                   ),
                   dropdownStyleData: DropdownStyleData(
                     maxHeight: 200,
-                    width: 160,
+                    width: 310,
                     padding: null,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(14),

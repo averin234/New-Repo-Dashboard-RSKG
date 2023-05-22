@@ -27,6 +27,19 @@ class _CardKananState extends State<CardKanan> {
   @override
   Widget build(BuildContext context) {
     return Container(
+      decoration: BoxDecoration(
+        color: Colors.transparent,
+        borderRadius: BorderRadius.circular(5),
+        boxShadow: [
+          BoxShadow(
+            color: const Color(0xccdadada).withOpacity(0.5),
+            spreadRadius: 1,
+            blurRadius: 20,
+            offset: const Offset(2, 1),
+          ),
+        ],
+
+      ),
       padding: const EdgeInsets.only(left: 5, right: 10),
       width: MediaQuery.of(context).size.width / 2,
       child: TextButton(
@@ -40,7 +53,7 @@ class _CardKananState extends State<CardKanan> {
         }),
         style: TextButton.styleFrom(
           elevation: isTapped ? 3 : 0,
-          backgroundColor: Color(widget.color ?? 0xffecf8ff),
+          backgroundColor: Color(widget.color ?? 0xfff6f5f5),
           padding: const EdgeInsets.all(20),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(20),
@@ -66,7 +79,7 @@ class _CardKananState extends State<CardKanan> {
             Text(
               widget.value,
               style: const TextStyle(
-                fontSize: 20.0,
+                fontSize: 25.0,
                 color: Colors.brown,
                 fontWeight: FontWeight.bold,
               ),

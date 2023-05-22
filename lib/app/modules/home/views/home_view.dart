@@ -1,3 +1,4 @@
+import 'package:dashboard_rskg_mobile/app/modules/home/views/widgets/card.pendapatan.dart';
 import 'package:dashboard_rskg_mobile/app/modules/home/views/widgets/logo.dart';
 import 'package:dashboard_rskg_mobile/app/modules/home/views/widgets/dashboard.dart';
 import 'package:dashboard_rskg_mobile/app/modules/home/views/widgets/static_lainnya.dart';
@@ -36,7 +37,7 @@ class HomeView extends GetView<HomeController> {
               toolbarHeight: 100,
               automaticallyImplyLeading: false,
               elevation: 1,
-              title: const Column(
+              title:  Column(
                 children: [
                   WidgetTitlelogo(),
                   SizedBox(
@@ -49,11 +50,12 @@ class HomeView extends GetView<HomeController> {
           // Other Sliver Widgets
           SliverList(
             delegate: SliverChildListDelegate([
-              const Column(
+              Column(
                 children: [
                   SizedBox(
                     height: 10,
                   ),
+                  WidgetTitlePendapatan(),
                   WidgetTitlePoli1(),
                   DashBoard(),
                   SizedBox(
@@ -68,7 +70,7 @@ class HomeView extends GetView<HomeController> {
         ],
       ),
       bottomNavigationBar: Container(
-        margin: const EdgeInsets.all(20),
+        margin: EdgeInsets.all(20),
         height: Get.width * .155,
         decoration: BoxDecoration(
           color: Colors.white,
@@ -76,7 +78,7 @@ class HomeView extends GetView<HomeController> {
             BoxShadow(
               color: Colors.black.withOpacity(.15),
               blurRadius: 30,
-              offset: const Offset(0, 10),
+              offset:  Offset(0, 10),
             ),
           ],
           borderRadius: BorderRadius.circular(50),
@@ -100,7 +102,7 @@ class HomeView extends GetView<HomeController> {
                   child: Center(
                     child: Obx(() {
                       return AnimatedContainer(
-                        duration: const Duration(seconds: 1),
+                        duration: Duration(seconds: 1),
                         curve: Curves.fastLinearToSlowEaseIn,
                         height: index == controller.currentIndex.value
                             ? Get.width * .12
