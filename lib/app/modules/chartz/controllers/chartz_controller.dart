@@ -119,7 +119,7 @@ class ChartzController extends GetxController {
           getTooltipItem: (group, groupIndex, rod, rodIndex) {
             return BarTooltipItem(
               '${dataPerTahun[tahun.value]![group.x].key}\n',
-              const TextStyle(
+              TextStyle(
                 color: Colors.white,
                 fontWeight: FontWeight.bold,
                 fontSize: 18,
@@ -166,7 +166,7 @@ class ChartzController extends GetxController {
                       .value
                       .toInt()
                       .toString(),
-                  style: const TextStyle(
+                  style: TextStyle(
                     color: Colors.black,
                   ),
                 ),
@@ -182,7 +182,7 @@ class ChartzController extends GetxController {
                 axisSide: meta.axisSide,
                 child: Text(
                   dataPerTahun[tahun.value]![value.toInt()].key.substring(0, 3),
-                  style: const TextStyle(
+                  style: TextStyle(
                     color: Colors.black,
                   ),
                 ),
@@ -211,7 +211,7 @@ class ChartzController extends GetxController {
                   : dataPerTahun[tahun.value]![index].value,
               color: index == touchedIndex.value ? touchedBarColor : barColor,
               width: 16,
-              borderSide: const BorderSide(width: 0),
+              borderSide: BorderSide(width: 0),
               backDrawRodData: BackgroundBarChartRodData(
                 show: true,
                 toY: 20,
