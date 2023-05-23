@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
+import '../../home/views/component_widgets/compomenet.dart';
 import '../controllers/jenis_pasien_controller.dart';
 
 class JenisPasienView extends GetView<JenisPasienController> {
@@ -9,15 +10,18 @@ class JenisPasienView extends GetView<JenisPasienController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xffecf8ff),
       appBar: AppBar(
-        title: const Text('JenisPasienView'),
+        elevation: 1,
+        title: const Text('JenisPasien'),
         centerTitle: true,
       ),
-      body: const Center(
-        child: Text(
-          'JenisPasienView is working',
-          style: TextStyle(fontSize: 20),
-        ),
+      body: SingleChildScrollView(
+    child : Column(
+      children: [
+    Homepage(),
+      ],
+    ),
       ),
     );
   }

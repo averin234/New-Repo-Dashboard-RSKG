@@ -16,6 +16,7 @@ class ChartzView extends GetView<ChartzController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color(0xffecf8ff),
       appBar: AppBar(
         elevation: 1,
         title: Text('Grafik ${controller.title}'),

@@ -14,7 +14,7 @@ class MyDropDown extends StatelessWidget {
     return Container(
       padding: const EdgeInsets.all(0),
       decoration: const BoxDecoration(
-        color: Color(0xfff3f3f4),
+        color: Colors.white,
       ),
       child: DropdownSearch<String>(
         popupProps: const PopupProps.modalBottomSheet(

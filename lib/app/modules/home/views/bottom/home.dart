@@ -1,3 +1,4 @@
+import 'package:dashboard_rskg_mobile/app/modules/home/views/component_widgets/compomenet_home.dart';
 import 'package:dashboard_rskg_mobile/app/modules/home/views/widgets/card.pendapatan.dart';
 import 'package:dashboard_rskg_mobile/app/modules/home/views/widgets/dashboard.dart';
 import 'package:dashboard_rskg_mobile/app/modules/home/views/widgets/logo.dart';
@@ -84,7 +85,8 @@ class HomeBottom extends StatelessWidget {
                   height: 10,
                 ),
                 WidgetTitlePoli2(),
-                StaticLainnya(),
+                Homepage2(),
+                // StaticLainnya(),
 
               ],
             ),
