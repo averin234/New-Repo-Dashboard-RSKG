@@ -19,23 +19,37 @@ class CardKanan extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.only(left: 10, right: 5),
-      width: MediaQuery.of(context).size.width / 2,
+    return Padding(padding:EdgeInsets.only(left: 10, right: 10),
+      child : Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10),
+          boxShadow: [
+            BoxShadow(
+              color: const Color(0xffd5d7d7).withOpacity(0.5),
+              spreadRadius: 10,
+              blurRadius: 10,
+              offset: const Offset(2, 1),
+            ),
+          ],
+        gradient: LinearGradient(
+        begin: Alignment.topRight,
+        end: Alignment.bottomLeft,
+        stops: [0.1, 0.5, 0.7, 0.9],
+        colors: [
+          Color(0xff62cdff),
+          Color(0xff62cdff),
+          Color(0xff29b9fd),
+          Color(0xff14b1fc),
+        ],
+      ),
+        ),
+
+      width: MediaQuery.of(context).size.width / 2.3,
       child: TextButton(
         onPressed: () {
           HapticFeedback.lightImpact();
           Get.toNamed(Routes.CHARTZ, parameters: {'title': title});
         },
-        style: TextButton.styleFrom(
-          elevation: 10,
-          shadowColor: Colors.grey[100],
-          backgroundColor: Color(0xff41b2fd),
-          padding: const EdgeInsets.all(20),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(20),
-          ),
-        ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.end,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -60,6 +74,9 @@ class CardKanan extends StatelessWidget {
                 color: Colors.white,
                 fontWeight: FontWeight.bold,
               ),
+            ),
+            SizedBox(
+              height: 10,
             ),
             Container(
                 decoration: BoxDecoration(
@@ -88,6 +105,7 @@ class CardKanan extends StatelessWidget {
           ],
         ),
       ),
+     ),
     );
   }
 }

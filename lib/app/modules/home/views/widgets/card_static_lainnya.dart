@@ -15,7 +15,9 @@ class CardStaticLainnya extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return Container(
+
+      child : Column(
       children: [
         GestureDetector(
           onTap: () {
@@ -25,14 +27,17 @@ class CardStaticLainnya extends StatelessWidget {
             width: MediaQuery.of(context).size.width / 1 - 30,
             padding:
                 const EdgeInsets.only(right: 16, left: 16, bottom: 20, top: 10),
-            decoration: const BoxDecoration(
-              color: Color(0xfff5f5f5),
-              borderRadius: BorderRadius.only(
-                topRight: Radius.circular(20.0),
-                bottomRight: Radius.circular(20.0),
-                topLeft: Radius.circular(20.0),
-                bottomLeft: Radius.circular(20.0),
-              ),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(10),
+              color: Colors.white,
+              boxShadow: [
+                BoxShadow(
+                  color: const Color(0xffd5d7d7).withOpacity(0.5),
+                  spreadRadius: 1,
+                  blurRadius: 10,
+                  offset: const Offset(2, 1),
+                ),
+              ],
             ),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.end,
@@ -47,7 +52,6 @@ class CardStaticLainnya extends StatelessWidget {
                         image,
                         height: 30,
                         width: 30,
-                        color: Colors.blue,
                       ),
                     ),
                     const SizedBox(
@@ -68,6 +72,7 @@ class CardStaticLainnya extends StatelessWidget {
           ),
         ),
       ],
+      ),
     );
   }
 }

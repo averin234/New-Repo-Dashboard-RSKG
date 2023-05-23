@@ -4,12 +4,12 @@ import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
-class CardKiri extends StatelessWidget {
+class CardKanan2 extends StatelessWidget {
   final String title;
   final String value;
   final String image;
   final int? color;
-  const CardKiri({
+  const CardKanan2({
     super.key,
     required this.title,
     required this.value,
@@ -19,30 +19,30 @@ class CardKiri extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(padding:EdgeInsets.only(left: 14, right: 10),
+    return Padding(padding:EdgeInsets.only(left: 10, right: 10),
       child : Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
-        boxShadow: [
-          BoxShadow(
-            color: const Color(0xffd5d7d7).withOpacity(0.5),
-            spreadRadius: 10,
-            blurRadius: 10,
-            offset: const Offset(2, 1),
-          ),
-        ],
-        gradient: LinearGradient(
-          begin: Alignment.topRight,
-          end: Alignment.bottomLeft,
-          stops: [0.1, 0.5, 0.7, 0.9],
-          colors: [
-            Color(0xff62cdff),
-            Color(0xff62cdff),
-            Color(0xff29b9fd),
-            Color(0xff14b1fc),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10),
+          boxShadow: [
+            BoxShadow(
+              color: const Color(0xffd5d7d7).withOpacity(0.5),
+              spreadRadius: 10,
+              blurRadius: 10,
+              offset: const Offset(2, 1),
+            ),
           ],
-        ),
+        gradient: LinearGradient(
+        begin: Alignment.topRight,
+        end: Alignment.bottomLeft,
+        stops: [0.1, 0.5, 0.7, 0.9],
+        colors: [
+          Color(0xffb5f1cc),
+          Color(0xffbef0cb),
+          Color(0xffade792),
+          Color(0xffade792),
+        ],
       ),
+        ),
 
       width: MediaQuery.of(context).size.width / 2.3,
       child: TextButton(
@@ -105,6 +105,66 @@ class CardKiri extends StatelessWidget {
           ],
         ),
       ),
+     ),
+    );
+  }
+}
+
+class MyCustomWidget extends StatefulWidget {
+  const MyCustomWidget({super.key});
+
+  @override
+  _MyCustomWidgetState createState() => _MyCustomWidgetState();
+}
+
+class _MyCustomWidgetState extends State<MyCustomWidget>
+    with TickerProviderStateMixin {
+  bool isTapped = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Colors.blue,
+      body: Center(
+        child: InkWell(
+          highlightColor: Colors.transparent,
+          splashColor: Colors.transparent,
+          onHighlightChanged: (value) {
+            setState(() {
+              isTapped = value;
+            });
+          },
+          onTap: () {},
+          child: AnimatedContainer(
+            duration: const Duration(milliseconds: 300),
+            curve: Curves.fastLinearToSlowEaseIn,
+            height: isTapped ? 55 : 60,
+            width: isTapped ? 150 : 160,
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: const BorderRadius.all(
+                Radius.circular(30),
+              ),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.3),
+                  blurRadius: 30,
+                  offset: const Offset(3, 7),
+                ),
+              ],
+            ),
+            child: Center(
+              child: Text(
+                'TAP HERE',
+                style: TextStyle(
+                  color: Colors.black.withOpacity(0.7),
+                  fontWeight: FontWeight.w500,
+                  fontSize: 19,
+                ),
+              ),
+            ),
+          ),
+        ),
       ),
     );
   }

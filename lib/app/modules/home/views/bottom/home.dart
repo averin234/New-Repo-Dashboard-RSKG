@@ -8,6 +8,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter/src/widgets/placeholder.dart';
 
+import '../component_widgets/compomenet.dart';
+import '../widgets/dashboard2.dart';
+import '../widgets/slider.dart';
+import '../widgets/title4.dart';
+
 class HomeBottom extends StatelessWidget {
   const HomeBottom({super.key});
 
@@ -19,20 +24,18 @@ class HomeBottom extends StatelessWidget {
           floating: true,
           pinned: true,
           snap: true,
-          stretch: true,
-          centerTitle: true,
-          title: Text(greetings()),
+          title: Text("Dashboard"),
           actions: const [
           ],
           bottom: AppBar(
-            toolbarHeight: 100,
+            toolbarHeight: 110,
             automaticallyImplyLeading: false,
             elevation: 1,
             title: Column(
               children: const [
                 WidgetTitlelogo(),
                 SizedBox(
-                  height: 5,
+                  height: 45,
                 )
               ],
             ),
@@ -60,13 +63,29 @@ class HomeBottom extends StatelessWidget {
                   height: 10,
                 ),
                 WidgetTitlePendapatan(),
+                SizedBox(
+                  height: 10,
+                ),
+                Text("Pendapatan bulan sebelumnya", style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold),),
+                WidgetSlider(),
+                Divider(
+                    color: Colors.black
+                ),
+                Text("Static Kunjungan perbulan", style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold),),
                 WidgetTitlePoli1(),
+                WidgetTitlePoli3(),
+                SizedBox(
+                  height: 15,
+                ),
+                // Homepage(),
                 DashBoard(),
+                DashBoard1(),
                 SizedBox(
                   height: 10,
                 ),
                 WidgetTitlePoli2(),
                 StaticLainnya(),
+
               ],
             ),
             ),

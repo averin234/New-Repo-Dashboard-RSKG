@@ -4,12 +4,12 @@ import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
-class CardKiri extends StatelessWidget {
+class CardKiri2 extends StatelessWidget {
   final String title;
   final String value;
   final String image;
   final int? color;
-  const CardKiri({
+  const CardKiri2({
     super.key,
     required this.title,
     required this.value,
@@ -36,10 +36,10 @@ class CardKiri extends StatelessWidget {
           end: Alignment.bottomLeft,
           stops: [0.1, 0.5, 0.7, 0.9],
           colors: [
-            Color(0xff62cdff),
-            Color(0xff62cdff),
-            Color(0xff29b9fd),
-            Color(0xff14b1fc),
+            Color(0xffb5f1cc),
+            Color(0xffbef0cb),
+            Color(0xffade792),
+            Color(0xffade792),
           ],
         ),
       ),

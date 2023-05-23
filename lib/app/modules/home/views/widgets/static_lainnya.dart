@@ -10,12 +10,12 @@ class StaticLainnya extends StatelessWidget {
       children: [
         SizedBox(height: 15),
         CardStaticLainnya(
-          image: 'assets/images/icons/total_pasien.svg',
+          image: 'assets/images/icons/rupiah.svg',
           title: "Keuangan",
         ),
         SizedBox(height: 15),
         CardStaticLainnya(
-          image: 'assets/images/icons/resep.svg',
+          image: 'assets/images/icons/obat2.svg',
           title: "Obat",
         ),
         SizedBox(height: 15),

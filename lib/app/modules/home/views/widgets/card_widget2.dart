@@ -2,8 +2,10 @@ import 'package:dashboard_rskg_mobile/app/modules/home/views/widgets/card_kanan.
 import 'package:dashboard_rskg_mobile/app/modules/home/views/widgets/card_kiri.dart';
 import 'package:flutter/material.dart';
 
+import 'card_kanan2.dart';
+import 'card_kiri2.dart';
 
-class CardWidget extends StatelessWidget {
+class CardWidget2 extends StatelessWidget {
   final String titleKanan;
   final String valueKanan;
   final String imageKanan;
@@ -11,7 +13,7 @@ class CardWidget extends StatelessWidget {
   final String valueKiri;
   final String imageKiri;
   final int? color;
-  const CardWidget({
+  const CardWidget2({
     super.key,
     required this.titleKanan,
     required this.valueKanan,
@@ -26,21 +28,21 @@ class CardWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(children: [
       Row(
-      children: [
-        CardKiri(
-          image: imageKiri,
-          title: titleKiri,
-          value: valueKiri,
-          color: color,
-        ),
-        CardKanan(
-          image: imageKanan,
-          title: titleKanan,
-          value: valueKanan,
-          color: color,
-        ),
-      ],
-    ),
+        children: [
+          CardKiri2(
+            image: imageKiri,
+            title: titleKiri,
+            value: valueKiri,
+            color: color,
+          ),
+          CardKanan2(
+            image: imageKanan,
+            title: titleKanan,
+            value: valueKanan,
+            color: color,
+          ),
+        ],
+      )
     ]
     );
   }
