@@ -53,20 +53,7 @@ class _WidgetListView3State extends State<WidgetListView3> {
           ),
           const SizedBox(
             width: 43,
-          ),
-          Container(
-            padding:
-            const EdgeInsets.only(left: 2, right: 2,),
-            decoration: BoxDecoration(
-              color: Colors.blue,
-              borderRadius: BorderRadius.circular(15),
-            ),
-            child : Text(
-              "Detail",
-              textAlign: TextAlign.center,
-              style: TextStyle(color : Colors.white, fontSize: 13, fontWeight: FontWeight.bold),
-            ),
-          ),// Icon(Icons.arrow_forward_ios_outlined, size: 15,)
+          ), // Icon(Icons.arrow_forward_ios_outlined, size: 15,)
         ],
       ),
       ),

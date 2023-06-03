@@ -12,9 +12,8 @@ class JenisPasienView extends GetView<JenisPasienController> {
     return Scaffold(
       backgroundColor: Color(0xffecf8ff),
       appBar: AppBar(
-        elevation: 1,
-        title: const Text('JenisPasien'),
-        centerTitle: true,
+        elevation: 0,
+        title: const Text('Jenis Pasien'),
       ),
       body: SingleChildScrollView(
     child : Column(

@@ -11,10 +11,14 @@ class _WidgetTitlePendapatanState extends State<WidgetTitlePendapatan> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-        padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
+        padding: const EdgeInsets.fromLTRB(0, 0, 0, 10),
       child : Container(
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(10),
+          borderRadius: BorderRadius.only(
+              topRight: Radius.circular(0.0),
+              bottomRight: Radius.circular(10.0),
+              topLeft: Radius.circular(0.0),
+              bottomLeft: Radius.circular(10.0)),
           image: DecorationImage(
             image: AssetImage(
                 'assets/images/bg1.png'),
@@ -83,7 +87,7 @@ class _WidgetTitlePendapatanState extends State<WidgetTitlePendapatan> {
             color: Colors.black
         ),
         Text(
-          "Lihat Total pendapatan",
+          "Lihat Seluruh pendapatan",
           style: TextStyle(color : Colors.blue ,fontSize: 16, fontWeight: FontWeight.bold),
         ),
         ]

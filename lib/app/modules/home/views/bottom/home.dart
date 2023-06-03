@@ -29,15 +29,15 @@ class HomeBottom extends StatelessWidget {
           actions: const [
           ],
           bottom: AppBar(
-            toolbarHeight: 110,
+            toolbarHeight: 90,
             automaticallyImplyLeading: false,
-            elevation: 1,
+            elevation: 0,
             title: Column(
               children: const [
                 WidgetTitlelogo(),
                 SizedBox(
-                  height: 45,
-                )
+                  height: 30,
+                ),
               ],
             ),
           ),
@@ -60,14 +60,11 @@ class HomeBottom extends StatelessWidget {
               ),
             child : Column(
               children: const [
-                SizedBox(
-                  height: 10,
-                ),
                 WidgetTitlePendapatan(),
                 SizedBox(
                   height: 10,
                 ),
-                Text("Pendapatan bulan sebelumnya", style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold),),
+                Text("Pendapatan perInstalasi", style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold),),
                 WidgetSlider(),
                 Divider(
                     color: Colors.black
@@ -87,7 +84,6 @@ class HomeBottom extends StatelessWidget {
                 WidgetTitlePoli2(),
                 Homepage2(),
                 // StaticLainnya(),
-
               ],
             ),
             ),

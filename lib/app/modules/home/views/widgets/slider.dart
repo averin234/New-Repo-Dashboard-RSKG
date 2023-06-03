@@ -33,8 +33,8 @@ class WidgetSlider extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(
-                  "Bulan April ",
-                  style: TextStyle(fontSize: 13, fontWeight: FontWeight.bold),
+                  "Laboratorium",
+                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
                 ),
                 SizedBox(
                   height: 10,
@@ -48,7 +48,7 @@ class WidgetSlider extends StatelessWidget {
                 ),
                 Text(
                   "Total Pendapatan",
-                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+                  style: TextStyle(fontSize: 13, fontWeight: FontWeight.bold),
                 ),
 
               ],
@@ -75,8 +75,8 @@ class WidgetSlider extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Text(
-                    "Bulan Maret ",
-                    style: TextStyle(fontSize: 13, fontWeight: FontWeight.bold),
+                    "Radiologi",
+                    style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
                   ),
                   SizedBox(
                     height: 10,
@@ -90,7 +90,7 @@ class WidgetSlider extends StatelessWidget {
                   ),
                   Text(
                     "Total Pendapatan",
-                    style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+                    style: TextStyle(fontSize: 13, fontWeight: FontWeight.bold),
                   ),
 
                 ],
@@ -117,8 +117,8 @@ class WidgetSlider extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Text(
-                    "Bulan Febuari ",
-                    style: TextStyle(fontSize: 13, fontWeight: FontWeight.bold),
+                    "Elektromedis",
+                    style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
                   ),
                   SizedBox(
                     height: 10,
@@ -132,7 +132,133 @@ class WidgetSlider extends StatelessWidget {
                   ),
                   Text(
                     "Total Pendapatan",
+                    style: TextStyle(fontSize: 13, fontWeight: FontWeight.bold),
+                  ),
+
+                ],
+              ),
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.all(10),
+            child : Container(
+              padding: EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                color: Colors.white,
+                boxShadow: [
+                  BoxShadow(
+                    color: const Color(0xffd5d7d7).withOpacity(0.5),
+                    spreadRadius: 1,
+                    blurRadius: 10,
+                    offset: const Offset(2, 1),
+                  ),
+                ],
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text(
+                    "MCU",
                     style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text(
+                    "Rp. 10.250.000",
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text(
+                    "Total Pendapatan",
+                    style: TextStyle(fontSize: 13, fontWeight: FontWeight.bold),
+                  ),
+
+                ],
+              ),
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.all(10),
+            child : Container(
+              padding: EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                color: Colors.white,
+                boxShadow: [
+                  BoxShadow(
+                    color: const Color(0xffd5d7d7).withOpacity(0.5),
+                    spreadRadius: 1,
+                    blurRadius: 10,
+                    offset: const Offset(2, 1),
+                  ),
+                ],
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text(
+                    "Poliklinik",
+                    style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text(
+                    "Rp. 10.250.000",
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text(
+                    "Total Pendapatan",
+                    style: TextStyle(fontSize: 13, fontWeight: FontWeight.bold),
+                  ),
+
+                ],
+              ),
+            ),
+          ),
+          Padding(
+            padding: EdgeInsets.all(10),
+            child : Container(
+              padding: EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
+                color: Colors.white,
+                boxShadow: [
+                  BoxShadow(
+                    color: const Color(0xffd5d7d7).withOpacity(0.5),
+                    spreadRadius: 1,
+                    blurRadius: 10,
+                    offset: const Offset(2, 1),
+                  ),
+                ],
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  Text(
+                    "Farmasi",
+                    style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text(
+                    "Rp. 10.250.000",
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Text(
+                    "Total Pendapatan",
+                    style: TextStyle(fontSize: 13, fontWeight: FontWeight.bold),
                   ),
 
                 ],

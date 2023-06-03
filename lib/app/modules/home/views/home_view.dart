@@ -50,10 +50,6 @@ class HomeView extends GetView<HomeController> {
               icon: Icon(Icons.bar_chart),
               label: 'Jenis Pasien',
             ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.settings),
-              label: ' Setting',
-            ),
           ],
           selectedItemColor: Colors.blue,
           currentIndex: controller.currentIndex.value,

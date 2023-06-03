@@ -23,7 +23,7 @@ class Homepage extends StatelessWidget {
                   children: [
                     BarChart(
                       display: DisplayType.average,
-                      title: "Umum",
+                      title: "Laboratorium",
                       subTitle: "",
                       color: Color(0xffFFC437),
                       data: [
@@ -45,7 +45,7 @@ class Homepage extends StatelessWidget {
                     ),
                     BarChart(
                       display: DisplayType.max,
-                      title: "Perusahaan",
+                      title: "Radiologi",
                       subTitle: "",
                       color: Color(0xffEA7674),
                       data: [
@@ -72,7 +72,7 @@ class Homepage extends StatelessWidget {
                   children: [
                     BarChart(
                       display: DisplayType.average,
-                      title: "BPJS",
+                      title: "Elektromedis",
                       subTitle: "Average",
                       color: Color(0xffFFC437),
                       data: [
@@ -90,7 +90,53 @@ class Homepage extends StatelessWidget {
                     ),
                     BarChart(
                       display: DisplayType.max,
-                      title: "Karyawan",
+                      title: "MCU",
+                      subTitle: "",
+                      color: Color(0xffEA7674),
+                      data: [
+
+                        BarchartData(value: 56, label: 'label'),
+                        BarchartData(value: 65, label: 'label'),
+                        BarchartData(value: 49, label: 'label'),
+                        BarchartData(value: 46, label: 'label'),
+                        BarchartData(value: 43, label: 'label'),
+                        BarchartData(value: 408, label: 'label'),
+                      ],
+                      icon: Icon(
+                        CupertinoIcons.bed_double,
+                        color: Color(0xffEA7674),
+                        size: 20,
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    BarChart(
+                      display: DisplayType.average,
+                      title: "Poliklinik",
+                      subTitle: "Average",
+                      color: Color(0xffFFC437),
+                      data: [
+                        BarchartData(value: 40, label: 'label'),
+                        BarchartData(value: 90, label: 'label'),
+                        BarchartData(value: 90, label: 'label'),
+                        BarchartData(value: 90, label: 'label'),
+                        BarchartData(value: 45, label: 'label'),
+                      ],
+                      icon: Icon(
+                        CupertinoIcons.bed_double_fill,
+                        color: Color(0xffFFC437),
+                        size: 20,
+                      ),
+                    ),
+                    BarChart(
+                      display: DisplayType.max,
+                      title: "Farmasi",
                       subTitle: "",
                       color: Color(0xffEA7674),
                       data: [

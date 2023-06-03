@@ -18,7 +18,6 @@ class UserView extends GetView<UserController> {
             "Settings",
             style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
           ),
-          centerTitle: true,
           backgroundColor: Colors.white,
           elevation: 1,
         ),
@@ -27,7 +26,7 @@ class UserView extends GetView<UserController> {
           child: ListView(
             children: [
               Padding(padding: EdgeInsets.only(left: 10),
-              child : Text("Setting Akun",style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold),),
+              child : Text("Akun",style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold),),
               ),
               Container(
                 padding: EdgeInsets.only(right: 10, left: 10, top: 10),
