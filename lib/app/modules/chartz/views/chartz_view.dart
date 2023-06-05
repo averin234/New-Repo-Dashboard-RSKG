@@ -6,17 +6,13 @@ import '../controllers/chartz_controller.dart';
 import 'Widget/BarChartWidget.dart';
 import 'Widget/dropdown_widget.dart';
 import 'Widget/list_view.dart';
-import 'Widget/list_view2.dart';
-import 'Widget/list_view3.dart';
-import 'Widget/list_view4.dart';
-import 'Widget/list_view5.dart';
 
 class ChartzView extends GetView<ChartzController> {
   const ChartzView({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xffecf8ff),
+      backgroundColor: const Color(0xffecf8ff),
       appBar: AppBar(
         elevation: 1,
         title: Text('Grafik ${controller.title}'),
@@ -24,10 +20,10 @@ class ChartzView extends GetView<ChartzController> {
       ),
       body: ListView(
         children: <Widget>[
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
-          Padding(
+          const Padding(
             padding: EdgeInsets.all(10),
             child: Text("Grafik Berdasarkan :",
                 style: TextStyle(
@@ -36,56 +32,42 @@ class ChartzView extends GetView<ChartzController> {
                     fontWeight: FontWeight.bold)),
           ),
           Padding(
-            padding: EdgeInsets.all(10),
+            padding: const EdgeInsets.all(10),
             child: MyDropDown(items: controller.listTahun),
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
           Text(
             controller.title.toUpperCase(),
-            style: TextStyle(
+            style: const TextStyle(
               color: Colors.black,
               fontSize: 18,
               fontWeight: FontWeight.bold,
             ),
             textAlign: TextAlign.center,
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
-          Container(
-            child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 8),
-              child: AspectRatio(
-                aspectRatio: 1,
-                child: ChartzWidget(),
-              ),
+          const Padding(
+            padding: EdgeInsets.symmetric(horizontal: 8),
+            child: AspectRatio(
+              aspectRatio: 1,
+              child: ChartzWidget(),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
-          Center(
-            child: Row(children: [
+          Row(
+            children: const [
               SizedBox(
                 width: 10,
               ),
-              Container(
-                width: 10,
-                height: 10,
-                decoration: BoxDecoration(
-                  color: Colors.pink,
-                  borderRadius: BorderRadius.circular(5),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Color(0xffecf8ff).withOpacity(0.5),
-                      spreadRadius: 0,
-                      blurRadius: 10,
-                      offset: Offset(2, 1),
-                    ),
-                  ],
-                ),
+              CircleAvatar(
+                backgroundColor: Colors.pink,
+                radius: 5,
               ),
               SizedBox(
                 width: 5,
@@ -98,21 +80,9 @@ class ChartzView extends GetView<ChartzController> {
               SizedBox(
                 width: 5,
               ),
-              Container(
-                width: 10,
-                height: 10,
-                decoration: BoxDecoration(
-                  color: Colors.blue,
-                  borderRadius: BorderRadius.circular(5),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Color(0xffecf8ff).withOpacity(0.5),
-                      spreadRadius: 0,
-                      blurRadius: 10,
-                      offset: Offset(2, 1),
-                    ),
-                  ],
-                ),
+              CircleAvatar(
+                backgroundColor: Colors.blue,
+                radius: 5,
               ),
               SizedBox(
                 width: 5,
@@ -125,21 +95,9 @@ class ChartzView extends GetView<ChartzController> {
               SizedBox(
                 width: 5,
               ),
-              Container(
-                width: 10,
-                height: 10,
-                decoration: BoxDecoration(
-                  color: Colors.green,
-                  borderRadius: BorderRadius.circular(5),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Color(0xffecf8ff).withOpacity(0.5),
-                      spreadRadius: 0,
-                      blurRadius: 10,
-                      offset: Offset(2, 1),
-                    ),
-                  ],
-                ),
+              CircleAvatar(
+                backgroundColor: Colors.green,
+                radius: 5,
               ),
               SizedBox(
                 width: 5,
@@ -152,21 +110,9 @@ class ChartzView extends GetView<ChartzController> {
               SizedBox(
                 width: 5,
               ),
-              Container(
-                width: 10,
-                height: 10,
-                decoration: BoxDecoration(
-                  color: Colors.yellow,
-                  borderRadius: BorderRadius.circular(5),
-                  boxShadow: [
-                    BoxShadow(
-                      color: Color(0xffecf8ff).withOpacity(0.5),
-                      spreadRadius: 0,
-                      blurRadius: 10,
-                      offset: Offset(2, 1),
-                    ),
-                  ],
-                ),
+              CircleAvatar(
+                backgroundColor: Colors.yellow,
+                radius: 5,
               ),
               SizedBox(
                 width: 5,
@@ -176,44 +122,19 @@ class ChartzView extends GetView<ChartzController> {
                       fontSize: 14.0,
                       color: Colors.black45,
                       fontWeight: FontWeight.bold)),
-            ]),
+            ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
-          Padding(
+          const Padding(
             padding: EdgeInsets.only(left: 5, right: 5),
             child: WidgetListView(),
           ),
-          SizedBox(
+          const SizedBox(
             height: 5,
           ),
-          Padding(
-            padding: EdgeInsets.only(left: 5, right: 5),
-            child: WidgetListView2(),
-          ),
-          SizedBox(
-            height: 5,
-          ),
-          Padding(
-            padding: EdgeInsets.only(left: 5, right: 5),
-            child: WidgetListView3(),
-          ),
-          SizedBox(
-            height: 5,
-          ),
-          Padding(
-            padding: EdgeInsets.only(left: 5, right: 5),
-            child: WidgetListView4(),
-          ),
-          SizedBox(
-            height: 5,
-          ),
-          Padding(
-            padding: EdgeInsets.only(left: 5, right: 5),
-            child: WidgetListView5(),
-          ),
-          SizedBox(
+          const SizedBox(
             height: 50,
           ),
         ],

@@ -119,7 +119,7 @@ class ChartzController extends GetxController {
           getTooltipItem: (group, groupIndex, rod, rodIndex) {
             return BarTooltipItem(
               '${dataPerTahun[tahun.value]![group.x].key}\n',
-              TextStyle(
+              const TextStyle(
                 color: Colors.white,
                 fontWeight: FontWeight.bold,
                 fontSize: 18,
@@ -166,7 +166,7 @@ class ChartzController extends GetxController {
                       .value
                       .toInt()
                       .toString(),
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: Colors.black,
                   ),
                 ),
@@ -182,7 +182,7 @@ class ChartzController extends GetxController {
                 axisSide: meta.axisSide,
                 child: Text(
                   dataPerTahun[tahun.value]![value.toInt()].key.substring(0, 3),
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: Colors.black,
                   ),
                 ),
@@ -209,9 +209,51 @@ class ChartzController extends GetxController {
               toY: index == touchedIndex.value
                   ? dataPerTahun[tahun.value]![index].value + 1
                   : dataPerTahun[tahun.value]![index].value,
-              color: index == touchedIndex.value ? touchedBarColor : barColor,
-              width: 16,
-              borderSide: BorderSide(width: 0),
+              color: index == touchedIndex.value ? touchedBarColor : Colors.red,
+              width: 5,
+              borderSide: const BorderSide(width: 0),
+              backDrawRodData: BackgroundBarChartRodData(
+                show: true,
+                toY: 20,
+                color: barBackgroundColor,
+              ),
+            ),
+            BarChartRodData(
+              toY: index == touchedIndex.value
+                  ? dataPerTahun[tahun.value]![index].value + 1
+                  : dataPerTahun[tahun.value]![index].value,
+              color:
+                  index == touchedIndex.value ? touchedBarColor : Colors.blue,
+              width: 5,
+              borderSide: const BorderSide(width: 0),
+              backDrawRodData: BackgroundBarChartRodData(
+                show: true,
+                toY: 20,
+                color: barBackgroundColor,
+              ),
+            ),
+            BarChartRodData(
+              toY: index == touchedIndex.value
+                  ? dataPerTahun[tahun.value]![index].value + 1
+                  : dataPerTahun[tahun.value]![index].value,
+              color:
+                  index == touchedIndex.value ? touchedBarColor : Colors.green,
+              width: 5,
+              borderSide: const BorderSide(width: 0),
+              backDrawRodData: BackgroundBarChartRodData(
+                show: true,
+                toY: 20,
+                color: barBackgroundColor,
+              ),
+            ),
+            BarChartRodData(
+              toY: index == touchedIndex.value
+                  ? dataPerTahun[tahun.value]![index].value + 1
+                  : dataPerTahun[tahun.value]![index].value,
+              color:
+                  index == touchedIndex.value ? touchedBarColor : Colors.yellow,
+              width: 5,
+              borderSide: const BorderSide(width: 0),
               backDrawRodData: BackgroundBarChartRodData(
                 show: true,
                 toY: 20,
