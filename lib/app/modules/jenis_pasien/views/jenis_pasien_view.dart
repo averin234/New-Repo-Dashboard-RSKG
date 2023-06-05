@@ -13,7 +13,7 @@ class JenisPasienView extends GetView<JenisPasienController> {
       backgroundColor: Color(0xffecf8ff),
       appBar: AppBar(
         elevation: 0,
-        title: const Text('Jenis Pasien'),
+        title: const Text('Instalasi'),
       ),
       body: SingleChildScrollView(
     child : Column(
