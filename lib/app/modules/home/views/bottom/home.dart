@@ -64,12 +64,11 @@ class HomeBottom extends StatelessWidget {
                 SizedBox(
                   height: 10,
                 ),
-                Text("Pendapatan perInstalasi", style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold),),
-                WidgetSlider(),
+                // Text("Pendapatan perInstalasi", style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold),),
+                // WidgetSlider(),
                 Divider(
                     color: Colors.black
                 ),
-                Text("Static Kunjungan perbulan", style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold),),
                 WidgetTitlePoli1(),
                 WidgetTitlePoli3(),
                 SizedBox(

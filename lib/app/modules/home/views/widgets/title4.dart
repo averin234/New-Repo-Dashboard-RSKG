@@ -26,13 +26,6 @@ class WidgetTitlePoli3 extends StatelessWidget {
         SizedBox(
           height: 10,
         ),
-        Text(
-          "Jumlah Kunjungan di sesuaikan dengan bulan yang dipilih",
-          style: TextStyle(
-            fontSize: 16,
-            fontWeight: FontWeight.normal,
-          ),
-        ),
       ]
       ),
     );
