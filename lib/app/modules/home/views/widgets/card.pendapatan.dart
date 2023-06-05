@@ -10,90 +10,173 @@ class WidgetTitlePendapatan extends StatefulWidget {
 class _WidgetTitlePendapatanState extends State<WidgetTitlePendapatan> {
   @override
   Widget build(BuildContext context) {
-    return Padding(
-        padding: const EdgeInsets.fromLTRB(0, 0, 0, 10),
-      child : Container(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.only(
-              topRight: Radius.circular(0.0),
-              bottomRight: Radius.circular(10.0),
-              topLeft: Radius.circular(0.0),
-              bottomLeft: Radius.circular(10.0)),
-          image: DecorationImage(
-            image: AssetImage(
-                'assets/images/bg1.png'),
-            fit: BoxFit.fill,
-          ),
-          color: Colors.white,
-          boxShadow: [
-            BoxShadow(
-              color: const Color(0xffd5d7d7).withOpacity(0.5),
-              spreadRadius: 1,
-              blurRadius: 10,
-              offset: const Offset(2, 1),
-            ),
-          ],
-        ),
-      child : Padding(
-      padding: const EdgeInsets.fromLTRB(17, 10, 10, 10),
-      child: Column(
+    return  Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
+        SizedBox(
+          height: 10,
+        ),
         Container(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Text(
-                "Pendapatan",
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-              ),
-            ],
-          ),
+          padding: EdgeInsets.only(left: 25),
+          child: Text("Pendapatan",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 20)),
         ),
         SizedBox(
           height: 15,
         ),
-        Row(
-        mainAxisAlignment: MainAxisAlignment.start,
+      Row(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+      Column(
         children: [
           Container(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  "bulan Mei - Sekarang",
-                  style: TextStyle(fontSize: 13, fontWeight: FontWeight.bold),
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.circular(10),
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.grey.withOpacity(0.5),
+                  spreadRadius: 1,
+                  blurRadius: 4,
+                  offset: Offset(0, 1), // changes position of shadow
                 ),
-                SizedBox(
-                  height: 10,
-                ),
-                Text(
-                  "Rp. 20.250.000",
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                ),
-                SizedBox(
-                  height: 10,
-                ),
-                Text(
-                  "Total Pendapatan",
-                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
-                ),
-
               ],
+              gradient: LinearGradient(
+                begin: Alignment.topRight,
+                end: Alignment.bottomLeft,
+                stops: [0.1, 0.5, 0.7, 0.9],
+                colors: [
+                  Color(0xff62cdff),
+                  Color(0xff62cdff),
+                  Color(0xff29b9fd),
+                  Color(0xff14b1fc),
+                ],
+              ),
             ),
-          ), // Icon(Icons.arrow_forward_ios_outlined, size: 15,)
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Container(
+                  padding: EdgeInsets.all(5),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10),
+                    color: Colors.blue,
+
+                  ),
+                child : Text("Rp. 12.000.000",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 15)),),
+                SizedBox(
+                  height: 20,
+                ),
+                Text("Senin",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white)),
+                Text("Tanggal 6",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white)),
+                SizedBox(
+                  height: 20,
+                ),
+              ],),
+          ),
         ],
       ),
-        Divider(
-            color: Colors.black
+        SizedBox(
+          width: 5,
         ),
-        Text(
-          "Lihat Seluruh pendapatan",
-          style: TextStyle(color : Colors.blue ,fontSize: 16, fontWeight: FontWeight.bold),
+        Column(
+          children: [
+            Container(
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(10),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.5),
+                    spreadRadius: 1,
+                    blurRadius: 4,
+                    offset: Offset(0, 1), // changes position of shadow
+                  ),
+                ],
+                gradient: LinearGradient(
+                  begin: Alignment.topRight,
+                  end: Alignment.bottomLeft,
+                  stops: [0.1, 0.5, 0.7, 0.9],
+                  colors: [
+                    Color(0xff62cdff),
+                    Color(0xff62cdff),
+                    Color(0xff29b9fd),
+                    Color(0xff14b1fc),
+                  ],
+                ),
+              ),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+              Container(
+              padding: EdgeInsets.all(5),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10),
+          color: Colors.blue,
         ),
-        ]
-      )
-      ),
-      ),
+                  child : Text("Rp. 12.000.000",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 15)),),
+                  SizedBox(
+                    height: 20,
+                  ),
+                  Text("Bulan",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white)),
+                  Text("Juni",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white)),
+                  SizedBox(
+                    height: 20,
+                  ),
+                ],),
+            ),
+          ],
+        ),
+        SizedBox(
+          width: 5,
+        ),
+        Container(
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: BorderRadius.circular(10),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.grey.withOpacity(0.5),
+                spreadRadius: 1,
+                blurRadius: 4,
+                offset: Offset(0, 1), // changes position of shadow
+              ),
+            ],
+            gradient: LinearGradient(
+              begin: Alignment.topRight,
+              end: Alignment.bottomLeft,
+              stops: [0.1, 0.5, 0.7, 0.9],
+              colors: [
+                Color(0xff62cdff),
+                Color(0xff62cdff),
+                Color(0xff29b9fd),
+                Color(0xff14b1fc),
+              ],
+            ),
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Container(
+                padding: EdgeInsets.all(5),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  color: Colors.blue,
+                ),
+                child : Text("Rp. 120.000.000",style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 15)),),
+              SizedBox(
+                height: 20,
+              ),
+              Text("Tahun",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.white),),
+              Text("2023",style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white),),
+              SizedBox(
+                height: 20,
+              ),
+            ],),
+        ),
+      ],
+    ),
+    ],
     );
   }
 }
