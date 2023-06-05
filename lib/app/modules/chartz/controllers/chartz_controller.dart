@@ -14,10 +14,10 @@ class DataChart {
 
 class ChartzController extends GetxController {
   String title = Get.parameters['title'] ?? 'Total Pasien';
-  List<String> listTahun = ['2020', '2021', '2022', '2023'];
-  RxString tahun = '2020'.obs;
+  List<String> listTahun = ['Tahun', 'Bulan', 'Tanggal',];
+  RxString tahun = 'Tahun'.obs;
   final Map<String, List<DataChart>> dataPerTahun = {
-    '2020': [
+    'Tahun': [
       DataChart(key: 'Januari', value: Random().nextInt(20).toDouble()),
       DataChart(key: 'Februari', value: Random().nextInt(20).toDouble()),
       DataChart(key: 'Maret', value: Random().nextInt(20).toDouble()),
@@ -31,7 +31,7 @@ class ChartzController extends GetxController {
       DataChart(key: 'November', value: Random().nextInt(20).toDouble()),
       DataChart(key: 'Desember', value: Random().nextInt(20).toDouble()),
     ],
-    '2021': [
+    'Bulan': [
       DataChart(key: 'Januari', value: Random().nextInt(20).toDouble()),
       DataChart(key: 'Februari', value: Random().nextInt(20).toDouble()),
       DataChart(key: 'Maret', value: Random().nextInt(20).toDouble()),
@@ -45,7 +45,7 @@ class ChartzController extends GetxController {
       DataChart(key: 'November', value: Random().nextInt(20).toDouble()),
       DataChart(key: 'Desember', value: Random().nextInt(20).toDouble()),
     ],
-    '2022': [
+    'Tanggal': [
       DataChart(key: 'Januari', value: Random().nextInt(20).toDouble()),
       DataChart(key: 'Februari', value: Random().nextInt(20).toDouble()),
       DataChart(key: 'Maret', value: Random().nextInt(20).toDouble()),
@@ -59,20 +59,6 @@ class ChartzController extends GetxController {
       DataChart(key: 'November', value: Random().nextInt(20).toDouble()),
       DataChart(key: 'Desember', value: Random().nextInt(20).toDouble()),
     ],
-    '2023': [
-      DataChart(key: 'Januari', value: Random().nextInt(20).toDouble()),
-      DataChart(key: 'Februari', value: Random().nextInt(20).toDouble()),
-      DataChart(key: 'Maret', value: Random().nextInt(20).toDouble()),
-      DataChart(key: 'April', value: Random().nextInt(20).toDouble()),
-      DataChart(key: 'Mei', value: Random().nextInt(20).toDouble()),
-      DataChart(key: 'Juni', value: Random().nextInt(20).toDouble()),
-      DataChart(key: 'Juli', value: Random().nextInt(20).toDouble()),
-      DataChart(key: 'Agustus', value: Random().nextInt(20).toDouble()),
-      DataChart(key: 'September', value: Random().nextInt(20).toDouble()),
-      DataChart(key: 'Oktober', value: Random().nextInt(20).toDouble()),
-      DataChart(key: 'November', value: Random().nextInt(20).toDouble()),
-      DataChart(key: 'Desember', value: Random().nextInt(20).toDouble()),
-    ]
   };
 
   final Color barBackgroundColor =

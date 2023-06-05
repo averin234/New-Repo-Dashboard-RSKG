@@ -20,7 +20,7 @@ class MyDropDown extends StatelessWidget {
         popupProps: const PopupProps.modalBottomSheet(
           fit: FlexFit.loose,
           showSelectedItems: true,
-          showSearchBox: true,
+          showSearchBox: false,
           searchFieldProps: TextFieldProps(
             decoration: InputDecoration(
               hintText: "Pencarian berdasarkan Tahun",
