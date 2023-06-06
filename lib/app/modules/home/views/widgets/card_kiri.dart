@@ -8,19 +8,23 @@ class CardKiri extends StatelessWidget {
   final String title;
   final String value;
   final String image;
+  final String path;
+  final bool isUmum;
   final int? color;
   const CardKiri({
     super.key,
     required this.title,
     required this.value,
     required this.image,
+    required this.isUmum,
+    required this.path,
     this.color,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Padding(padding:EdgeInsets.only(left: 14, right: 10),
-      child : Container(
+    return Container(
+      margin: const EdgeInsets.only(right: 10, left: 10),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
         boxShadow: [
@@ -31,7 +35,7 @@ class CardKiri extends StatelessWidget {
             offset: const Offset(2, 1),
           ),
         ],
-        gradient: LinearGradient(
+        gradient: const LinearGradient(
           begin: Alignment.topRight,
           end: Alignment.bottomLeft,
           stops: [0.1, 0.5, 0.7, 0.9],
@@ -43,12 +47,12 @@ class CardKiri extends StatelessWidget {
           ],
         ),
       ),
-
-      width: MediaQuery.of(context).size.width / 2.3,
+      width: MediaQuery.of(context).size.width / 2 - 20,
       child: TextButton(
         onPressed: () {
           HapticFeedback.lightImpact();
-          Get.toNamed(Routes.CHARTZ, parameters: {'title': title});
+          Get.toNamed(Routes.CHARTZ,
+              arguments: {'title': title, 'path': path, 'isUmum': isUmum});
         },
         child: Column(
           mainAxisAlignment: MainAxisAlignment.end,
@@ -75,7 +79,7 @@ class CardKiri extends StatelessWidget {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Container(
@@ -91,8 +95,9 @@ class CardKiri extends StatelessWidget {
                     ),
                   ],
                 ),
-                child : Padding(padding: EdgeInsets.all(6),
-                  child : Text(
+                child: Padding(
+                  padding: const EdgeInsets.all(6),
+                  child: Text(
                     title,
                     style: const TextStyle(
                       fontSize: 15.0,
@@ -100,11 +105,9 @@ class CardKiri extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                )
-            ),
+                )),
           ],
         ),
-      ),
       ),
     );
   }

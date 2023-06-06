@@ -191,10 +191,13 @@ class ChartzView extends GetView<ChartzController> {
     print(date);
     if (controller.kalender.value == 'Tahun') {
       controller.dateController.text = DateFormat('yyyy').format(date);
+      controller.stringDate.value = controller.dateController.text;
     } else if (controller.kalender.value == 'Bulan') {
       controller.dateController.text = DateFormat('yyyy-MM').format(date);
+      controller.stringDate.value = controller.dateController.text;
     } else {
       controller.dateController.text = DateFormat('yyyy-MM-dd').format(date);
+      controller.stringDate.value = controller.dateController.text;
     }
   }
 }

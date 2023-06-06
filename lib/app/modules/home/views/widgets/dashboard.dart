@@ -7,47 +7,60 @@ class DashBoard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-        children: [
-          // GridView.builder(
-          //   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          //       crossAxisCount: 3),
-          //   shrinkWrap: true,
-          //   itemBuilder: (context, index) => const CardKanan(
-          //     title: 'Total Pasien',
-          //     value: '1.345',
-          //     image: 'assets/images/icons/total_pasien.svg',
-          //   ),
-          // ),
-          CardWidget(
-            imageKiri: 'assets/images/icons/total_pasien.svg',
-            titleKiri: "Total Pasien",
-            valueKiri: "1.345",
-            imageKanan: 'assets/images/icons/pasien_poli.svg',
-            titleKanan: "Pasien Poliklinik",
-            valueKanan: "460",
-            color: 0xffe3f4ff,
-          ),
-          SizedBox(height: 15),
-          CardWidget(
-            imageKiri: 'assets/images/icons/hemode.svg',
-            titleKiri: "Pasien Hemodialisa",
-            valueKiri: "840",
-            imageKanan: 'assets/images/icons/igd.svg',
-            titleKanan: "Pasien IGD",
-            valueKanan: "242",
-            color: 0xffe3f4ff,
-          ),
-          SizedBox(height: 15),
-          CardWidget(
-            imageKiri: 'assets/images/icons/labro.svg',
-            titleKiri: "Laboratorium",
-            valueKiri: "200",
-            imageKanan: 'assets/images/icons/resep2.svg',
-            titleKanan: "Jumlah Resep",
-            valueKanan: "120",
-          ),
-          SizedBox(height: 15),
-        ],
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: const [
+        // GridView.builder(
+        //   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+        //       crossAxisCount: 3),
+        //   shrinkWrap: true,
+        //   itemBuilder: (context, index) => const CardKanan(
+        //     title: 'Total Pasien',
+        //     value: '1.345',
+        //     image: 'assets/images/icons/total_pasien.svg',
+        //   ),
+        // ),
+        CardWidget(
+          imageKiri: 'assets/images/icons/total_pasien.svg',
+          titleKiri: "Total Pasien",
+          valueKiri: "1.345",
+          imageKanan: 'assets/images/icons/pasien_poli.svg',
+          titleKanan: "Pasien Poliklinik",
+          valueKanan: "460",
+          color: 0xffe3f4ff,
+          isUmumKiri: true,
+          isUmumKanan: true,
+          pathKiri: 'get-pasien',
+          pathKanan: 'get-poli',
+        ),
+        SizedBox(height: 15),
+        CardWidget(
+          imageKiri: 'assets/images/icons/hemode.svg',
+          titleKiri: "Pasien Hemodialisa",
+          valueKiri: "840",
+          imageKanan: 'assets/images/icons/igd.svg',
+          titleKanan: "Pasien IGD",
+          valueKanan: "242",
+          color: 0xffe3f4ff,
+          isUmumKiri: true,
+          isUmumKanan: true,
+          pathKiri: 'get-hemo',
+          pathKanan: 'get-igd',
+        ),
+        SizedBox(height: 15),
+        CardWidget(
+          imageKiri: 'assets/images/icons/labro.svg',
+          titleKiri: "Laboratorium",
+          valueKiri: "200",
+          imageKanan: 'assets/images/icons/resep2.svg',
+          titleKanan: "Jumlah Resep",
+          valueKanan: "120",
+          isUmumKiri: true,
+          isUmumKanan: false,
+          pathKiri: 'get-lab',
+          pathKanan: 'get-resep',
+        ),
+        SizedBox(height: 15),
+      ],
     );
   }
 }

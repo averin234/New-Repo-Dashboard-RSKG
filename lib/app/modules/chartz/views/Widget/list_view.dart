@@ -1,22 +1,22 @@
 import 'package:dashboard_rskg_mobile/app/data/component/fetch_data.dart';
+import 'package:dashboard_rskg_mobile/app/modules/chartz/controllers/chartz_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-class WidgetListView extends StatefulWidget {
+class WidgetListView extends GetView<ChartzController> {
   const WidgetListView({Key? key}) : super(key: key);
 
   @override
-  _WidgetListViewState createState() => _WidgetListViewState();
-}
-
-class _WidgetListViewState extends State<WidgetListView> {
-  @override
   Widget build(BuildContext context) {
-    return FutureBuilder(
-        future: API.getPasien,
+    return Obx(
+      () => FutureBuilder(
+        future: API.getDetail(
+            path: controller.path, date: controller.stringDate.value),
         builder: (context, snapshot) {
           if (snapshot.hasData &&
               snapshot.connectionState != ConnectionState.waiting &&
               snapshot.data != null) {
+            final data = snapshot.data!;
             return Column(
               children: [
                 Container(
@@ -72,7 +72,7 @@ class _WidgetListViewState extends State<WidgetListView> {
                   ),
                 ),
                 Column(
-                    children: (snapshot.data!['lists'] as List)
+                    children: (data.kelompok!)
                         .map(
                           (e) => Container(
                             margin: const EdgeInsets.only(bottom: 5),
@@ -87,7 +87,7 @@ class _WidgetListViewState extends State<WidgetListView> {
                                   Expanded(
                                     flex: 1,
                                     child: Text(
-                                      e['kode_kelompok'].toString(),
+                                      e.kodeKelompok.toString(),
                                       textAlign: TextAlign.center,
                                       style: const TextStyle(
                                           fontSize: 13,
@@ -97,7 +97,7 @@ class _WidgetListViewState extends State<WidgetListView> {
                                   Expanded(
                                     flex: 4,
                                     child: Text(
-                                      e['nama_kelompok'],
+                                      e.namaKelompok ?? '',
                                       textAlign: TextAlign.center,
                                       style: const TextStyle(
                                           fontSize: 13,
@@ -107,11 +107,20 @@ class _WidgetListViewState extends State<WidgetListView> {
                                   Expanded(
                                     flex: 2,
                                     child: Text(
-                                      e['length'].toString(),
+                                      e.data!.isNotEmpty
+                                          ? e.data!.values
+                                              .toList()
+                                              .reduce(
+                                                (value, element) =>
+                                                    value + element,
+                                              )
+                                              .toString()
+                                          : 0.toString(),
                                       textAlign: TextAlign.center,
                                       style: const TextStyle(
-                                          fontSize: 13,
-                                          fontWeight: FontWeight.bold),
+                                        fontSize: 13,
+                                        fontWeight: FontWeight.bold,
+                                      ),
                                     ),
                                   ),
                                 ],
@@ -127,6 +136,8 @@ class _WidgetListViewState extends State<WidgetListView> {
               child: CircularProgressIndicator(),
             );
           }
-        });
+        },
+      ),
+    );
   }
 }

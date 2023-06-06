@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:intl/intl.dart';
 
 class HomeController extends GetxController {
   //TODO: Implement HomeController
 
+  TextEditingController dateController = TextEditingController();
+  RxString stringDate = ''.obs;
   final selectedValue = ''.obs;
   final isTapped = false.obs;
   final List<String> items = [
@@ -30,6 +33,7 @@ class HomeController extends GetxController {
   @override
   void onInit() {
     selectedValue.value = items.first;
+    dateController.text = DateFormat('yyyy-MM').format(DateTime.now());
     super.onInit();
   }
 }

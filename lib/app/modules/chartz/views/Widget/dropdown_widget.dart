@@ -59,11 +59,14 @@ class MyDropDown extends StatelessWidget {
           final date = DateTime.now();
           if (controller.kalender.value == 'Tahun') {
             controller.dateController.text = DateFormat('yyyy').format(date);
+            controller.stringDate.value = controller.dateController.text;
           } else if (controller.kalender.value == 'Bulan') {
             controller.dateController.text = DateFormat('yyyy-MM').format(date);
+            controller.stringDate.value = controller.dateController.text;
           } else {
             controller.dateController.text =
                 DateFormat('yyyy-MM-dd').format(date);
+            controller.stringDate.value = controller.dateController.text;
           }
         },
         selectedItem: controller.kalender.value,

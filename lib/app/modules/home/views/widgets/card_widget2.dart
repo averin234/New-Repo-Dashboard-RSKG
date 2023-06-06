@@ -11,6 +11,10 @@ class CardWidget2 extends StatelessWidget {
   final String valueKiri;
   final String imageKiri;
   final int? color;
+  final bool isUmumKanan;
+  final String pathKanan;
+  final bool isUmumKiri;
+  final String pathKiri;
   const CardWidget2({
     super.key,
     required this.titleKanan,
@@ -19,6 +23,10 @@ class CardWidget2 extends StatelessWidget {
     required this.titleKiri,
     required this.valueKiri,
     required this.imageKiri,
+    required this.isUmumKanan,
+    required this.pathKanan,
+    required this.isUmumKiri,
+    required this.pathKiri,
     this.color,
   });
 
@@ -32,12 +40,16 @@ class CardWidget2 extends StatelessWidget {
             title: titleKiri,
             value: valueKiri,
             color: color,
+            isUmum: isUmumKiri,
+            path: pathKiri,
           ),
           CardKanan2(
             image: imageKanan,
             title: titleKanan,
             value: valueKanan,
             color: color,
+            isUmum: isUmumKanan,
+            path: pathKanan,
           ),
         ],
       )

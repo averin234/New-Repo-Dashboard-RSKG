@@ -8,17 +8,21 @@ class DashBoard1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-        children: [
-          CardWidget2(
-            imageKiri: 'assets/images/icons/bpjs.svg',
-            titleKiri: "Pasien BPJS",
-            valueKiri: "1.098",
-            imageKanan: 'assets/images/icons/total_pasien.svg',
-            titleKanan: "Pasien Umum",
-            valueKanan: "200",
-          ),
-          SizedBox(height: 15),
-        ],
+      children: const [
+        CardWidget2(
+          imageKiri: 'assets/images/icons/bpjs.svg',
+          titleKiri: "Pasien BPJS",
+          valueKiri: "1.098",
+          isUmumKiri: true,
+          pathKiri: 'get-bpjs',
+          imageKanan: 'assets/images/icons/total_pasien.svg',
+          titleKanan: "Pasien Umum",
+          valueKanan: "200",
+          isUmumKanan: true,
+          pathKanan: 'get-umum',
+        ),
+        SizedBox(height: 15),
+      ],
     );
   }
 }

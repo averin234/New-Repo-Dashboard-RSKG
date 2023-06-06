@@ -2,16 +2,11 @@ import 'package:dashboard_rskg_mobile/app/modules/home/views/component_widgets/c
 import 'package:dashboard_rskg_mobile/app/modules/home/views/widgets/card.pendapatan.dart';
 import 'package:dashboard_rskg_mobile/app/modules/home/views/widgets/dashboard.dart';
 import 'package:dashboard_rskg_mobile/app/modules/home/views/widgets/logo.dart';
-import 'package:dashboard_rskg_mobile/app/modules/home/views/widgets/static_lainnya.dart';
-import 'package:dashboard_rskg_mobile/app/modules/home/views/widgets/title2.dart';
+import 'package:dashboard_rskg_mobile/app/modules/home/views/widgets/mydropdown.dart';
 import 'package:dashboard_rskg_mobile/app/modules/home/views/widgets/title3.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 
-import '../component_widgets/compomenet.dart';
 import '../widgets/dashboard2.dart';
-import '../widgets/slider.dart';
 import '../widgets/title4.dart';
 
 class HomeBottom extends StatelessWidget {
@@ -25,9 +20,8 @@ class HomeBottom extends StatelessWidget {
           floating: true,
           pinned: true,
           snap: true,
-          title: Text("Dashboard"),
-          actions: const [
-          ],
+          title: const Text("Dashboard"),
+          actions: const [],
           bottom: AppBar(
             toolbarHeight: 90,
             automaticallyImplyLeading: false,
@@ -45,20 +39,11 @@ class HomeBottom extends StatelessWidget {
         // Other Sliver Widgets
         SliverList(
           delegate: SliverChildListDelegate([
-            Container(
-              decoration: BoxDecoration(
-                color: Color(0xffecf8ff),
-                borderRadius: BorderRadius.circular(0),
-                boxShadow: [
-                  BoxShadow(
-                    color: const Color(0xffecf8ff).withOpacity(0.5),
-                    spreadRadius: 0,
-                    blurRadius: 10,
-                    offset: const Offset(2, 1),
-                  ),
-                ],
-              ),
-            child : Column(
+            const Divider(
+              color: Colors.black,
+              height: 1.5,
+            ),
+            Column(
               children: const [
                 WidgetTitlePendapatan(),
                 SizedBox(
@@ -66,10 +51,8 @@ class HomeBottom extends StatelessWidget {
                 ),
                 // Text("Pendapatan perInstalasi", style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold),),
                 // WidgetSlider(),
-                Divider(
-                    color: Colors.black
-                ),
-                WidgetTitlePoli1(),
+                Divider(color: Colors.black),
+                WidgetTitle3(),
                 WidgetTitlePoli3(),
                 SizedBox(
                   height: 15,
@@ -84,7 +67,6 @@ class HomeBottom extends StatelessWidget {
                 Homepage2(),
                 // StaticLainnya(),
               ],
-            ),
             ),
           ]),
         ),

@@ -1,7 +1,6 @@
-import 'dart:math';
-
 import 'package:dashboard_rskg_mobile/app/data/component/app_colors.dart';
 import 'package:dashboard_rskg_mobile/app/data/component/color_extensions.dart';
+import 'package:dashboard_rskg_mobile/app/data/model/detail_model.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -15,57 +14,66 @@ class DataChart {
 
 class ChartzController extends GetxController {
   TextEditingController dateController = TextEditingController();
-  String title = Get.parameters['title'] ?? 'Total Pasien';
+  RxString stringDate = ''.obs;
+  final isUmum = Get.arguments['isUmum'] ?? false;
+  final path = Get.arguments['path'] ?? 'get-pasien';
+  final title = Get.arguments['title'] ?? 'Total Pasien';
   List<String> listKalender = [
     'Tahun',
     'Bulan',
     'Tanggal',
   ];
-  RxString kalender = 'Tahun'.obs;
-  final Map<String, List<DataChart>> dataPerTahun = {
-    'Tahun': [
-      DataChart(key: 'Januari', value: Random().nextInt(20).toDouble()),
-      DataChart(key: 'Februari', value: Random().nextInt(20).toDouble()),
-      DataChart(key: 'Maret', value: Random().nextInt(20).toDouble()),
-      DataChart(key: 'April', value: Random().nextInt(20).toDouble()),
-      DataChart(key: 'Mei', value: Random().nextInt(20).toDouble()),
-      DataChart(key: 'Juni', value: Random().nextInt(20).toDouble()),
-      DataChart(key: 'Juli', value: Random().nextInt(20).toDouble()),
-      DataChart(key: 'Agustus', value: Random().nextInt(20).toDouble()),
-      DataChart(key: 'September', value: Random().nextInt(20).toDouble()),
-      DataChart(key: 'Oktober', value: Random().nextInt(20).toDouble()),
-      DataChart(key: 'November', value: Random().nextInt(20).toDouble()),
-      DataChart(key: 'Desember', value: Random().nextInt(20).toDouble()),
-    ],
-    'Bulan': [
-      DataChart(key: 'Januari', value: Random().nextInt(20).toDouble()),
-      DataChart(key: 'Februari', value: Random().nextInt(20).toDouble()),
-      DataChart(key: 'Maret', value: Random().nextInt(20).toDouble()),
-      DataChart(key: 'April', value: Random().nextInt(20).toDouble()),
-      DataChart(key: 'Mei', value: Random().nextInt(20).toDouble()),
-      DataChart(key: 'Juni', value: Random().nextInt(20).toDouble()),
-      DataChart(key: 'Juli', value: Random().nextInt(20).toDouble()),
-      DataChart(key: 'Agustus', value: Random().nextInt(20).toDouble()),
-      DataChart(key: 'September', value: Random().nextInt(20).toDouble()),
-      DataChart(key: 'Oktober', value: Random().nextInt(20).toDouble()),
-      DataChart(key: 'November', value: Random().nextInt(20).toDouble()),
-      DataChart(key: 'Desember', value: Random().nextInt(20).toDouble()),
-    ],
-    'Tanggal': [
-      DataChart(key: 'Januari', value: Random().nextInt(20).toDouble()),
-      DataChart(key: 'Februari', value: Random().nextInt(20).toDouble()),
-      DataChart(key: 'Maret', value: Random().nextInt(20).toDouble()),
-      DataChart(key: 'April', value: Random().nextInt(20).toDouble()),
-      DataChart(key: 'Mei', value: Random().nextInt(20).toDouble()),
-      DataChart(key: 'Juni', value: Random().nextInt(20).toDouble()),
-      DataChart(key: 'Juli', value: Random().nextInt(20).toDouble()),
-      DataChart(key: 'Agustus', value: Random().nextInt(20).toDouble()),
-      DataChart(key: 'September', value: Random().nextInt(20).toDouble()),
-      DataChart(key: 'Oktober', value: Random().nextInt(20).toDouble()),
-      DataChart(key: 'November', value: Random().nextInt(20).toDouble()),
-      DataChart(key: 'Desember', value: Random().nextInt(20).toDouble()),
-    ],
-  };
+  RxString kalender = 'Bulan'.obs;
+  // final Map<String, List<DataChart>> dataPerTahun = {
+  //   'Tahun': [
+  //     DataChart(key: 'Januari', value: Random().nextInt(20).toDouble()),
+  //     DataChart(key: 'Februari', value: Random().nextInt(20).toDouble()),
+  //     DataChart(key: 'Maret', value: Random().nextInt(20).toDouble()),
+  //     DataChart(key: 'April', value: Random().nextInt(20).toDouble()),
+  //     DataChart(key: 'Mei', value: Random().nextInt(20).toDouble()),
+  //     DataChart(key: 'Juni', value: Random().nextInt(20).toDouble()),
+  //     DataChart(key: 'Juli', value: Random().nextInt(20).toDouble()),
+  //     DataChart(key: 'Agustus', value: Random().nextInt(20).toDouble()),
+  //     DataChart(key: 'September', value: Random().nextInt(20).toDouble()),
+  //     DataChart(key: 'Oktober', value: Random().nextInt(20).toDouble()),
+  //     DataChart(key: 'November', value: Random().nextInt(20).toDouble()),
+  //     DataChart(key: 'Desember', value: Random().nextInt(20).toDouble()),
+  //   ],
+  //   'Bulan': [
+  //     DataChart(key: 'Januari', value: Random().nextInt(20).toDouble()),
+  //     DataChart(key: 'Februari', value: Random().nextInt(20).toDouble()),
+  //     DataChart(key: 'Maret', value: Random().nextInt(20).toDouble()),
+  //     DataChart(key: 'April', value: Random().nextInt(20).toDouble()),
+  //     DataChart(key: 'Mei', value: Random().nextInt(20).toDouble()),
+  //     DataChart(key: 'Juni', value: Random().nextInt(20).toDouble()),
+  //     DataChart(key: 'Juli', value: Random().nextInt(20).toDouble()),
+  //     DataChart(key: 'Agustus', value: Random().nextInt(20).toDouble()),
+  //     DataChart(key: 'September', value: Random().nextInt(20).toDouble()),
+  //     DataChart(key: 'Oktober', value: Random().nextInt(20).toDouble()),
+  //     DataChart(key: 'November', value: Random().nextInt(20).toDouble()),
+  //     DataChart(key: 'Desember', value: Random().nextInt(20).toDouble()),
+  //   ],
+  //   'Tanggal': [
+  //     DataChart(key: 'Januari', value: Random().nextInt(20).toDouble()),
+  //     DataChart(key: 'Februari', value: Random().nextInt(20).toDouble()),
+  //     DataChart(key: 'Maret', value: Random().nextInt(20).toDouble()),
+  //     DataChart(key: 'April', value: Random().nextInt(20).toDouble()),
+  //     DataChart(key: 'Mei', value: Random().nextInt(20).toDouble()),
+  //     DataChart(key: 'Juni', value: Random().nextInt(20).toDouble()),
+  //     DataChart(key: 'Juli', value: Random().nextInt(20).toDouble()),
+  //     DataChart(key: 'Agustus', value: Random().nextInt(20).toDouble()),
+  //     DataChart(key: 'September', value: Random().nextInt(20).toDouble()),
+  //     DataChart(key: 'Oktober', value: Random().nextInt(20).toDouble()),
+  //     DataChart(key: 'November', value: Random().nextInt(20).toDouble()),
+  //     DataChart(key: 'Desember', value: Random().nextInt(20).toDouble()),
+  //   ],
+  // };
+  final List<Color> listKelompokColor = [
+    Colors.red,
+    Colors.blue,
+    Colors.green,
+    Colors.yellow,
+  ];
 
   final Color barBackgroundColor =
       AppColors.contentColorWhite.darken().withOpacity(0.3);
@@ -77,7 +85,8 @@ class ChartzController extends GetxController {
   @override
   void onInit() {
     touchedIndex.value = -1;
-    dateController.text = DateFormat('yyyy').format(DateTime.now());
+    dateController.text = DateFormat('yyyy-MM').format(DateTime.now());
+    stringDate.value = dateController.text;
     super.onInit();
   }
 
@@ -102,7 +111,7 @@ class ChartzController extends GetxController {
   //       }
   //     });
 
-  BarChartData mainBarData() {
+  BarChartData mainBarData(ModelDetail data) {
     return BarChartData(
       barTouchData: BarTouchData(
         touchTooltipData: BarTouchTooltipData(
@@ -111,7 +120,7 @@ class ChartzController extends GetxController {
           tooltipMargin: 10,
           getTooltipItem: (group, groupIndex, rod, rodIndex) {
             return BarTooltipItem(
-              '${dataPerTahun[kalender.value]![group.x].key}\n',
+              '${data.kelompok![rodIndex].namaKelompok}\n',
               const TextStyle(
                 color: Colors.white,
                 fontWeight: FontWeight.bold,
@@ -119,7 +128,7 @@ class ChartzController extends GetxController {
               ),
               children: <TextSpan>[
                 TextSpan(
-                  text: (rod.toY - 1).toString(),
+                  text: (rod.toY).toString(),
                   style: TextStyle(
                     color: Colors.white.withOpacity(0.8),
                     fontSize: 16,
@@ -155,9 +164,10 @@ class ChartzController extends GetxController {
               return SideTitleWidget(
                 axisSide: meta.axisSide,
                 child: Text(
-                  dataPerTahun[kalender.value]![value.toInt()]
-                      .value
-                      .toInt()
+                  data.kelompok!
+                      .map((e) => e.data![(value + 1).toInt().toString()])
+                      .toList()
+                      .reduce((value, element) => value + element)
                       .toString(),
                   style: const TextStyle(
                     color: Colors.black,
@@ -174,9 +184,7 @@ class ChartzController extends GetxController {
               return SideTitleWidget(
                 axisSide: meta.axisSide,
                 child: Text(
-                  dataPerTahun[kalender.value]![value.toInt()]
-                      .key
-                      .substring(0, 3),
+                  data.kelompok!.first.data!.keys.toList()[value.toInt()],
                   style: const TextStyle(
                     color: Colors.black,
                   ),
@@ -187,78 +195,33 @@ class ChartzController extends GetxController {
           ),
         ),
         leftTitles: AxisTitles(
-          sideTitles: SideTitles(
-            showTitles: false,
-          ),
+          sideTitles: SideTitles(showTitles: false),
         ),
       ),
       borderData: FlBorderData(
         show: false,
       ),
       barGroups: List.generate(
-        dataPerTahun[kalender.value]!.length,
-        (index) => BarChartGroupData(
-          x: index,
-          barRods: [
-            BarChartRodData(
-              toY: index == touchedIndex.value
-                  ? dataPerTahun[kalender.value]![index].value + 1
-                  : dataPerTahun[kalender.value]![index].value,
-              color: index == touchedIndex.value ? touchedBarColor : Colors.red,
-              width: 5,
-              borderSide: const BorderSide(width: 0),
-              backDrawRodData: BackgroundBarChartRodData(
-                show: true,
-                toY: 20,
-                color: barBackgroundColor,
-              ),
-            ),
-            BarChartRodData(
-              toY: index == touchedIndex.value
-                  ? dataPerTahun[kalender.value]![index].value + 1
-                  : dataPerTahun[kalender.value]![index].value,
-              color:
-                  index == touchedIndex.value ? touchedBarColor : Colors.blue,
-              width: 5,
-              borderSide: const BorderSide(width: 0),
-              backDrawRodData: BackgroundBarChartRodData(
-                show: true,
-                toY: 20,
-                color: barBackgroundColor,
-              ),
-            ),
-            BarChartRodData(
-              toY: index == touchedIndex.value
-                  ? dataPerTahun[kalender.value]![index].value + 1
-                  : dataPerTahun[kalender.value]![index].value,
-              color:
-                  index == touchedIndex.value ? touchedBarColor : Colors.green,
-              width: 5,
-              borderSide: const BorderSide(width: 0),
-              backDrawRodData: BackgroundBarChartRodData(
-                show: true,
-                toY: 20,
-                color: barBackgroundColor,
-              ),
-            ),
-            BarChartRodData(
-              toY: index == touchedIndex.value
-                  ? dataPerTahun[kalender.value]![index].value + 1
-                  : dataPerTahun[kalender.value]![index].value,
-              color:
-                  index == touchedIndex.value ? touchedBarColor : Colors.yellow,
-              width: 5,
-              borderSide: const BorderSide(width: 0),
-              backDrawRodData: BackgroundBarChartRodData(
-                show: true,
-                toY: 20,
-                color: barBackgroundColor,
-              ),
-            ),
-          ],
+        data.kelompok!.first.data!.length,
+        (indexData) => BarChartGroupData(
+          x: indexData,
+          barRods: List.generate(
+              data.kelompok!.length,
+              (indexKelompok) => barChartRodData(
+                  indexData, indexKelompok, data.kelompok![indexKelompok])),
         ),
       ),
       gridData: FlGridData(show: true),
+    );
+  }
+
+  BarChartRodData barChartRodData(
+      int indexData, int indexKelompok, Kelompok kelompok) {
+    return BarChartRodData(
+      toY: kelompok.data![(indexData + 1).toString()]!.toDouble(),
+      color: listKelompokColor[indexKelompok],
+      width: 5,
+      borderSide: const BorderSide(width: 0),
     );
   }
 }
