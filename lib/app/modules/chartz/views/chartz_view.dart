@@ -1,6 +1,10 @@
+import 'package:dashboard_rskg_mobile/app/data/component/month_picker.dart';
+import 'package:dashboard_rskg_mobile/app/data/component/year_picker.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 
 import 'package:get/get.dart';
+import 'package:intl/intl.dart';
 
 import '../controllers/chartz_controller.dart';
 import 'Widget/BarChartWidget.dart';
@@ -33,7 +37,48 @@ class ChartzView extends GetView<ChartzController> {
           ),
           Padding(
             padding: const EdgeInsets.all(10),
-            child: MyDropDown(items: controller.listTahun),
+            child: MyDropDown(items: controller.listKalender),
+          ),
+          const SizedBox(
+            height: 10,
+          ),
+          Padding(
+            padding: const EdgeInsets.all(10),
+            child: TextField(
+              controller: controller.dateController,
+              readOnly: true,
+              onTap: () => DatePicker.showPicker(
+                Get.context!,
+                showTitleActions: true,
+                pickerModel: controller.kalender.value == 'Tahun'
+                    ? CustomYearPicker(
+                        currentTime: DateTime.now(),
+                        minTime: DateTime(2000, 3, 5),
+                        maxTime: DateTime.now(),
+                        locale: LocaleType.id,
+                      )
+                    : controller.kalender.value == 'Bulan'
+                        ? CustomMonthPicker(
+                            currentTime: DateTime.now(),
+                            minTime: DateTime(2000, 3, 5),
+                            maxTime: DateTime.now(),
+                            locale: LocaleType.id,
+                          )
+                        : DatePickerModel(
+                            currentTime: DateTime.now(),
+                            minTime: DateTime(2000, 3, 5),
+                            maxTime: DateTime.now(),
+                            locale: LocaleType.id,
+                          ),
+                onChanged: onTanggal,
+                onConfirm: onTanggal,
+                // currentTime: DateTime.now(),
+                locale: LocaleType.id,
+              ),
+              decoration: const InputDecoration(
+                border: OutlineInputBorder(),
+              ),
+            ),
           ),
           const SizedBox(
             height: 10,
@@ -140,5 +185,16 @@ class ChartzView extends GetView<ChartzController> {
         ],
       ),
     );
+  }
+
+  void onTanggal(DateTime date) {
+    print(date);
+    if (controller.kalender.value == 'Tahun') {
+      controller.dateController.text = DateFormat('yyyy').format(date);
+    } else if (controller.kalender.value == 'Bulan') {
+      controller.dateController.text = DateFormat('yyyy-MM').format(date);
+    } else {
+      controller.dateController.text = DateFormat('yyyy-MM-dd').format(date);
+    }
   }
 }

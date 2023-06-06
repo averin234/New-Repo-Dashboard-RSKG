@@ -1,5 +1,3 @@
-import 'package:dashboard_rskg_mobile/app/modules/home/views/widgets/card_kanan.dart';
-import 'package:dashboard_rskg_mobile/app/modules/home/views/widgets/card_kiri.dart';
 import 'package:flutter/material.dart';
 
 import 'card_kanan2.dart';
@@ -43,7 +41,6 @@ class CardWidget2 extends StatelessWidget {
           ),
         ],
       )
-    ]
-    );
+    ]);
   }
 }

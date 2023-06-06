@@ -1,6 +1,7 @@
 import 'package:dropdown_search/dropdown_search.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:intl/intl.dart';
 
 import '../../controllers/chartz_controller.dart';
 
@@ -53,8 +54,19 @@ class MyDropDown extends StatelessWidget {
             ),
           ),
         ),
-        onChanged: (value) => controller.tahun.value = value!,
-        selectedItem: '2020',
+        onChanged: (value) {
+          controller.kalender.value = value!;
+          final date = DateTime.now();
+          if (controller.kalender.value == 'Tahun') {
+            controller.dateController.text = DateFormat('yyyy').format(date);
+          } else if (controller.kalender.value == 'Bulan') {
+            controller.dateController.text = DateFormat('yyyy-MM').format(date);
+          } else {
+            controller.dateController.text =
+                DateFormat('yyyy-MM-dd').format(date);
+          }
+        },
+        selectedItem: controller.kalender.value,
       ),
     );
   }

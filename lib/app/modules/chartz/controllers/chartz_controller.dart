@@ -5,6 +5,7 @@ import 'package:dashboard_rskg_mobile/app/data/component/color_extensions.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:intl/intl.dart';
 
 class DataChart {
   final String key;
@@ -13,9 +14,14 @@ class DataChart {
 }
 
 class ChartzController extends GetxController {
+  TextEditingController dateController = TextEditingController();
   String title = Get.parameters['title'] ?? 'Total Pasien';
-  List<String> listTahun = ['Tahun', 'Bulan', 'Tanggal',];
-  RxString tahun = 'Tahun'.obs;
+  List<String> listKalender = [
+    'Tahun',
+    'Bulan',
+    'Tanggal',
+  ];
+  RxString kalender = 'Tahun'.obs;
   final Map<String, List<DataChart>> dataPerTahun = {
     'Tahun': [
       DataChart(key: 'Januari', value: Random().nextInt(20).toDouble()),
@@ -71,6 +77,7 @@ class ChartzController extends GetxController {
   @override
   void onInit() {
     touchedIndex.value = -1;
+    dateController.text = DateFormat('yyyy').format(DateTime.now());
     super.onInit();
   }
 
@@ -104,7 +111,7 @@ class ChartzController extends GetxController {
           tooltipMargin: 10,
           getTooltipItem: (group, groupIndex, rod, rodIndex) {
             return BarTooltipItem(
-              '${dataPerTahun[tahun.value]![group.x].key}\n',
+              '${dataPerTahun[kalender.value]![group.x].key}\n',
               const TextStyle(
                 color: Colors.white,
                 fontWeight: FontWeight.bold,
@@ -148,7 +155,7 @@ class ChartzController extends GetxController {
               return SideTitleWidget(
                 axisSide: meta.axisSide,
                 child: Text(
-                  dataPerTahun[tahun.value]![value.toInt()]
+                  dataPerTahun[kalender.value]![value.toInt()]
                       .value
                       .toInt()
                       .toString(),
@@ -167,7 +174,9 @@ class ChartzController extends GetxController {
               return SideTitleWidget(
                 axisSide: meta.axisSide,
                 child: Text(
-                  dataPerTahun[tahun.value]![value.toInt()].key.substring(0, 3),
+                  dataPerTahun[kalender.value]![value.toInt()]
+                      .key
+                      .substring(0, 3),
                   style: const TextStyle(
                     color: Colors.black,
                   ),
@@ -187,14 +196,14 @@ class ChartzController extends GetxController {
         show: false,
       ),
       barGroups: List.generate(
-        dataPerTahun[tahun.value]!.length,
+        dataPerTahun[kalender.value]!.length,
         (index) => BarChartGroupData(
           x: index,
           barRods: [
             BarChartRodData(
               toY: index == touchedIndex.value
-                  ? dataPerTahun[tahun.value]![index].value + 1
-                  : dataPerTahun[tahun.value]![index].value,
+                  ? dataPerTahun[kalender.value]![index].value + 1
+                  : dataPerTahun[kalender.value]![index].value,
               color: index == touchedIndex.value ? touchedBarColor : Colors.red,
               width: 5,
               borderSide: const BorderSide(width: 0),
@@ -206,8 +215,8 @@ class ChartzController extends GetxController {
             ),
             BarChartRodData(
               toY: index == touchedIndex.value
-                  ? dataPerTahun[tahun.value]![index].value + 1
-                  : dataPerTahun[tahun.value]![index].value,
+                  ? dataPerTahun[kalender.value]![index].value + 1
+                  : dataPerTahun[kalender.value]![index].value,
               color:
                   index == touchedIndex.value ? touchedBarColor : Colors.blue,
               width: 5,
@@ -220,8 +229,8 @@ class ChartzController extends GetxController {
             ),
             BarChartRodData(
               toY: index == touchedIndex.value
-                  ? dataPerTahun[tahun.value]![index].value + 1
-                  : dataPerTahun[tahun.value]![index].value,
+                  ? dataPerTahun[kalender.value]![index].value + 1
+                  : dataPerTahun[kalender.value]![index].value,
               color:
                   index == touchedIndex.value ? touchedBarColor : Colors.green,
               width: 5,
@@ -234,8 +243,8 @@ class ChartzController extends GetxController {
             ),
             BarChartRodData(
               toY: index == touchedIndex.value
-                  ? dataPerTahun[tahun.value]![index].value + 1
-                  : dataPerTahun[tahun.value]![index].value,
+                  ? dataPerTahun[kalender.value]![index].value + 1
+                  : dataPerTahun[kalender.value]![index].value,
               color:
                   index == touchedIndex.value ? touchedBarColor : Colors.yellow,
               width: 5,
