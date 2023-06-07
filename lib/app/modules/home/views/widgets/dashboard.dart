@@ -1,14 +1,17 @@
+import 'package:dashboard_rskg_mobile/app/data/model/pasien_pendapatan.dart';
 import 'package:dashboard_rskg_mobile/app/modules/home/views/widgets/card_widget.dart';
+import 'package:dashboard_rskg_mobile/app/modules/home/views/widgets/card_widget2.dart';
 import 'package:flutter/material.dart';
 
 class DashBoard extends StatelessWidget {
-  const DashBoard({super.key});
+  final Pasien pasien;
+  const DashBoard({super.key, required this.pasien});
 
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
-      children: const [
+      children: [
         // GridView.builder(
         //   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         //       crossAxisCount: 3),
@@ -22,44 +25,54 @@ class DashBoard extends StatelessWidget {
         CardWidget(
           imageKiri: 'assets/images/icons/total_pasien.svg',
           titleKiri: "Total Pasien",
-          valueKiri: "1.345",
+          valueKiri: pasien.total ?? '',
           imageKanan: 'assets/images/icons/pasien_poli.svg',
           titleKanan: "Pasien Poliklinik",
-          valueKanan: "460",
-          color: 0xffe3f4ff,
+          valueKanan: pasien.poli ?? '',
           isUmumKiri: true,
           isUmumKanan: true,
           pathKiri: 'get-pasien',
           pathKanan: 'get-poli',
         ),
-        SizedBox(height: 15),
+        const SizedBox(height: 15),
         CardWidget(
           imageKiri: 'assets/images/icons/hemode.svg',
           titleKiri: "Pasien Hemodialisa",
-          valueKiri: "840",
+          valueKiri: pasien.hd ?? '',
           imageKanan: 'assets/images/icons/igd.svg',
           titleKanan: "Pasien IGD",
-          valueKanan: "242",
-          color: 0xffe3f4ff,
+          valueKanan: pasien.igd ?? '',
           isUmumKiri: true,
           isUmumKanan: true,
           pathKiri: 'get-hemo',
           pathKanan: 'get-igd',
         ),
-        SizedBox(height: 15),
+        const SizedBox(height: 15),
         CardWidget(
           imageKiri: 'assets/images/icons/labro.svg',
           titleKiri: "Laboratorium",
-          valueKiri: "200",
+          valueKiri: pasien.lab ?? '',
           imageKanan: 'assets/images/icons/resep2.svg',
           titleKanan: "Jumlah Resep",
-          valueKanan: "120",
+          valueKanan: pasien.resep ?? '',
           isUmumKiri: true,
           isUmumKanan: false,
           pathKiri: 'get-lab',
           pathKanan: 'get-resep',
         ),
-        SizedBox(height: 15),
+        const SizedBox(height: 15),
+        CardWidget2(
+          imageKiri: 'assets/images/icons/bpjs.svg',
+          titleKiri: "Pasien BPJS",
+          valueKiri: pasien.bpjs ?? '',
+          isUmumKiri: true,
+          pathKiri: 'get-bpjs',
+          imageKanan: 'assets/images/icons/total_pasien.svg',
+          titleKanan: "Pasien Umum",
+          valueKanan: pasien.umum ?? '',
+          isUmumKanan: true,
+          pathKanan: 'get-umum',
+        ),
       ],
     );
   }

@@ -1,5 +1,11 @@
 import 'dart:ui';
 
+extension SumExtension on List<int> {
+  int sum() {
+    return isEmpty ? 0 : reduce((a, b) => a + b);
+  }
+}
+
 extension ColorExtension on Color {
   /// Convert the color to a darken color based on the [percent]
   Color darken([int percent = 40]) {

@@ -1,15 +1,17 @@
+import 'package:dashboard_rskg_mobile/app/data/component/fetch_data.dart';
+import 'package:dashboard_rskg_mobile/app/modules/home/controllers/home_controller.dart';
 import 'package:dashboard_rskg_mobile/app/modules/home/views/component_widgets/compomenet_home.dart';
-import 'package:dashboard_rskg_mobile/app/modules/home/views/widgets/card.pendapatan.dart';
+import 'package:dashboard_rskg_mobile/app/modules/home/views/widgets/card_pendapatan.dart';
 import 'package:dashboard_rskg_mobile/app/modules/home/views/widgets/dashboard.dart';
 import 'package:dashboard_rskg_mobile/app/modules/home/views/widgets/logo.dart';
 import 'package:dashboard_rskg_mobile/app/modules/home/views/widgets/mydropdown.dart';
 import 'package:dashboard_rskg_mobile/app/modules/home/views/widgets/title3.dart';
 import 'package:flutter/material.dart';
-
-import '../widgets/dashboard2.dart';
+import 'package:get/get.dart';
+import 'package:intl/intl.dart';
 import '../widgets/title4.dart';
 
-class HomeBottom extends StatelessWidget {
+class HomeBottom extends GetView<HomeController> {
   const HomeBottom({super.key});
 
   @override
@@ -20,8 +22,9 @@ class HomeBottom extends StatelessWidget {
           floating: true,
           pinned: true,
           snap: true,
+          toolbarHeight: 50,
+          centerTitle: true,
           title: const Text("Dashboard"),
-          actions: const [],
           bottom: AppBar(
             toolbarHeight: 90,
             automaticallyImplyLeading: false,
@@ -29,9 +32,7 @@ class HomeBottom extends StatelessWidget {
             title: Column(
               children: const [
                 WidgetTitlelogo(),
-                SizedBox(
-                  height: 30,
-                ),
+                SizedBox(height: 30),
               ],
             ),
           ),
@@ -44,27 +45,56 @@ class HomeBottom extends StatelessWidget {
               height: 1.5,
             ),
             Column(
-              children: const [
-                WidgetTitlePendapatan(),
-                SizedBox(
+              children: [
+                FutureBuilder(
+                    future: API.getPendapatan(
+                        date: DateFormat('yyyy-MM-dd').format(DateTime.now())),
+                    builder: (context, snapshot) {
+                      if (snapshot.hasData &&
+                          snapshot.connectionState != ConnectionState.waiting &&
+                          snapshot.data != null) {
+                        return WidgetTitlePendapatan(
+                          pendapatan: snapshot.data!,
+                        );
+                      } else {
+                        return const Center(
+                          child: CircularProgressIndicator(),
+                        );
+                      }
+                    }),
+                const SizedBox(
                   height: 10,
                 ),
                 // Text("Pendapatan perInstalasi", style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold),),
                 // WidgetSlider(),
-                Divider(color: Colors.black),
-                WidgetTitle3(),
-                WidgetTitlePoli3(),
-                SizedBox(
+                const Divider(color: Colors.black),
+                const WidgetTitle3(),
+                const WidgetTitlePoli3(),
+                const SizedBox(
                   height: 15,
                 ),
                 // Homepage(),
-                DashBoard(),
-                DashBoard1(),
-                SizedBox(
+                Obx(() {
+                  return FutureBuilder(
+                    future: API.getPasien(date: controller.stringDate.value),
+                    builder: (context, snapshot) {
+                      if (snapshot.hasData &&
+                          snapshot.connectionState != ConnectionState.waiting &&
+                          snapshot.data != null) {
+                        return DashBoard(pasien: snapshot.data!);
+                      } else {
+                        return const Center(
+                          child: CircularProgressIndicator(),
+                        );
+                      }
+                    },
+                  );
+                }),
+                const SizedBox(
                   height: 10,
                 ),
-                WidgetTitlePoli2(),
-                Homepage2(),
+                const WidgetTitlePoli2(),
+                const Homepage2(),
                 // StaticLainnya(),
               ],
             ),

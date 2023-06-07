@@ -19,7 +19,7 @@ class WidgetTitle3 extends GetView<HomeController> {
           context,
           showTitleActions: true,
           pickerModel: CustomMonthPicker(
-            currentTime: DateTime.now(),
+            currentTime: DateTime.parse(controller.stringDate.value),
             minTime: DateTime(2000),
             maxTime: DateTime.now(),
             locale: LocaleType.id,
@@ -37,6 +37,6 @@ class WidgetTitle3 extends GetView<HomeController> {
 
   void onTanggal(DateTime date) {
     controller.dateController.text = DateFormat('yyyy-MM').format(date);
-    controller.stringDate.value = controller.dateController.text;
+    controller.stringDate.value = DateFormat('yyyy-MM-dd').format(date);
   }
 }

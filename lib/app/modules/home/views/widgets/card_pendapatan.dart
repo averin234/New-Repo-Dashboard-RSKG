@@ -1,13 +1,62 @@
+import 'package:dashboard_rskg_mobile/app/data/model/pasien_pendapatan.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
-class WidgetTitlePendapatan extends StatefulWidget {
-  const WidgetTitlePendapatan({Key? key}) : super(key: key);
+class WidgetTitlePendapatan extends StatelessWidget {
+  final Pendapatan pendapatan;
+  const WidgetTitlePendapatan({Key? key, required this.pendapatan})
+      : super(key: key);
 
-  @override
-  _WidgetTitlePendapatanState createState() => _WidgetTitlePendapatanState();
-}
+  String hariIndo(String eeee) {
+    String hari = '';
+    if (eeee == 'Sunday') {
+      hari = 'Minggu';
+    } else if (eeee == 'Monday') {
+      hari = 'Senin';
+    } else if (eeee == 'Tuesday') {
+      hari = 'Selasa';
+    } else if (eeee == 'Wednesday') {
+      hari = 'Rabu';
+    } else if (eeee == 'Thursday') {
+      hari = 'Kamis';
+    } else if (eeee == 'Friday') {
+      hari = 'Jumat';
+    } else if (eeee == 'Saturday') {
+      hari = 'Sabtu';
+    }
+    return hari;
+  }
 
-class _WidgetTitlePendapatanState extends State<WidgetTitlePendapatan> {
+  String bulanIndo(int bulan) {
+    String a = '';
+    if (bulan == 1) {
+      a = 'Januari';
+    } else if (bulan == 2) {
+      a = 'Februari';
+    } else if (bulan == 3) {
+      a = 'Maret';
+    } else if (bulan == 4) {
+      a = 'April';
+    } else if (bulan == 5) {
+      a = 'Mei';
+    } else if (bulan == 6) {
+      a = 'Juni';
+    } else if (bulan == 7) {
+      a = 'Juli';
+    } else if (bulan == 8) {
+      a = 'Agustus';
+    } else if (bulan == 9) {
+      a = 'September';
+    } else if (bulan == 10) {
+      a = 'Oktober';
+    } else if (bulan == 11) {
+      a = 'November';
+    } else if (bulan == 12) {
+      a = 'Desember';
+    }
+    return a;
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -57,7 +106,7 @@ class _WidgetTitlePendapatanState extends State<WidgetTitlePendapatan> {
                   ),
                 ),
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
                     Container(
                       padding: const EdgeInsets.all(5),
@@ -65,21 +114,24 @@ class _WidgetTitlePendapatanState extends State<WidgetTitlePendapatan> {
                         borderRadius: BorderRadius.circular(10),
                         color: Colors.blue,
                       ),
-                      child: const Text("Rp. 12.000.000",
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 15)),
+                      child: Text(
+                        "Rp ${pendapatan.harian ?? ''}",
+                        style: const TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 15),
+                        textAlign: TextAlign.center,
+                      ),
                     ),
                     const SizedBox(
                       height: 20,
                     ),
-                    const Text("Senin",
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold, color: Colors.white)),
-                    const Text("Tanggal 6",
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold, color: Colors.white)),
+                    Text(
+                      "${hariIndo(DateFormat('EEEE').format(DateTime.now()))}\nTanggal ${DateTime.now().day}",
+                      style: const TextStyle(
+                          fontWeight: FontWeight.bold, color: Colors.white),
+                      textAlign: TextAlign.center,
+                    ),
                     const SizedBox(
                       height: 20,
                     ),
@@ -116,7 +168,7 @@ class _WidgetTitlePendapatanState extends State<WidgetTitlePendapatan> {
                   ),
                 ),
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
                     Container(
                       padding: const EdgeInsets.all(5),
@@ -124,21 +176,24 @@ class _WidgetTitlePendapatanState extends State<WidgetTitlePendapatan> {
                         borderRadius: BorderRadius.circular(10),
                         color: Colors.blue,
                       ),
-                      child: const Text("Rp. 12.000.000",
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 15)),
+                      child: Text(
+                        "Rp ${pendapatan.harian ?? ''}",
+                        style: const TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 15),
+                        textAlign: TextAlign.center,
+                      ),
                     ),
                     const SizedBox(
                       height: 20,
                     ),
-                    const Text("Bulan",
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold, color: Colors.white)),
-                    const Text("Juni",
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold, color: Colors.white)),
+                    Text(
+                      "Bulan\n${bulanIndo(DateTime.now().month)}",
+                      style: const TextStyle(
+                          fontWeight: FontWeight.bold, color: Colors.white),
+                      textAlign: TextAlign.center,
+                    ),
                     const SizedBox(
                       height: 20,
                     ),
@@ -175,7 +230,7 @@ class _WidgetTitlePendapatanState extends State<WidgetTitlePendapatan> {
                   ),
                 ),
                 child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
                     Container(
                       padding: const EdgeInsets.all(5),
@@ -183,24 +238,23 @@ class _WidgetTitlePendapatanState extends State<WidgetTitlePendapatan> {
                         borderRadius: BorderRadius.circular(10),
                         color: Colors.blue,
                       ),
-                      child: const Text("Rp. 120.000.000",
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 15)),
+                      child: Text(
+                        "Rp ${pendapatan.bulanan ?? ''}",
+                        style: const TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 15),
+                        textAlign: TextAlign.center,
+                      ),
                     ),
                     const SizedBox(
                       height: 20,
                     ),
-                    const Text(
-                      "Tahun",
-                      style: TextStyle(
+                    Text(
+                      "Tahun\n${DateTime.now().year.toString()}",
+                      style: const TextStyle(
                           fontWeight: FontWeight.bold, color: Colors.white),
-                    ),
-                    const Text(
-                      "2023",
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold, color: Colors.white),
+                      textAlign: TextAlign.center,
                     ),
                     const SizedBox(
                       height: 20,
