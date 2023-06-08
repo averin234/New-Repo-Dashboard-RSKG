@@ -177,7 +177,7 @@ class WidgetTitlePendapatan extends StatelessWidget {
                         color: Colors.blue,
                       ),
                       child: Text(
-                        "Rp ${pendapatan.harian ?? ''}",
+                        "Rp ${pendapatan.bulanan ?? ''}",
                         style: const TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.bold,
