@@ -20,13 +20,9 @@ class WidgetListView extends GetView<ChartzController> {
             return Column(
               children: [
                 Container(
-                  padding: const EdgeInsets.only(
-                    left: 5,
-                    right: 5,
-                  ),
                   decoration: BoxDecoration(
-                    color: const Color(0xffecf8ff),
-                    borderRadius: BorderRadius.circular(15),
+                    color: const Color(0xff009688),
+                    borderRadius: BorderRadius.circular(0),
                     boxShadow: [
                       BoxShadow(
                         color: const Color(0xffecf8ff).withOpacity(0.5),
@@ -46,7 +42,7 @@ class WidgetListView extends GetView<ChartzController> {
                             "No",
                             textAlign: TextAlign.center,
                             style: TextStyle(
-                                fontSize: 13, fontWeight: FontWeight.bold),
+                                fontSize: 13, fontWeight: FontWeight.bold,color: Colors.white),
                           ),
                         ),
                         Expanded(
@@ -55,7 +51,7 @@ class WidgetListView extends GetView<ChartzController> {
                             "JENIS PASIEN",
                             textAlign: TextAlign.center,
                             style: TextStyle(
-                                fontSize: 13, fontWeight: FontWeight.bold),
+                                fontSize: 13, fontWeight: FontWeight.bold,color: Colors.white),
                           ),
                         ),
                         Expanded(
@@ -64,7 +60,7 @@ class WidgetListView extends GetView<ChartzController> {
                             "JUMLAH",
                             textAlign: TextAlign.center,
                             style: TextStyle(
-                                fontSize: 13, fontWeight: FontWeight.bold),
+                                fontSize: 13, fontWeight: FontWeight.bold, color: Colors.white),
                           ),
                         ),
                       ],

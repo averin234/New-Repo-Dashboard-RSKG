@@ -22,9 +22,9 @@ class HomeBottom extends GetView<HomeController> {
           floating: true,
           pinned: true,
           snap: true,
-          toolbarHeight: 50,
+          toolbarHeight: 10,
           centerTitle: true,
-          title: const Text("Dashboard"),
+          // title: const Text("Dashboard"),
           bottom: AppBar(
             toolbarHeight: 90,
             automaticallyImplyLeading: false,
@@ -32,7 +32,7 @@ class HomeBottom extends GetView<HomeController> {
             title: Column(
               children: const [
                 WidgetTitlelogo(),
-                SizedBox(height: 30),
+                SizedBox(height: 10),
               ],
             ),
           ),
@@ -68,10 +68,12 @@ class HomeBottom extends GetView<HomeController> {
                 // Text("Pendapatan perInstalasi", style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold),),
                 // WidgetSlider(),
                 const Divider(color: Colors.black),
-                const WidgetTitle3(),
-                const WidgetTitlePoli3(),
+
+                // WidgetTitlePoli3(),
+                // WidgetTitle3(),
+
                 const SizedBox(
-                  height: 15,
+                  height: 8,
                 ),
                 // Homepage(),
                 Obx(() {

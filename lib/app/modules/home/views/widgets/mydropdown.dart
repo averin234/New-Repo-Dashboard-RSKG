@@ -10,8 +10,12 @@ class WidgetTitle3 extends GetView<HomeController> {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(10),
+    return Container(
+      decoration: BoxDecoration(
+        color: Color(0xffededed),
+        borderRadius: BorderRadius.circular(10),
+      ),
+      margin: EdgeInsets.only(left: 10,right: 10),
       child: TextField(
         controller: controller.dateController,
         readOnly: true,
@@ -28,8 +32,19 @@ class WidgetTitle3 extends GetView<HomeController> {
           onConfirm: onTanggal,
           locale: LocaleType.id,
         ),
-        decoration: const InputDecoration(
-          border: OutlineInputBorder(),
+        decoration: InputDecoration(
+          border: OutlineInputBorder(
+            borderRadius: BorderRadius.all(
+              Radius.circular(10.0),
+            ),
+            borderSide: BorderSide(
+              width: 0,
+              style: BorderStyle.none,
+            ),
+          ),
+          fillColor: Color(0xfff0fff0),
+          filled: true,
+
         ),
       ),
     );

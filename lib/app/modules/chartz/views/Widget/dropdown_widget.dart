@@ -12,10 +12,13 @@ class MyDropDown extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     ChartzController controller = Get.put(ChartzController());
-    return Container(
-      padding: const EdgeInsets.all(0),
-      decoration: const BoxDecoration(
-        color: Colors.white,
+    return Column(
+      children: [
+      Container(
+      padding: const EdgeInsets.all(5),
+      decoration: BoxDecoration(
+        color: Color(0xfff0fff0),
+        borderRadius: BorderRadius.circular(10),
       ),
       child: DropdownSearch<String>(
         popupProps: const PopupProps.modalBottomSheet(
@@ -28,13 +31,9 @@ class MyDropDown extends StatelessWidget {
               contentPadding: EdgeInsets.symmetric(vertical: 0, horizontal: 10),
               enabledBorder: OutlineInputBorder(
                   borderSide: BorderSide(
-                color: Color(0xff4babe7),
+                color: Colors.transparent,
               )),
-              border: OutlineInputBorder(
-                borderSide: BorderSide(
-                  color: Color(0xff4babe7),
-                ),
-              ),
+                border: InputBorder.none
             ),
           ),
         ),
@@ -47,11 +46,7 @@ class MyDropDown extends StatelessWidget {
                 color: Colors.transparent,
               ),
             ),
-            border: OutlineInputBorder(
-              borderSide: BorderSide(
-                color: Color(0xff4babe7),
-              ),
-            ),
+              border: InputBorder.none
           ),
         ),
         onChanged: (value) {
@@ -71,6 +66,7 @@ class MyDropDown extends StatelessWidget {
         },
         selectedItem: controller.kalender.value,
       ),
-    );
+    ),
+    ],);
   }
 }

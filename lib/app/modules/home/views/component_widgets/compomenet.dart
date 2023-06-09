@@ -188,7 +188,7 @@ class Homepage extends GetView<HomeController> {
                     ),
                     SizedBox(height: 10),
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
                         BarChart(

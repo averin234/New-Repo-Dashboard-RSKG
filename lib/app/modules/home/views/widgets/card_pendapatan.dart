@@ -88,7 +88,7 @@ class WidgetTitlePendapatan extends StatelessWidget {
                   borderRadius: BorderRadius.circular(10),
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.grey.withOpacity(0.5),
+                      color: Color(0xffff7171).withOpacity(0.5),
                       spreadRadius: 1,
                       blurRadius: 4,
                       offset: const Offset(0, 1), // changes position of shadow
@@ -99,10 +99,10 @@ class WidgetTitlePendapatan extends StatelessWidget {
                     end: Alignment.bottomLeft,
                     stops: [0.1, 0.5, 0.7, 0.9],
                     colors: [
-                      Color(0xff62cdff),
-                      Color(0xff62cdff),
-                      Color(0xff29b9fd),
-                      Color(0xff14b1fc),
+                      Color(0xffff7171),
+                      Color(0xffff7171),
+                      Color(0xffff7171),
+                      Color(0xffff7171),
                     ],
                   ),
                 ),
@@ -150,7 +150,7 @@ class WidgetTitlePendapatan extends StatelessWidget {
                   borderRadius: BorderRadius.circular(10),
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.grey.withOpacity(0.5),
+                      color: Color(0xff379fff).withOpacity(0.5),
                       spreadRadius: 1,
                       blurRadius: 4,
                       offset: const Offset(0, 1), // changes position of shadow
@@ -161,10 +161,10 @@ class WidgetTitlePendapatan extends StatelessWidget {
                     end: Alignment.bottomLeft,
                     stops: [0.1, 0.5, 0.7, 0.9],
                     colors: [
-                      Color(0xff62cdff),
-                      Color(0xff62cdff),
-                      Color(0xff29b9fd),
-                      Color(0xff14b1fc),
+                      Color(0xff379fff),
+                      Color(0xff379fff),
+                      Color(0xff379fff),
+                      Color(0xff379fff),
                     ],
                   ),
                 ),
@@ -212,7 +212,7 @@ class WidgetTitlePendapatan extends StatelessWidget {
                   borderRadius: BorderRadius.circular(10),
                   boxShadow: [
                     BoxShadow(
-                      color: Colors.grey.withOpacity(0.5),
+                      color: Color(0xff009688).withOpacity(0.5),
                       spreadRadius: 1,
                       blurRadius: 4,
                       offset: const Offset(0, 1), // changes position of shadow
@@ -223,10 +223,10 @@ class WidgetTitlePendapatan extends StatelessWidget {
                     end: Alignment.bottomLeft,
                     stops: [0.1, 0.5, 0.7, 0.9],
                     colors: [
-                      Color(0xff62cdff),
-                      Color(0xff62cdff),
-                      Color(0xff29b9fd),
-                      Color(0xff14b1fc),
+                      Color(0xff009688),
+                      Color(0xff009688),
+                      Color(0xff009688),
+                      Color(0xff009688),
                     ],
                   ),
                 ),

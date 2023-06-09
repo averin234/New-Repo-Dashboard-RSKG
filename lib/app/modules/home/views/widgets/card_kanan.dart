@@ -24,30 +24,28 @@ class CardKanan extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(left: 10),
+      // padding: EdgeInsets.only(top: 2, right: 30,bottom: 0),
+      margin: const EdgeInsets.only(left: 0),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
-        boxShadow: [
-          BoxShadow(
-            color: const Color(0xffd5d7d7).withOpacity(0.5),
-            spreadRadius: 10,
-            blurRadius: 10,
-            offset: const Offset(2, 1),
-          ),
-        ],
-        gradient: const LinearGradient(
-          begin: Alignment.topRight,
-          end: Alignment.bottomLeft,
-          stops: [0.1, 0.5, 0.7, 0.9],
-          colors: [
-            Color(0xff62cdff),
-            Color(0xff62cdff),
-            Color(0xff29b9fd),
-            Color(0xff14b1fc),
-          ],
+        image: DecorationImage(
+          image: AssetImage(
+              'assets/images/bgmenu2.png'),
+          fit: BoxFit.fill,
         ),
+        // gradient: const LinearGradient(
+        //   begin: Alignment.topRight,
+        //   end: Alignment.bottomLeft,
+        //   stops: [0.1, 0.5, 0.7, 0.9],
+        //   colors: [
+        //     Color(0xff62cdff),
+        //     Color(0xff62cdff),
+        //     Color(0xff29b9fd),
+        //     Color(0xff14b1fc),
+        //   ],
+        // ),
       ),
-      width: MediaQuery.of(context).size.width / 2 - 20,
+      width: 182.8,
       child: TextButton(
         onPressed: () {
           HapticFeedback.lightImpact();
@@ -58,18 +56,37 @@ class CardKanan extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.end,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
+            SizedBox(
+              height: 4,
+            ),
+            Row(children: [
             Align(
-              alignment: Alignment.topRight,
+              alignment: Alignment.topLeft,
               child: CircleAvatar(
-                radius: 32,
+                radius: 27,
                 backgroundColor: Colors.white,
                 child: SvgPicture.asset(
                   image,
                   height: 30,
                   width: 30,
-                  color: Colors.blue,
+                  color: Color(0xff009688),
                 ),
               ),
+            ),
+              SizedBox(
+                width: 55,
+              ),
+              Align(
+                alignment: Alignment.topLeft,
+                child: Text("Lihat",style: const TextStyle(
+                  fontSize: 15.0,
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                ),)
+              ),
+            ],),
+            SizedBox(
+              height: 10,
             ),
             Text(
               value,
@@ -84,89 +101,26 @@ class CardKanan extends StatelessWidget {
             ),
             Container(
                 decoration: BoxDecoration(
-                  color: Colors.white,
+
                   borderRadius: BorderRadius.circular(10),
-                  boxShadow: [
-                    BoxShadow(
-                      color: const Color(0xffecf8ff).withOpacity(0.5),
-                      spreadRadius: 0,
-                      blurRadius: 10,
-                      offset: const Offset(2, 1),
-                    ),
-                  ],
+                  // boxShadow: [
+                  //   BoxShadow(
+                  //     color: const Color(0xffecf8ff).withOpacity(0.5),
+                  //     spreadRadius: 0,
+                  //     blurRadius: 10,
+                  //     offset: const Offset(2, 1),
+                  //   ),
+                  // ],
                 ),
-                child: Padding(
-                  padding: const EdgeInsets.all(6),
-                  child: Text(
+                child :Text(
                     title,
                     style: const TextStyle(
                       fontSize: 15.0,
-                      color: Color(0xff4babe7),
+                      color: Colors.white,
                       fontWeight: FontWeight.bold,
                     ),
-                  ),
                 )),
           ],
-        ),
-      ),
-    );
-  }
-}
-
-class MyCustomWidget extends StatefulWidget {
-  const MyCustomWidget({super.key});
-
-  @override
-  _MyCustomWidgetState createState() => _MyCustomWidgetState();
-}
-
-class _MyCustomWidgetState extends State<MyCustomWidget>
-    with TickerProviderStateMixin {
-  bool isTapped = false;
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.blue,
-      body: Center(
-        child: InkWell(
-          highlightColor: Colors.transparent,
-          splashColor: Colors.transparent,
-          onHighlightChanged: (value) {
-            setState(() {
-              isTapped = value;
-            });
-          },
-          onTap: () {},
-          child: AnimatedContainer(
-            duration: const Duration(milliseconds: 300),
-            curve: Curves.fastLinearToSlowEaseIn,
-            height: isTapped ? 55 : 60,
-            width: isTapped ? 150 : 160,
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: const BorderRadius.all(
-                Radius.circular(30),
-              ),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black.withOpacity(0.3),
-                  blurRadius: 30,
-                  offset: const Offset(3, 7),
-                ),
-              ],
-            ),
-            child: Center(
-              child: Text(
-                'TAP HERE',
-                style: TextStyle(
-                  color: Colors.black.withOpacity(0.7),
-                  fontWeight: FontWeight.w500,
-                  fontSize: 19,
-                ),
-              ),
-            ),
-          ),
         ),
       ),
     );

@@ -1,7 +1,10 @@
 import 'package:dashboard_rskg_mobile/app/data/model/pasien_pendapatan.dart';
 import 'package:dashboard_rskg_mobile/app/modules/home/views/widgets/card_widget.dart';
 import 'package:dashboard_rskg_mobile/app/modules/home/views/widgets/card_widget2.dart';
+import 'package:dashboard_rskg_mobile/app/modules/home/views/widgets/title4.dart';
 import 'package:flutter/material.dart';
+
+import 'mydropdown.dart';
 
 class DashBoard extends StatelessWidget {
   final Pasien pasien;
@@ -9,9 +12,41 @@ class DashBoard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.stretch,
+    return Container(
+      padding: EdgeInsets.only(top: 10,bottom: 10),
+      decoration: BoxDecoration(
+        color: Colors.white,
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey.withOpacity(0.2),
+            spreadRadius: 1,
+            blurRadius: 1,
+            offset: const Offset(0, 1), // changes position of shadow
+          ),
+        ],
+      ),
+        child: Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
+        SizedBox(
+          height: 10,
+        ),
+        Text(
+          "Dashboard",
+          style: TextStyle(
+            fontSize: 20,
+            color: Color(0xff009688),
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        SizedBox(
+          height: 10,
+        ),
+        WidgetTitle3(),
+        SizedBox(
+          height: 10,
+        ),
         CardWidget(
           imageKiri: 'assets/images/icons/total_pasien.svg',
           titleKiri: "Total Pasien",
@@ -77,6 +112,7 @@ class DashBoard extends StatelessWidget {
           pathKanan: 'karyawan',
         ),
       ],
+        ),
     );
   }
 }

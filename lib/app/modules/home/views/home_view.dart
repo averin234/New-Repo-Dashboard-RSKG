@@ -31,7 +31,6 @@ class HomeView extends GetView<HomeController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
       body: Obx(
         () => controller.currentIndex.value == 0
             ? const HomeBottom()
