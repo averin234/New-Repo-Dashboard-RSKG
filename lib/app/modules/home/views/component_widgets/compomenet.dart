@@ -7,6 +7,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 
+import '../../../../data/component/app_colors.dart';
 import 'components/barchart/bar_chart.dart';
 import 'components/barchart/barchart_data.dart';
 
@@ -35,21 +36,127 @@ class Homepage extends GetView<HomeController> {
                         Expanded(
                           child: BarChart(
                             display: DisplayType.total,
-                            title: "Laboratorium\n",
-                            subTitle: "Rp ${data.lab ?? ''}",
-                            color: Color(0xffFFC437),
+                            title: "Hemodialisa",
+                            subTitle: formatCurrency(data.hd ?? 0),
+                            color: Color(0xff6993ff),
                             data: List.generate(
                               12,
                               (index) => BarchartData(
                                 value: controller
-                                    .listChart(data.lab ?? '')[index]
+                                    .listChart(data.hd.toString())[index]
                                     .toDouble(),
                                 label: '',
                               ),
                             ),
                             icon: Icon(
                               CupertinoIcons.person_add_solid,
-                              color: Color(0xffFFC437),
+                              color: Color(0xff6993ff),
+                              size: 20,
+                            ),
+                          ),
+                        ),
+                        SizedBox(width: 10),
+                        Expanded(
+                          child: BarChart(
+                            display: DisplayType.total,
+                            title: "Poliklinik",
+                            subTitle: formatCurrency(data.poli ?? 0),
+                            color: Color(0xff1bc5bd),
+                            data: List.generate(
+                              12,
+                              (index) => BarchartData(
+                                value: controller
+                                    .listChart(data.poli.toString())[index]
+                                    .toDouble(),
+                                label: '',
+                              ),
+                            ),
+                            icon: Icon(
+                              Icons.local_hospital,
+                              color: Color(0xff1bc5bd),
+                              size: 20,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Expanded(
+                          child: BarChart(
+                            display: DisplayType.total,
+                            title: "IGD",
+                            subTitle: formatCurrency(data.igd ?? 0),
+                            color: Color(0xffffa800),
+                            data: List.generate(
+                              12,
+                              (index) => BarchartData(
+                                value: controller
+                                    .listChart(data.igd.toString())[index]
+                                    .toDouble(),
+                                label: '',
+                              ),
+                            ),
+                            icon: Icon(
+                              CupertinoIcons.bed_double_fill,
+                              color: Color(0xffffa800),
+                              size: 20,
+                            ),
+                          ),
+                        ),
+                        SizedBox(width: 10),
+                        Expanded(
+                          child: BarChart(
+                            display: DisplayType.total,
+                            title: "Rawat Inap",
+                            subTitle: formatCurrency(data.ri ?? 0),
+                            color: Color(0xfff64e60),
+                            data: List.generate(
+                              12,
+                              (index) => BarchartData(
+                                value: controller
+                                    .listChart(data.ri.toString())[index]
+                                    .toDouble(),
+                                label: '',
+                              ),
+                            ),
+                            icon: Icon(
+                              CupertinoIcons.bed_double,
+                              color: Color(0xfff64e60),
+                              size: 20,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                    SizedBox(
+                      height: 10,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Expanded(
+                          child: BarChart(
+                            display: DisplayType.total,
+                            title: "Laboratorium",
+                            subTitle: formatCurrency(data.lab ?? 0),
+                            color: Color(0xff8950fc),
+                            data: List.generate(
+                              12,
+                              (index) => BarchartData(
+                                value: controller
+                                    .listChart(data.lab.toString())[index]
+                                    .toDouble(),
+                                label: '',
+                              ),
+                            ),
+                            icon: Icon(
+                              CupertinoIcons.bed_double_fill,
+                              color: Color(0xff8950fc),
                               size: 20,
                             ),
                           ),
@@ -59,128 +166,49 @@ class Homepage extends GetView<HomeController> {
                           child: BarChart(
                             display: DisplayType.total,
                             title: "Radiologi",
-                            subTitle: "Rp ${data.rad ?? ''}",
-                            color: Color(0xffEA7674),
+                            subTitle: formatCurrency(data.rad ?? 0),
+                            color: Color(0xff6993ff),
                             data: List.generate(
                               12,
                               (index) => BarchartData(
                                 value: controller
-                                    .listChart(data.rad ?? '')[index]
-                                    .toDouble(),
-                                label: '',
-                              ),
-                            ),
-                            icon: Icon(
-                              Icons.local_hospital,
-                              color: Color(0xffEA7674),
-                              size: 20,
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Expanded(
-                          child: BarChart(
-                            display: DisplayType.total,
-                            title: "Elektromedis",
-                            subTitle: "Rp ${data.fisio ?? ''}",
-                            color: Color(0xffFFC437),
-                            data: List.generate(
-                              12,
-                              (index) => BarchartData(
-                                value: controller
-                                    .listChart(data.hd ?? '')[index]
-                                    .toDouble(),
-                                label: '',
-                              ),
-                            ),
-                            icon: Icon(
-                              CupertinoIcons.bed_double_fill,
-                              color: Color(0xffFFC437),
-                              size: 20,
-                            ),
-                          ),
-                        ),
-                        SizedBox(width: 10),
-                        Expanded(
-                          child: BarChart(
-                            display: DisplayType.total,
-                            title: "MCU",
-                            subTitle: "Rp ${data.igd ?? ''}",
-                            color: Color(0xffEA7674),
-                            data: List.generate(
-                              12,
-                              (index) => BarchartData(
-                                value: controller
-                                    .listChart(data.igd ?? '')[index]
+                                    .listChart(data.rad.toString())[index]
                                     .toDouble(),
                                 label: '',
                               ),
                             ),
                             icon: Icon(
                               CupertinoIcons.bed_double,
-                              color: Color(0xffEA7674),
+                              color: Color(0xff6993ff),
                               size: 20,
                             ),
                           ),
                         ),
                       ],
                     ),
-                    SizedBox(
-                      height: 10,
-                    ),
+                    SizedBox(height: 10),
                     Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: [
-                        Expanded(
-                          child: BarChart(
-                            display: DisplayType.total,
-                            title: "Poliklinik",
-                            subTitle: "Rp ${data.poli ?? ''}",
-                            color: Color(0xffFFC437),
-                            data: List.generate(
-                              12,
-                              (index) => BarchartData(
-                                value: controller
-                                    .listChart(data.poli ?? '')[index]
-                                    .toDouble(),
-                                label: '',
-                              ),
-                            ),
-                            icon: Icon(
-                              CupertinoIcons.bed_double_fill,
-                              color: Color(0xffFFC437),
-                              size: 20,
+                        BarChart(
+                          display: DisplayType.total,
+                          title: "Fisioterapi",
+                          subTitle: formatCurrency(data.fisio ?? 0),
+                          color: Color(0xff1bc5bd),
+                          data: List.generate(
+                            12,
+                            (index) => BarchartData(
+                              value: controller
+                                  .listChart(data.fisio.toString())[index]
+                                  .toDouble(),
+                              label: '',
                             ),
                           ),
-                        ),
-                        SizedBox(width: 10),
-                        Expanded(
-                          child: BarChart(
-                            display: DisplayType.total,
-                            title: "Farmasi",
-                            subTitle: "",
-                            color: Color(0xffEA7674),
-                            data: List.generate(
-                              12,
-                              (index) => BarchartData(
-                                value: controller
-                                    .listChart(data.ri ?? '')[index]
-                                    .toDouble(),
-                                label: '',
-                              ),
-                            ),
-                            icon: Icon(
-                              CupertinoIcons.bed_double,
-                              color: Color(0xffEA7674),
-                              size: 20,
-                            ),
+                          icon: Icon(
+                            CupertinoIcons.bed_double_fill,
+                            color: Color(0xff1bc5bd),
+                            size: 20,
                           ),
                         ),
                       ],

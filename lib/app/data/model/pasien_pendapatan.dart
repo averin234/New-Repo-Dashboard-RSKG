@@ -1,10 +1,10 @@
-class JumlahPasienPendapatan {
-  String? code;
+class MenuDashboard {
+  int? code;
   Data? data;
 
-  JumlahPasienPendapatan({this.code, this.data});
+  MenuDashboard({this.code, this.data});
 
-  JumlahPasienPendapatan.fromJson(Map<String, dynamic> json) {
+  MenuDashboard.fromJson(Map<String, dynamic> json) {
     code = json['code'];
     data = json['data'] != null ? Data.fromJson(json['data']) : null;
   }
@@ -53,8 +53,11 @@ class Pasien {
   String? poli;
   String? hd;
   String? igd;
-  String? resep;
   String? lab;
+  String? ri;
+  String? fisio;
+  String? rad;
+  String? resep;
 
   Pasien(
       {this.total,
@@ -65,8 +68,11 @@ class Pasien {
       this.poli,
       this.hd,
       this.igd,
-      this.resep,
-      this.lab});
+      this.lab,
+      this.ri,
+      this.fisio,
+      this.rad,
+      this.resep});
 
   Pasien.fromJson(Map<String, dynamic> json) {
     total = json['total'];
@@ -78,6 +84,9 @@ class Pasien {
     hd = json['hd'];
     igd = json['igd'];
     lab = json['lab'];
+    ri = json['ri'];
+    fisio = json['fisio'];
+    rad = json['rad'];
     resep = json['resep'];
   }
 
@@ -92,15 +101,18 @@ class Pasien {
     data['hd'] = hd;
     data['igd'] = igd;
     data['lab'] = lab;
+    data['ri'] = ri;
+    data['fisio'] = fisio;
+    data['rad'] = rad;
     data['resep'] = resep;
     return data;
   }
 }
 
 class Pendapatan {
-  String? harian;
-  String? bulanan;
-  String? tahunan;
+  int? harian;
+  int? bulanan;
+  int? tahunan;
   Unit? unit;
 
   Pendapatan({this.harian, this.bulanan, this.tahunan, this.unit});
@@ -113,7 +125,7 @@ class Pendapatan {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
+    final Map<String, dynamic> data = Map<String, dynamic>();
     data['harian'] = harian;
     data['bulanan'] = bulanan;
     data['tahunan'] = tahunan;
@@ -125,13 +137,13 @@ class Pendapatan {
 }
 
 class Unit {
-  String? hd;
-  String? poli;
-  String? igd;
-  String? ri;
-  String? lab;
-  String? rad;
-  String? fisio;
+  int? hd;
+  int? poli;
+  int? igd;
+  int? ri;
+  int? lab;
+  int? rad;
+  int? fisio;
 
   Unit({this.hd, this.poli, this.igd, this.ri, this.lab, this.rad, this.fisio});
 

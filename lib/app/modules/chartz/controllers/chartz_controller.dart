@@ -23,7 +23,7 @@ class ChartzController extends GetxController {
     'Bulan',
     'Tanggal',
   ];
-  RxString kalender = 'Bulan'.obs;
+  RxString kalender = 'Tahun'.obs;
   // final Map<String, List<DataChart>> dataPerTahun = {
   //   'Tahun': [
   //     DataChart(key: 'Januari', value: Random().nextInt(20).toDouble()),
@@ -85,9 +85,46 @@ class ChartzController extends GetxController {
   @override
   void onInit() {
     touchedIndex.value = -1;
-    dateController.text = DateFormat('yyyy-MM').format(DateTime.now());
+    dateController.text = DateFormat('yyyy').format(DateTime.now());
     stringDate.value = dateController.text;
     super.onInit();
+  }
+
+  Map<String, int> mapBulan(List listTahun) {
+    int lengthTanggal = 0;
+    String kalenders = '';
+
+    if (kalender.value == 'Tahun') {
+      kalenders = 'MM';
+      lengthTanggal = 12;
+    } else if (kalender.value == 'Bulan') {
+      kalenders = 'dd';
+      lengthTanggal = 31;
+    } else {
+      kalenders = 'dd';
+      lengthTanggal = 1;
+    }
+    final datas = <String, int>{};
+    final da = List.generate(
+      lengthTanggal,
+      (index) => datas[(index + 1).toString()] = 0,
+    );
+    final tanggal = listTahun
+        .map(
+          (e) => int.parse(
+            DateFormat(kalenders).format(DateTime.parse(e)),
+          ).toString(),
+        )
+        .toList();
+    for (final elemen in tanggal) {
+      if (datas.containsKey(elemen)) {
+        datas[elemen] = datas[elemen]! + 1;
+      } else {
+        datas[elemen] = 1;
+      }
+    }
+    // print(datas);
+    return datas;
   }
 
   // List<BarChartGroupData> get showingGroups => List.generate(7, (i) {
@@ -111,7 +148,7 @@ class ChartzController extends GetxController {
   //       }
   //     });
 
-  BarChartData mainBarData(ModelDetail data) {
+  BarChartData mainBarData(Data data) {
     return BarChartData(
       barTouchData: BarTouchData(
         touchTooltipData: BarTouchTooltipData(
@@ -165,9 +202,12 @@ class ChartzController extends GetxController {
                 axisSide: meta.axisSide,
                 child: Text(
                   data.kelompok!
-                      .map((e) => e.data![(value + 1).toInt().toString()])
+                      .map((e) {
+                        final w = mapBulan(e.tgl ?? []);
+                        return w[(value + 1).toInt().toString()];
+                      })
                       .toList()
-                      .reduce((value, element) => value + element)
+                      .reduce((value, element) => (value ?? 0) + (element ?? 0))
                       .toString(),
                   style: const TextStyle(
                     color: Colors.black,
@@ -184,7 +224,10 @@ class ChartzController extends GetxController {
               return SideTitleWidget(
                 axisSide: meta.axisSide,
                 child: Text(
-                  data.kelompok!.first.data!.keys.toList()[value.toInt()],
+                  mapBulan(data.kelompok!.first.tgl ?? [])
+                      .keys
+                      .toList()[value.toInt()]
+                      .toString(),
                   style: const TextStyle(
                     color: Colors.black,
                   ),
@@ -202,7 +245,7 @@ class ChartzController extends GetxController {
         show: false,
       ),
       barGroups: List.generate(
-        data.kelompok!.first.data!.length,
+        mapBulan(data.kelompok!.first.tgl ?? []).length,
         (indexData) => BarChartGroupData(
           x: indexData,
           barRods: List.generate(
@@ -218,7 +261,8 @@ class ChartzController extends GetxController {
   BarChartRodData barChartRodData(
       int indexData, int indexKelompok, Kelompok kelompok) {
     return BarChartRodData(
-      toY: kelompok.data![(indexData + 1).toString()]!.toDouble(),
+      toY: (mapBulan(kelompok.tgl ?? [])[(indexData + 1).toString()] ?? 0)
+          .toDouble(),
       color: listKelompokColor[indexKelompok],
       width: 5,
       borderSide: const BorderSide(width: 0),

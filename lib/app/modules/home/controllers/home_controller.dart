@@ -41,7 +41,6 @@ class HomeController extends GetxController {
   }
 
   List<int> listChart(String totalString) {
-    print(totalString);
     final a = totalString.split('.');
     final b = a.join('');
     int nilaiTotal = int.parse(b);
@@ -52,12 +51,14 @@ class HomeController extends GetxController {
     Random random = Random();
     for (int i = 0; i < jumlahData - 1; i++) {
       int nilaiAcak = random.nextInt(nilaiTotal + 1);
-      data[i] = nilaiAcak;
+      if (nilaiAcak == 0) {
+        data[i] = 1;
+      } else {
+        data[i] = nilaiAcak;
+      }
       nilaiTotal -= nilaiAcak;
     }
     data[jumlahData - 1] = nilaiTotal;
-
-    print("Data: $data");
     return data;
   }
 }

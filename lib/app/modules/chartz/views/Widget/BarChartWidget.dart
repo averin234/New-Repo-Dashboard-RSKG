@@ -27,7 +27,7 @@ class _ChartzWidgetState extends State<ChartzWidget> {
                 snapshot.connectionState != ConnectionState.waiting &&
                 snapshot.data != null) {
               return BarChart(
-                controller.mainBarData(snapshot.data!),
+                controller.mainBarData(snapshot.data!.data!),
               );
             } else {
               return const Center(

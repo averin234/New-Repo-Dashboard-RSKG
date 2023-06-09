@@ -1,12 +1,31 @@
 class ModelDetail {
-  String? tanggal;
-  int? total;
-  List<Kelompok>? kelompok;
+  int? code;
+  Data? data;
 
-  ModelDetail({this.tanggal, this.total, this.kelompok});
+  ModelDetail({this.code, this.data});
 
   ModelDetail.fromJson(Map<String, dynamic> json) {
-    tanggal = json['tanggal'];
+    code = json['code'];
+    data = json['data'] != null ? Data.fromJson(json['data']) : null;
+  }
+
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['code'] = code;
+    if (this.data != null) {
+      data['data'] = this.data!.toJson();
+    }
+    return data;
+  }
+}
+
+class Data {
+  String? total;
+  List<Kelompok>? kelompok;
+
+  Data({this.total, this.kelompok});
+
+  Data.fromJson(Map<String, dynamic> json) {
     total = json['total'];
     if (json['kelompok'] != null) {
       kelompok = <Kelompok>[];
@@ -18,7 +37,6 @@ class ModelDetail {
 
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = <String, dynamic>{};
-    data['tanggal'] = tanggal;
     data['total'] = total;
     if (kelompok != null) {
       data['kelompok'] = kelompok!.map((v) => v.toJson()).toList();
@@ -30,21 +48,24 @@ class ModelDetail {
 class Kelompok {
   int? kodeKelompok;
   String? namaKelompok;
-  Map<String, dynamic>? data;
+  String? total;
+  List<dynamic>? tgl;
 
-  Kelompok({this.kodeKelompok, this.namaKelompok, this.data});
+  Kelompok({this.kodeKelompok, this.namaKelompok, this.total, this.tgl});
 
   Kelompok.fromJson(Map<String, dynamic> json) {
     kodeKelompok = json['kode_kelompok'];
     namaKelompok = json['nama_kelompok'];
-    data = json['data'];
+    total = json['total'];
+    tgl = json['tgl'];
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> datas = <String, dynamic>{};
-    datas['kode_kelompok'] = kodeKelompok;
-    datas['nama_kelompok'] = namaKelompok;
-    datas['data'] = data;
-    return datas;
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['kode_kelompok'] = kodeKelompok;
+    data['nama_kelompok'] = namaKelompok;
+    data['total'] = total;
+    data['tgl'] = tgl;
+    return data;
   }
 }

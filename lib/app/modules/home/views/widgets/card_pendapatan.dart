@@ -1,3 +1,4 @@
+import 'package:dashboard_rskg_mobile/app/data/component/app_colors.dart';
 import 'package:dashboard_rskg_mobile/app/data/model/pasien_pendapatan.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
@@ -115,7 +116,7 @@ class WidgetTitlePendapatan extends StatelessWidget {
                         color: Colors.blue,
                       ),
                       child: Text(
-                        "Rp ${pendapatan.harian ?? ''}",
+                        formatCurrency(pendapatan.harian ?? 0),
                         style: const TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.bold,
@@ -177,7 +178,7 @@ class WidgetTitlePendapatan extends StatelessWidget {
                         color: Colors.blue,
                       ),
                       child: Text(
-                        "Rp ${pendapatan.bulanan ?? ''}",
+                        formatCurrency(pendapatan.bulanan ?? 0),
                         style: const TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.bold,
@@ -239,7 +240,7 @@ class WidgetTitlePendapatan extends StatelessWidget {
                         color: Colors.blue,
                       ),
                       child: Text(
-                        "Rp ${pendapatan.bulanan ?? ''}",
+                        formatCurrency(pendapatan.tahunan ?? 0),
                         style: const TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.bold,

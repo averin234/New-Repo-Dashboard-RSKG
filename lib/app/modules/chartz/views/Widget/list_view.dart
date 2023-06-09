@@ -16,7 +16,7 @@ class WidgetListView extends GetView<ChartzController> {
           if (snapshot.hasData &&
               snapshot.connectionState != ConnectionState.waiting &&
               snapshot.data != null) {
-            final data = snapshot.data!;
+            final data = snapshot.data!.data!;
             return Column(
               children: [
                 Container(
@@ -107,8 +107,10 @@ class WidgetListView extends GetView<ChartzController> {
                                   Expanded(
                                     flex: 2,
                                     child: Text(
-                                      e.data!.isNotEmpty
-                                          ? e.data!.values
+                                      e.tgl != null
+                                          ? controller
+                                              .mapBulan(e.tgl!)
+                                              .values
                                               .toList()
                                               .reduce(
                                                 (value, element) =>

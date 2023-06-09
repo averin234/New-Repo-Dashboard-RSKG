@@ -12,16 +12,6 @@ class DashBoard extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: [
-        // GridView.builder(
-        //   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-        //       crossAxisCount: 3),
-        //   shrinkWrap: true,
-        //   itemBuilder: (context, index) => const CardKanan(
-        //     title: 'Total Pasien',
-        //     value: '1.345',
-        //     image: 'assets/images/icons/total_pasien.svg',
-        //   ),
-        // ),
         CardWidget(
           imageKiri: 'assets/images/icons/total_pasien.svg',
           titleKiri: "Total Pasien",
@@ -31,8 +21,8 @@ class DashBoard extends StatelessWidget {
           valueKanan: pasien.poli ?? '',
           isUmumKiri: true,
           isUmumKanan: true,
-          pathKiri: 'get-pasien',
-          pathKanan: 'get-poli',
+          pathKiri: 'pasien',
+          pathKanan: 'poli',
         ),
         const SizedBox(height: 15),
         CardWidget(
@@ -44,8 +34,8 @@ class DashBoard extends StatelessWidget {
           valueKanan: pasien.igd ?? '',
           isUmumKiri: true,
           isUmumKanan: true,
-          pathKiri: 'get-hemo',
-          pathKanan: 'get-igd',
+          pathKiri: 'hemo',
+          pathKanan: 'igd',
         ),
         const SizedBox(height: 15),
         CardWidget(
@@ -57,8 +47,8 @@ class DashBoard extends StatelessWidget {
           valueKanan: pasien.resep ?? '',
           isUmumKiri: true,
           isUmumKanan: false,
-          pathKiri: 'get-lab',
-          pathKanan: 'get-resep',
+          pathKiri: 'lab',
+          pathKanan: 'resep',
         ),
         const SizedBox(height: 15),
         CardWidget2(
@@ -66,12 +56,25 @@ class DashBoard extends StatelessWidget {
           titleKiri: "Pasien BPJS",
           valueKiri: pasien.bpjs ?? '',
           isUmumKiri: true,
-          pathKiri: 'get-bpjs',
+          pathKiri: 'bpjs',
           imageKanan: 'assets/images/icons/total_pasien.svg',
           titleKanan: "Pasien Umum",
           valueKanan: pasien.umum ?? '',
           isUmumKanan: true,
-          pathKanan: 'get-umum',
+          pathKanan: 'umum',
+        ),
+        const SizedBox(height: 10),
+        CardWidget2(
+          imageKiri: 'assets/images/icons/perusahaan.svg',
+          titleKiri: "Pasien Asuransi/Perusahaan",
+          valueKiri: pasien.asuransi ?? '',
+          isUmumKiri: true,
+          pathKiri: 'asuransi',
+          imageKanan: 'assets/images/icons/karyawan.svg',
+          titleKanan: "Pasien Karyawan",
+          valueKanan: pasien.karyawan ?? '',
+          isUmumKanan: true,
+          pathKanan: 'karyawan',
         ),
       ],
     );
