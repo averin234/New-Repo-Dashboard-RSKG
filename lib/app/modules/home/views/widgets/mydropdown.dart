@@ -6,7 +6,7 @@ import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 
 class WidgetTitle3 extends GetView<HomeController> {
-  const WidgetTitle3({Key? key}) : super(key: key);
+  WidgetTitle3({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -15,12 +15,12 @@ class WidgetTitle3 extends GetView<HomeController> {
         // color: Color(0xffededed),
         borderRadius: BorderRadius.circular(10),
       ),
-      margin: EdgeInsets.only(left: 15,right: 10),
+      margin: EdgeInsets.only(left: 15, right: 10),
       child: TextField(
         controller: controller.dateController,
         readOnly: true,
         textAlign: TextAlign.justify,
-        style: TextStyle(fontWeight: FontWeight.bold,color: Color(0xff009688)),
+        style: TextStyle(fontWeight: FontWeight.bold, color: Color(0xff009688)),
         onTap: () => DatePicker.showPicker(
           context,
           showTitleActions: true,
@@ -35,8 +35,8 @@ class WidgetTitle3 extends GetView<HomeController> {
           locale: LocaleType.id,
         ),
         decoration: InputDecoration(
-          // enabledBorder: const OutlineInputBorder(
-          //   borderSide: const BorderSide(color: Color(0xff009688), width: 2.0),
+          // enabledBorder: OutlineInputBorder(
+          //   borderSide: BorderSide(color: Color(0xff009688), width: 2.0),
           // ),
           suffixIcon: Icon(
             Icons.arrow_drop_down_circle_rounded,
@@ -53,7 +53,6 @@ class WidgetTitle3 extends GetView<HomeController> {
           ),
           fillColor: Color(0xfff0fff0),
           filled: true,
-
         ),
       ),
     );

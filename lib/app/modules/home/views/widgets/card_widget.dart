@@ -14,7 +14,7 @@ class CardWidget extends StatelessWidget {
   final String pathKiri;
   final bool isUmumKiri;
   final int? color;
-  const CardWidget({
+  CardWidget({
     super.key,
     required this.titleKanan,
     required this.valueKanan,

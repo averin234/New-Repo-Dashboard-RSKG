@@ -5,8 +5,7 @@ import 'package:intl/intl.dart';
 
 class WidgetTitlePendapatan extends StatelessWidget {
   final Pendapatan pendapatan;
-  const WidgetTitlePendapatan({Key? key, required this.pendapatan})
-      : super(key: key);
+  WidgetTitlePendapatan({Key? key, required this.pendapatan}) : super(key: key);
 
   String hariIndo(String eeee) {
     String hari = '';
@@ -63,22 +62,22 @@ class WidgetTitlePendapatan extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        const SizedBox(
+        SizedBox(
           height: 10,
         ),
         Container(
-          padding: const EdgeInsets.only(left: 25),
-          child: const Text("Pendapatan",
+          padding: EdgeInsets.only(left: 25),
+          child: Text("Pendapatan",
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
         ),
-        const SizedBox(
+        SizedBox(
           height: 15,
         ),
         Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const SizedBox(
+            SizedBox(
               width: 10,
             ),
             Expanded(
@@ -91,10 +90,10 @@ class WidgetTitlePendapatan extends StatelessWidget {
                       color: Color(0xffff7171).withOpacity(0.5),
                       spreadRadius: 1,
                       blurRadius: 4,
-                      offset: const Offset(0, 1), // changes position of shadow
+                      offset: Offset(0, 1), // changes position of shadow
                     ),
                   ],
-                  gradient: const LinearGradient(
+                  gradient: LinearGradient(
                     begin: Alignment.topRight,
                     end: Alignment.bottomLeft,
                     stops: [0.1, 0.5, 0.7, 0.9],
@@ -110,37 +109,37 @@ class WidgetTitlePendapatan extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
                     Container(
-                      padding: const EdgeInsets.all(5),
+                      padding: EdgeInsets.all(5),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
                         color: Colors.blue,
                       ),
                       child: Text(
                         formatCurrency(pendapatan.harian ?? 0),
-                        style: const TextStyle(
+                        style: TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.bold,
                             fontSize: 15),
                         textAlign: TextAlign.center,
                       ),
                     ),
-                    const SizedBox(
+                    SizedBox(
                       height: 20,
                     ),
                     Text(
                       "${hariIndo(DateFormat('EEEE').format(DateTime.now()))}\nTanggal ${DateTime.now().day}",
-                      style: const TextStyle(
+                      style: TextStyle(
                           fontWeight: FontWeight.bold, color: Colors.white),
                       textAlign: TextAlign.center,
                     ),
-                    const SizedBox(
+                    SizedBox(
                       height: 20,
                     ),
                   ],
                 ),
               ),
             ),
-            const SizedBox(
+            SizedBox(
               width: 10,
             ),
             Expanded(
@@ -153,10 +152,10 @@ class WidgetTitlePendapatan extends StatelessWidget {
                       color: Color(0xff379fff).withOpacity(0.5),
                       spreadRadius: 1,
                       blurRadius: 4,
-                      offset: const Offset(0, 1), // changes position of shadow
+                      offset: Offset(0, 1), // changes position of shadow
                     ),
                   ],
-                  gradient: const LinearGradient(
+                  gradient: LinearGradient(
                     begin: Alignment.topRight,
                     end: Alignment.bottomLeft,
                     stops: [0.1, 0.5, 0.7, 0.9],
@@ -172,37 +171,37 @@ class WidgetTitlePendapatan extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
                     Container(
-                      padding: const EdgeInsets.all(5),
+                      padding: EdgeInsets.all(5),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
                         color: Colors.blue,
                       ),
                       child: Text(
                         formatCurrency(pendapatan.bulanan ?? 0),
-                        style: const TextStyle(
+                        style: TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.bold,
                             fontSize: 15),
                         textAlign: TextAlign.center,
                       ),
                     ),
-                    const SizedBox(
+                    SizedBox(
                       height: 20,
                     ),
                     Text(
                       "Bulan\n${bulanIndo(DateTime.now().month)}",
-                      style: const TextStyle(
+                      style: TextStyle(
                           fontWeight: FontWeight.bold, color: Colors.white),
                       textAlign: TextAlign.center,
                     ),
-                    const SizedBox(
+                    SizedBox(
                       height: 20,
                     ),
                   ],
                 ),
               ),
             ),
-            const SizedBox(
+            SizedBox(
               width: 10,
             ),
             Expanded(
@@ -215,10 +214,10 @@ class WidgetTitlePendapatan extends StatelessWidget {
                       color: Color(0xff009688).withOpacity(0.5),
                       spreadRadius: 1,
                       blurRadius: 4,
-                      offset: const Offset(0, 1), // changes position of shadow
+                      offset: Offset(0, 1), // changes position of shadow
                     ),
                   ],
-                  gradient: const LinearGradient(
+                  gradient: LinearGradient(
                     begin: Alignment.topRight,
                     end: Alignment.bottomLeft,
                     stops: [0.1, 0.5, 0.7, 0.9],
@@ -234,37 +233,37 @@ class WidgetTitlePendapatan extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
                     Container(
-                      padding: const EdgeInsets.all(5),
+                      padding: EdgeInsets.all(5),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
                         color: Colors.blue,
                       ),
                       child: Text(
                         formatCurrency(pendapatan.tahunan ?? 0),
-                        style: const TextStyle(
+                        style: TextStyle(
                             color: Colors.white,
                             fontWeight: FontWeight.bold,
                             fontSize: 15),
                         textAlign: TextAlign.center,
                       ),
                     ),
-                    const SizedBox(
+                    SizedBox(
                       height: 20,
                     ),
                     Text(
                       "Tahun\n${DateTime.now().year.toString()}",
-                      style: const TextStyle(
+                      style: TextStyle(
                           fontWeight: FontWeight.bold, color: Colors.white),
                       textAlign: TextAlign.center,
                     ),
-                    const SizedBox(
+                    SizedBox(
                       height: 20,
                     ),
                   ],
                 ),
               ),
             ),
-            const SizedBox(
+            SizedBox(
               width: 10,
             ),
           ],

@@ -12,7 +12,7 @@ import 'package:intl/intl.dart';
 import '../widgets/title4.dart';
 
 class HomeBottom extends GetView<HomeController> {
-  const HomeBottom({super.key});
+  HomeBottom({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -24,13 +24,13 @@ class HomeBottom extends GetView<HomeController> {
           snap: true,
           toolbarHeight: 10,
           centerTitle: true,
-          // title: const Text("Dashboard"),
+          // title: Text("Dashboard"),
           bottom: AppBar(
             toolbarHeight: 90,
             automaticallyImplyLeading: false,
             elevation: 0,
             title: Column(
-              children: const [
+              children: [
                 WidgetTitlelogo(),
                 SizedBox(height: 10),
               ],
@@ -40,7 +40,7 @@ class HomeBottom extends GetView<HomeController> {
         // Other Sliver Widgets
         SliverList(
           delegate: SliverChildListDelegate([
-            const Divider(
+            Divider(
               color: Colors.black,
               height: 1.5,
             ),
@@ -57,22 +57,22 @@ class HomeBottom extends GetView<HomeController> {
                           pendapatan: snapshot.data!,
                         );
                       } else {
-                        return const Center(
+                        return Center(
                           child: CircularProgressIndicator(),
                         );
                       }
                     }),
-                const SizedBox(
+                SizedBox(
                   height: 10,
                 ),
                 // Text("Pendapatan perInstalasi", style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold),),
                 // WidgetSlider(),
-                const Divider(color: Colors.black),
+                Divider(color: Colors.black),
 
                 // WidgetTitlePoli3(),
                 // WidgetTitle3(),
 
-                const SizedBox(
+                SizedBox(
                   height: 8,
                 ),
                 // Homepage(),
@@ -85,18 +85,18 @@ class HomeBottom extends GetView<HomeController> {
                           snapshot.data != null) {
                         return DashBoard(pasien: snapshot.data!);
                       } else {
-                        return const Center(
+                        return Center(
                           child: CircularProgressIndicator(),
                         );
                       }
                     },
                   );
                 }),
-                const SizedBox(
+                SizedBox(
                   height: 10,
                 ),
-                const WidgetTitlePoli2(),
-                const Homepage2(),
+                WidgetTitlePoli2(),
+                Homepage2(),
                 // StaticLainnya(),
               ],
             ),

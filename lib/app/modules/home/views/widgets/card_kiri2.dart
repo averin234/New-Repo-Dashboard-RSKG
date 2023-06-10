@@ -11,7 +11,7 @@ class CardKiri2 extends StatelessWidget {
   final bool isUmum;
   final String path;
   final int? color;
-  const CardKiri2({
+   CardKiri2({
     super.key,
     required this.title,
     required this.value,
@@ -25,14 +25,14 @@ class CardKiri2 extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       // padding: EdgeInsets.only(top: 2, right: 30,bottom: 0),
-      margin: const EdgeInsets.only(left: 10),
+      margin:  EdgeInsets.only(left: 10),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
-        image: const DecorationImage(
+        image:  DecorationImage(
           image: AssetImage('assets/images/bgmenu.png'),
           fit: BoxFit.fill,
         ),
-        // gradient: const LinearGradient(
+        // gradient:  LinearGradient(
         //   begin: Alignment.topRight,
         //   end: Alignment.bottomLeft,
         //   stops: [0.1, 0.5, 0.7, 0.9],
@@ -54,7 +54,7 @@ class CardKiri2 extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.end,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const SizedBox(
+             SizedBox(
               height: 4,
             ),
             Row(
@@ -68,14 +68,14 @@ class CardKiri2 extends StatelessWidget {
                       image,
                       height: 30,
                       width: 30,
-                      color: const Color(0xff379fff),
+                      color:  Color(0xff379fff),
                     ),
                   ),
                 ),
-                const SizedBox(
+                 SizedBox(
                   width: 55,
                 ),
-                const Align(
+                 Align(
                     alignment: Alignment.topLeft,
                     child: Text(
                       "Lihat",
@@ -87,18 +87,18 @@ class CardKiri2 extends StatelessWidget {
                     )),
               ],
             ),
-            const SizedBox(
+             SizedBox(
               height: 10,
             ),
             Text(
               value,
-              style: const TextStyle(
+              style:  TextStyle(
                 fontSize: 25.0,
                 color: Colors.white,
                 fontWeight: FontWeight.bold,
               ),
             ),
-            const SizedBox(
+             SizedBox(
               height: 10,
             ),
             Container(
@@ -106,16 +106,16 @@ class CardKiri2 extends StatelessWidget {
                   borderRadius: BorderRadius.circular(10),
                   // boxShadow: [
                   //   BoxShadow(
-                  //     color: const Color(0xffecf8ff).withOpacity(0.5),
+                  //     color:  Color(0xffecf8ff).withOpacity(0.5),
                   //     spreadRadius: 0,
                   //     blurRadius: 10,
-                  //     offset: const Offset(2, 1),
+                  //     offset:  Offset(2, 1),
                   //   ),
                   // ],
                 ),
                 child: Text(
                   title,
-                  style: const TextStyle(
+                  style:  TextStyle(
                     fontSize: 15.0,
                     color: Colors.white,
                     fontWeight: FontWeight.bold,

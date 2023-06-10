@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'mydropdown.dart';
 
 class WidgetTitlePoli1 extends StatelessWidget {
-  const WidgetTitlePoli1({Key? key}) : super(key: key);
+  WidgetTitlePoli1({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

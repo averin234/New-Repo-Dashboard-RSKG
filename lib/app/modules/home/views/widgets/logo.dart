@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class WidgetTitlelogo extends StatefulWidget {
-  const WidgetTitlelogo({Key? key}) : super(key: key);
+  WidgetTitlelogo({Key? key}) : super(key: key);
 
   @override
   _WidgetTitlelogoState createState() => _WidgetTitlelogoState();
@@ -11,7 +11,7 @@ class _WidgetTitlelogoState extends State<WidgetTitlelogo> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(0, 10, 10, 0),
+      padding: EdgeInsets.fromLTRB(0, 10, 10, 0),
       child: Row(
         children: [
           Image.asset(
@@ -19,7 +19,7 @@ class _WidgetTitlelogoState extends State<WidgetTitlelogo> {
             width: 70.0,
             fit: BoxFit.cover,
           ),
-          const SizedBox(
+          SizedBox(
             width: 10,
           ),
           Container(
