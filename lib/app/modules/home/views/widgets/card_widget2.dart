@@ -36,21 +36,25 @@ class CardWidget2 extends StatelessWidget {
       children: [
         Row(
           children: [
-            CardKiri2(
-              image: imageKiri,
-              title: titleKiri,
-              value: valueKiri,
-              color: color,
-              isUmum: isUmumKiri,
-              path: pathKiri,
+            Expanded(
+              child: CardKiri2(
+                image: imageKiri,
+                title: titleKiri,
+                value: valueKiri,
+                color: color,
+                isUmum: isUmumKiri,
+                path: pathKiri,
+              ),
             ),
-            CardKanan2(
-              image: imageKanan,
-              title: titleKanan,
-              value: valueKanan,
-              color: color,
-              isUmum: isUmumKanan,
-              path: pathKanan,
+            Expanded(
+              child: CardKanan2(
+                image: imageKanan,
+                title: titleKanan,
+                value: valueKanan,
+                color: color,
+                isUmum: isUmumKanan,
+                path: pathKanan,
+              ),
             ),
           ],
         )

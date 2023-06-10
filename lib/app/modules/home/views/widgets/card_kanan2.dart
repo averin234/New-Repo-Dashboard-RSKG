@@ -28,9 +28,8 @@ class CardKanan2 extends StatelessWidget {
       margin: const EdgeInsets.only(left: 0),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
-        image: DecorationImage(
-          image: AssetImage(
-              'assets/images/bgmenu.png'),
+        image: const DecorationImage(
+          image: AssetImage('assets/images/bgmenu.png'),
           fit: BoxFit.fill,
         ),
         // gradient: const LinearGradient(
@@ -45,7 +44,6 @@ class CardKanan2 extends StatelessWidget {
         //   ],
         // ),
       ),
-      width: 182,
       child: TextButton(
         onPressed: () {
           HapticFeedback.lightImpact();
@@ -56,36 +54,40 @@ class CardKanan2 extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.end,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(
+            const SizedBox(
               height: 4,
             ),
-            Row(children: [
-              Align(
-                alignment: Alignment.topLeft,
-                child: CircleAvatar(
-                  radius: 27,
-                  backgroundColor: Colors.white,
-                  child: SvgPicture.asset(
-                    image,
-                    height: 30,
-                    width: 30,
-                    color: Color(0xff379fff),
+            Row(
+              children: [
+                Align(
+                  alignment: Alignment.topLeft,
+                  child: CircleAvatar(
+                    radius: 27,
+                    backgroundColor: Colors.white,
+                    child: SvgPicture.asset(
+                      image,
+                      height: 30,
+                      width: 30,
+                      color: const Color(0xff379fff),
+                    ),
                   ),
                 ),
-              ),
-              SizedBox(
-                width: 55,
-              ),
-              Align(
-                  alignment: Alignment.topLeft,
-                  child: Text("Lihat",style: const TextStyle(
-                    fontSize: 15.0,
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                  ),)
-              ),
-            ],),
-            SizedBox(
+                const SizedBox(
+                  width: 55,
+                ),
+                const Align(
+                    alignment: Alignment.topLeft,
+                    child: Text(
+                      "Lihat",
+                      style: TextStyle(
+                        fontSize: 15.0,
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    )),
+              ],
+            ),
+            const SizedBox(
               height: 10,
             ),
             Text(
@@ -101,7 +103,6 @@ class CardKanan2 extends StatelessWidget {
             ),
             Container(
                 decoration: BoxDecoration(
-
                   borderRadius: BorderRadius.circular(10),
                   // boxShadow: [
                   //   BoxShadow(
@@ -112,7 +113,7 @@ class CardKanan2 extends StatelessWidget {
                   //   ),
                   // ],
                 ),
-                child :Text(
+                child: Text(
                   title,
                   style: const TextStyle(
                     fontSize: 15.0,
@@ -126,5 +127,3 @@ class CardKanan2 extends StatelessWidget {
     );
   }
 }
-
-
