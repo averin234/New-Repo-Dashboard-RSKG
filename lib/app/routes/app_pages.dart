@@ -1,7 +1,9 @@
+import 'package:dashboard_rskg_mobile/app/modules/chartz2/views/chartz_view.dart';
 import 'package:get/get.dart';
 
 import '../modules/chartz/bindings/chartz_binding.dart';
 import '../modules/chartz/views/chartz_view.dart';
+import '../modules/chartz2/bindings/chartz_binding.dart';
 import '../modules/detail_umum/detail_umum/bindings/detail_umum_binding.dart';
 import '../modules/detail_umum/detail_umum/views/detail_umum_view.dart';
 import '../modules/home/bindings/home_binding.dart';
@@ -38,6 +40,12 @@ class AppPages {
       name: _Paths.CHARTZ,
       page: () => const ChartzView(),
       binding: ChartzBinding(),
+    ),
+    GetPage(
+      transition: Transition.cupertino,
+      name: _Paths.CHARTZ2,
+      page: () => const ChartzView2(),
+      binding: ChartzBinding2(),
     ),
     GetPage(
       name: _Paths.DETAIL_UMUM,

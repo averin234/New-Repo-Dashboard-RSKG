@@ -47,7 +47,7 @@ class CardKanan2 extends StatelessWidget {
       child: TextButton(
         onPressed: () {
           HapticFeedback.lightImpact();
-          Get.toNamed(Routes.CHARTZ,
+          Get.toNamed(Routes.CHARTZ2,
               arguments: {'title': title, 'path': path, 'isUmum': isUmum});
         },
         child: Column(
