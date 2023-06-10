@@ -12,13 +12,15 @@ class WidgetTitle3 extends GetView<HomeController> {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: Color(0xffededed),
+        // color: Color(0xffededed),
         borderRadius: BorderRadius.circular(10),
       ),
-      margin: EdgeInsets.only(left: 10,right: 10),
+      margin: EdgeInsets.only(left: 15,right: 10),
       child: TextField(
         controller: controller.dateController,
         readOnly: true,
+        textAlign: TextAlign.justify,
+        style: TextStyle(fontWeight: FontWeight.bold,color: Color(0xff009688)),
         onTap: () => DatePicker.showPicker(
           context,
           showTitleActions: true,
@@ -33,9 +35,16 @@ class WidgetTitle3 extends GetView<HomeController> {
           locale: LocaleType.id,
         ),
         decoration: InputDecoration(
+          // enabledBorder: const OutlineInputBorder(
+          //   borderSide: const BorderSide(color: Color(0xff009688), width: 2.0),
+          // ),
+          suffixIcon: Icon(
+            Icons.arrow_drop_down_circle_rounded,
+            color: Color(0xff009688),
+          ),
           border: OutlineInputBorder(
             borderRadius: BorderRadius.all(
-              Radius.circular(10.0),
+              Radius.circular(40.0),
             ),
             borderSide: BorderSide(
               width: 0,

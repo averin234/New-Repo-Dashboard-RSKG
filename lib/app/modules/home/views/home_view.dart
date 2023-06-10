@@ -9,11 +9,11 @@ import 'package:get/get.dart';
 import '../controllers/home_controller.dart';
 
 class HomeView extends GetView<HomeController> {
-  const HomeView({Key? key}) : super(key: key);
+   HomeView({Key? key}) : super(key: key);
 
-  static const TextStyle optionStyle =
+  static  TextStyle optionStyle =
       TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
-  static const List<Widget> _widgetOptions = <Widget>[
+  static  List<Widget> _widgetOptions = <Widget>[
     Text(
       'Index 0: Home',
       style: optionStyle,
@@ -33,14 +33,14 @@ class HomeView extends GetView<HomeController> {
     return Scaffold(
       body: Obx(
         () => controller.currentIndex.value == 0
-            ? const HomeBottom()
+            ?  HomeBottom()
             : controller.currentIndex.value == 1
-                ? const JenisPasienView()
-                : const UserView(),
+                ?  JenisPasienView()
+                :  UserView(),
       ),
       bottomNavigationBar: Obx(() {
         return BottomNavigationBar(
-          items: const <BottomNavigationBarItem>[
+          items:  <BottomNavigationBarItem>[
             BottomNavigationBarItem(
               icon: Icon(Icons.home),
               label: 'Home',
