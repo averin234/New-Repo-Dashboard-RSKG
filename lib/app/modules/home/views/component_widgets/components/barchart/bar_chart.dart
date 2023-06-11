@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 import 'barchart_data.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class BarChart extends StatelessWidget {
   final Color color;
@@ -43,7 +44,7 @@ class BarChart extends StatelessWidget {
             children: [
               Text(
                 title,
-                style: TextStyle(
+                style: GoogleFonts.nunito(
                     color: Colors.black,
                     fontWeight: FontWeight.w600,
                     fontSize: 16),
@@ -65,7 +66,7 @@ class BarChart extends StatelessWidget {
           SizedBox(height: 3),
           Text(
             subTitle,
-            style: TextStyle(
+            style: GoogleFonts.nunito(
                 fontWeight: FontWeight.w500, fontSize: 11, color: Colors.grey),
           ),
           Spacer(),

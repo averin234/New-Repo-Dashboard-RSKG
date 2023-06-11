@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import 'package:get/get.dart';
 
@@ -16,119 +17,144 @@ class UserView extends GetView<UserController> {
         appBar: AppBar(
           title: Text(
             "Settings",
-            style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+            style: GoogleFonts.nunito(
+                color: Colors.black, fontWeight: FontWeight.bold),
           ),
           backgroundColor: Colors.white,
           elevation: 1,
         ),
         body: Padding(
           padding: const EdgeInsets.all(10),
-          child: ListView(
-            children: [
-              Padding(padding: EdgeInsets.only(left: 10),
-              child : Text("Akun",style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold),),
+          child: ListView(children: [
+            Padding(
+              padding: EdgeInsets.only(left: 10),
+              child: Text(
+                "Akun",
+                style: GoogleFonts.nunito(
+                    fontSize: 17, fontWeight: FontWeight.bold),
               ),
-              Container(
-                padding: EdgeInsets.only(right: 10, left: 10, top: 10),
-                child: Column(
-                  children: [
-                    Container(
-                      padding: EdgeInsets.only(right: 10, left: 10, top: 10, bottom: 10),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(5),
-                      ),
-                      child : Stack(
-                        children: [
-                          CircleAvatar(
-                            radius: 30,
-                            backgroundColor: Colors.white,
-                            child: CircleAvatar(
-                              radius: 290,
-                              backgroundImage: NetworkImage(
-                                'https://cdn-icons-png.flaticon.com/512/3135/3135715.png',
-                              ),
-                              backgroundColor: Colors.green,
+            ),
+            Container(
+              padding: EdgeInsets.only(right: 10, left: 10, top: 10),
+              child: Column(
+                children: [
+                  Container(
+                    padding: EdgeInsets.only(
+                        right: 10, left: 10, top: 10, bottom: 10),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(5),
+                    ),
+                    child: Stack(
+                      children: [
+                        CircleAvatar(
+                          radius: 30,
+                          backgroundColor: Colors.white,
+                          child: CircleAvatar(
+                            radius: 290,
+                            backgroundImage: NetworkImage(
+                              'https://cdn-icons-png.flaticon.com/512/3135/3135715.png',
                             ),
+                            backgroundColor: Colors.green,
                           ),
-                          Padding(
-                              padding: EdgeInsets.only(left: 80, top: 20),
-                          child : Row(
+                        ),
+                        Padding(
+                          padding: EdgeInsets.only(left: 80, top: 20),
+                          child: Row(
                             children: [
-                              Text("Admin",style: TextStyle(fontSize: 17,fontWeight: FontWeight.bold),)
+                              Text(
+                                "Admin",
+                                style: GoogleFonts.nunito(
+                                    fontSize: 17, fontWeight: FontWeight.bold),
+                              )
                             ],
                           ),
-                          ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    Container(
-                      padding: EdgeInsets.only(right: 10, left: 10, top: 10, bottom: 10),
-                      decoration: BoxDecoration(
-                          color: Colors.white,
-                        borderRadius: BorderRadius.circular(5),
-                      ),
-                      child : Stack(
-                        children: [
-                          Row(
-                        children: [
-                          Text("Rubah Password",style: TextStyle(fontWeight: FontWeight.bold),),
-                        ],
-                      ),
-                        ],
-                      ),
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    Container(
-                      padding: EdgeInsets.only(right: 10, left: 10, top: 10, bottom: 10),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(5),
-                      ),
-                      child : Stack(
-                        children: [
-                          Row(
-                            children: [
-                              Text("Informasi Aplikasi",style: TextStyle(fontWeight: FontWeight.bold),),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
+                  ),
                   SizedBox(
                     height: 10,
                   ),
-                    Container(
-                      padding: EdgeInsets.only(right: 10, left: 10, top: 10, bottom: 10),
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(5),
-                      ),
-                      child : Stack(
-                        children: [
-                          Icon(Icons.logout_outlined),
-                          Padding( padding: EdgeInsets.only(left: 35,top: 4),
-                          child : Row(
+                  Container(
+                    padding: EdgeInsets.only(
+                        right: 10, left: 10, top: 10, bottom: 10),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(5),
+                    ),
+                    child: Stack(
+                      children: [
+                        Row(
+                          children: [
+                            Text(
+                              "Rubah Password",
+                              style: GoogleFonts.nunito(
+                                  fontWeight: FontWeight.bold),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Container(
+                    padding: EdgeInsets.only(
+                        right: 10, left: 10, top: 10, bottom: 10),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(5),
+                    ),
+                    child: Stack(
+                      children: [
+                        Row(
+                          children: [
+                            Text(
+                              "Informasi Aplikasi",
+                              style: GoogleFonts.nunito(
+                                  fontWeight: FontWeight.bold),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Container(
+                    padding: EdgeInsets.only(
+                        right: 10, left: 10, top: 10, bottom: 10),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(5),
+                    ),
+                    child: Stack(
+                      children: [
+                        Icon(Icons.logout_outlined),
+                        Padding(
+                          padding: EdgeInsets.only(left: 35, top: 4),
+                          child: Row(
                             children: [
-                              Text("Logout",style: TextStyle(fontWeight: FontWeight.bold,color: Colors.redAccent),),
+                              Text(
+                                "Logout",
+                                style: GoogleFonts.nunito(
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.redAccent),
+                              ),
                             ],
                           ),
-                          ),
-                        ],
-                      ),
+                        ),
+                      ],
                     ),
-                  ],
-                ),
-              )
-    ]
-
-      ),
-    ),
+                  ),
+                ],
+              ),
+            )
+          ]),
+        ),
       ),
     );
   }

@@ -2,6 +2,7 @@ import 'package:dashboard_rskg_mobile/app/data/component/fetch_data.dart';
 import 'package:dashboard_rskg_mobile/app/modules/chartz/controllers/chartz_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class WidgetListView extends GetView<ChartzController> {
   const WidgetListView({Key? key}) : super(key: key);
@@ -35,14 +36,16 @@ class WidgetListView extends GetView<ChartzController> {
                   child: Padding(
                     padding: const EdgeInsets.fromLTRB(0, 10, 0, 10),
                     child: Row(
-                      children: const [
+                      children: [
                         Expanded(
                           flex: 1,
                           child: Text(
                             "No",
                             textAlign: TextAlign.center,
-                            style: TextStyle(
-                                fontSize: 13, fontWeight: FontWeight.bold,color: Colors.white),
+                            style: GoogleFonts.nunito(
+                                fontSize: 13,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white),
                           ),
                         ),
                         Expanded(
@@ -50,8 +53,10 @@ class WidgetListView extends GetView<ChartzController> {
                           child: Text(
                             "JENIS PASIEN",
                             textAlign: TextAlign.center,
-                            style: TextStyle(
-                                fontSize: 13, fontWeight: FontWeight.bold,color: Colors.white),
+                            style: GoogleFonts.nunito(
+                                fontSize: 13,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white),
                           ),
                         ),
                         Expanded(
@@ -59,8 +64,10 @@ class WidgetListView extends GetView<ChartzController> {
                           child: Text(
                             "JUMLAH",
                             textAlign: TextAlign.center,
-                            style: TextStyle(
-                                fontSize: 13, fontWeight: FontWeight.bold, color: Colors.white),
+                            style: GoogleFonts.nunito(
+                                fontSize: 13,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white),
                           ),
                         ),
                       ],
@@ -85,7 +92,7 @@ class WidgetListView extends GetView<ChartzController> {
                                     child: Text(
                                       e.kodeKelompok.toString(),
                                       textAlign: TextAlign.center,
-                                      style: const TextStyle(
+                                      style: GoogleFonts.nunito(
                                           fontSize: 13,
                                           fontWeight: FontWeight.bold),
                                     ),
@@ -95,7 +102,7 @@ class WidgetListView extends GetView<ChartzController> {
                                     child: Text(
                                       e.namaKelompok ?? '',
                                       textAlign: TextAlign.center,
-                                      style: const TextStyle(
+                                      style: GoogleFonts.nunito(
                                           fontSize: 13,
                                           fontWeight: FontWeight.bold),
                                     ),
@@ -115,7 +122,7 @@ class WidgetListView extends GetView<ChartzController> {
                                               .toString()
                                           : 0.toString(),
                                       textAlign: TextAlign.center,
-                                      style: const TextStyle(
+                                      style: GoogleFonts.nunito(
                                         fontSize: 13,
                                         fontWeight: FontWeight.bold,
                                       ),

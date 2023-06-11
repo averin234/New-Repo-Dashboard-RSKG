@@ -1,21 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class WidgetTitlePoli extends StatelessWidget {
-  WidgetTitlePoli({Key? key}) : super(key: key);
+  const WidgetTitlePoli({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.fromLTRB(20, 0, 10, 0),
+      padding: const EdgeInsets.fromLTRB(20, 0, 10, 0),
       child: Row(
         children: [
           Expanded(
             child: Text(
               "Dashboard",
-              style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+              style:
+                  GoogleFonts.nunito(fontSize: 20, fontWeight: FontWeight.bold),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             width: 10,
           ),
           Image.asset(
@@ -32,7 +34,7 @@ class WidgetTitlePoli extends StatelessWidget {
           //     fontSize: MyFontSize.medium1,
           //   ),
           // ),
-          SizedBox(
+          const SizedBox(
             width: 10,
           ),
           // Icon(Icons.arrow_forward_ios_outlined, size: 15,)

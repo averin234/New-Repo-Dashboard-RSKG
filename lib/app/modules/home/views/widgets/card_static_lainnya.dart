@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../../../../routes/app_pages.dart';
 
@@ -58,7 +59,7 @@ class CardStaticLainnya extends StatelessWidget {
                       ),
                       Text(
                         title,
-                        style: TextStyle(
+                        style: GoogleFonts.nunito(
                           fontSize: 16.0,
                           color: Colors.brown,
                           fontWeight: FontWeight.bold,

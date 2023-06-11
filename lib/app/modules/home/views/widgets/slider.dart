@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class WidgetSlider extends StatelessWidget {
   const WidgetSlider({Key? key}) : super(key: key);
@@ -34,21 +35,24 @@ class WidgetSlider extends StatelessWidget {
                 children: [
                   Text(
                     "Laboratorium",
-                    style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+                    style: GoogleFonts.nunito(
+                        fontSize: 14, fontWeight: FontWeight.bold),
                   ),
                   SizedBox(
                     height: 10,
                   ),
                   Text(
                     "Rp. 18.250.000",
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    style: GoogleFonts.nunito(
+                        fontSize: 20, fontWeight: FontWeight.bold),
                   ),
                   SizedBox(
                     height: 10,
                   ),
                   Text(
                     "Total Pendapatan",
-                    style: TextStyle(fontSize: 13, fontWeight: FontWeight.bold),
+                    style: GoogleFonts.nunito(
+                        fontSize: 13, fontWeight: FontWeight.bold),
                   ),
                 ],
               ),
@@ -75,21 +79,24 @@ class WidgetSlider extends StatelessWidget {
                 children: [
                   Text(
                     "Radiologi",
-                    style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+                    style: GoogleFonts.nunito(
+                        fontSize: 14, fontWeight: FontWeight.bold),
                   ),
                   SizedBox(
                     height: 10,
                   ),
                   Text(
                     "Rp. 7.250.000",
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    style: GoogleFonts.nunito(
+                        fontSize: 20, fontWeight: FontWeight.bold),
                   ),
                   SizedBox(
                     height: 10,
                   ),
                   Text(
                     "Total Pendapatan",
-                    style: TextStyle(fontSize: 13, fontWeight: FontWeight.bold),
+                    style: GoogleFonts.nunito(
+                        fontSize: 13, fontWeight: FontWeight.bold),
                   ),
                 ],
               ),
@@ -116,21 +123,24 @@ class WidgetSlider extends StatelessWidget {
                 children: [
                   Text(
                     "Elektromedis",
-                    style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+                    style: GoogleFonts.nunito(
+                        fontSize: 14, fontWeight: FontWeight.bold),
                   ),
                   SizedBox(
                     height: 10,
                   ),
                   Text(
                     "Rp. 10.250.000",
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    style: GoogleFonts.nunito(
+                        fontSize: 20, fontWeight: FontWeight.bold),
                   ),
                   SizedBox(
                     height: 10,
                   ),
                   Text(
                     "Total Pendapatan",
-                    style: TextStyle(fontSize: 13, fontWeight: FontWeight.bold),
+                    style: GoogleFonts.nunito(
+                        fontSize: 13, fontWeight: FontWeight.bold),
                   ),
                 ],
               ),
@@ -157,21 +167,24 @@ class WidgetSlider extends StatelessWidget {
                 children: [
                   Text(
                     "MCU",
-                    style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+                    style: GoogleFonts.nunito(
+                        fontSize: 14, fontWeight: FontWeight.bold),
                   ),
                   SizedBox(
                     height: 10,
                   ),
                   Text(
                     "Rp. 10.250.000",
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    style: GoogleFonts.nunito(
+                        fontSize: 20, fontWeight: FontWeight.bold),
                   ),
                   SizedBox(
                     height: 10,
                   ),
                   Text(
                     "Total Pendapatan",
-                    style: TextStyle(fontSize: 13, fontWeight: FontWeight.bold),
+                    style: GoogleFonts.nunito(
+                        fontSize: 13, fontWeight: FontWeight.bold),
                   ),
                 ],
               ),
@@ -198,21 +211,24 @@ class WidgetSlider extends StatelessWidget {
                 children: [
                   Text(
                     "Poliklinik",
-                    style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+                    style: GoogleFonts.nunito(
+                        fontSize: 14, fontWeight: FontWeight.bold),
                   ),
                   SizedBox(
                     height: 10,
                   ),
                   Text(
                     "Rp. 10.250.000",
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    style: GoogleFonts.nunito(
+                        fontSize: 20, fontWeight: FontWeight.bold),
                   ),
                   SizedBox(
                     height: 10,
                   ),
                   Text(
                     "Total Pendapatan",
-                    style: TextStyle(fontSize: 13, fontWeight: FontWeight.bold),
+                    style: GoogleFonts.nunito(
+                        fontSize: 13, fontWeight: FontWeight.bold),
                   ),
                 ],
               ),
@@ -239,21 +255,24 @@ class WidgetSlider extends StatelessWidget {
                 children: [
                   Text(
                     "Farmasi",
-                    style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+                    style: GoogleFonts.nunito(
+                        fontSize: 14, fontWeight: FontWeight.bold),
                   ),
                   SizedBox(
                     height: 10,
                   ),
                   Text(
                     "Rp. 10.250.000",
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    style: GoogleFonts.nunito(
+                        fontSize: 20, fontWeight: FontWeight.bold),
                   ),
                   SizedBox(
                     height: 10,
                   ),
                   Text(
                     "Total Pendapatan",
-                    style: TextStyle(fontSize: 13, fontWeight: FontWeight.bold),
+                    style: GoogleFonts.nunito(
+                        fontSize: 13, fontWeight: FontWeight.bold),
                   ),
                 ],
               ),

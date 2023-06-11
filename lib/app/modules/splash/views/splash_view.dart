@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
+import 'package:google_fonts/google_fonts.dart';
 import '../controllers/splash_controller.dart';
 
 class SplashView extends GetView<SplashController> {
@@ -13,10 +14,10 @@ class SplashView extends GetView<SplashController> {
         title: const Text('SplashView'),
         centerTitle: true,
       ),
-      body: const Center(
+      body: Center(
         child: Text(
           'SplashView is working',
-          style: TextStyle(fontSize: 20),
+          style: GoogleFonts.nunito(fontSize: 20),
         ),
       ),
     );

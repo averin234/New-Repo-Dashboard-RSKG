@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
 import 'barchart_data.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class BarChart2 extends StatelessWidget {
   final Color color;
@@ -32,7 +33,7 @@ class BarChart2 extends StatelessWidget {
           formatter.format(data
               .reduce((curr, next) => curr.value > next.value ? curr : next)
               .value),
-          style: TextStyle(
+          style: GoogleFonts.nunito(
               fontWeight: FontWeight.w500, fontSize: 20, color: Colors.grey),
         );
       case DisplayType.min:
@@ -40,14 +41,14 @@ class BarChart2 extends StatelessWidget {
           formatter.format(data
               .reduce((curr, next) => curr.value < next.value ? curr : next)
               .value),
-          style: TextStyle(
+          style: GoogleFonts.nunito(
               fontWeight: FontWeight.w500, fontSize: 12, color: Colors.grey),
         );
       case DisplayType.total:
         return Text(
           formatter
               .format(data.fold<double>(0, (sum, item) => sum + item.value)),
-          style: TextStyle(
+          style: GoogleFonts.nunito(
               fontWeight: FontWeight.w500, fontSize: 11, color: Colors.grey),
         );
       case DisplayType.average:
@@ -56,14 +57,14 @@ class BarChart2 extends StatelessWidget {
                   data.length)
               .toInt()
               .toString(),
-          style: TextStyle(
+          style: GoogleFonts.nunito(
               fontWeight: FontWeight.w500, fontSize: 20, color: Colors.grey),
         );
       default:
     }
     return Text(
       "",
-      style: TextStyle(
+      style: GoogleFonts.nunito(
           fontWeight: FontWeight.w500, fontSize: 11, color: Colors.grey),
     );
   }
@@ -75,9 +76,7 @@ class BarChart2 extends StatelessWidget {
       height: 175,
       width: 375,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
-        color: Colors.white
-      ),
+          borderRadius: BorderRadius.circular(10), color: Colors.white),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         mainAxisAlignment: MainAxisAlignment.center,
@@ -88,7 +87,10 @@ class BarChart2 extends StatelessWidget {
             children: [
               Text(
                 title,
-                style: TextStyle(color: Colors.black,fontWeight: FontWeight.w600, fontSize: 16),
+                style: GoogleFonts.nunito(
+                    color: Colors.black,
+                    fontWeight: FontWeight.w600,
+                    fontSize: 16),
               ),
               icon
             ],

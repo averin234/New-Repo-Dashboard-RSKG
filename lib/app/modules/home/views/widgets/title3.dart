@@ -1,24 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class WidgetTitlePoli2 extends StatelessWidget {
-  WidgetTitlePoli2({Key? key}) : super(key: key);
+  const WidgetTitlePoli2({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.fromLTRB(20, 0, 10, 0),
+      padding: const EdgeInsets.fromLTRB(20, 0, 10, 0),
       child: Row(
         children: [
           Expanded(
             child: Text(
               "Static Lainnya",
-              style: TextStyle(
+              style: GoogleFonts.nunito(
                 fontSize: 20,
                 fontWeight: FontWeight.bold,
               ),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             width: 10,
           ),
         ],

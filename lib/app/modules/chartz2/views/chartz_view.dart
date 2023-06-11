@@ -3,6 +3,7 @@ import 'package:dashboard_rskg_mobile/app/data/component/year_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 
+import 'package:google_fonts/google_fonts.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 
@@ -20,122 +21,131 @@ class ChartzView2 extends GetView<ChartzController2> {
         elevation: 0,
         title: Text('${controller.title}'),
         leading: IconButton(
-          icon: Icon(Icons.arrow_circle_left_rounded, color: Color(0xff00a7d7), size: 40),
+          icon: const Icon(Icons.arrow_circle_left_rounded,
+              color: Color(0xff00a7d7), size: 40),
           onPressed: () => Navigator.of(context).pop(),
         ),
       ),
       body: ListView(
         children: <Widget>[
-          Padding(padding: EdgeInsets.only(left: 10,right: 10,top: 20),
-          child : Container(
-            decoration: BoxDecoration(
-              color: Color(0xff00a7d7),
-              boxShadow: [
-                BoxShadow(
-                  color: const Color(0xff00a7d7).withOpacity(0.5),
-                  spreadRadius: 1,
-                  blurRadius: 10,
-                  offset: const Offset(2, 1),
-                ),
-              ],
-              borderRadius: BorderRadius.only(
-                  topRight: Radius.circular(10.0),
-                  bottomRight: Radius.circular(10.0),
-                  topLeft: Radius.circular(10.0),
-                  bottomLeft: Radius.circular(10.0)),
-            ),
-          child : Column(children: [
           Padding(
-            padding: EdgeInsets.only(top: 10),
-            child: Text("Grafik Berdasarkan",
-                style: TextStyle(
-                    fontSize: 17.0,
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold)),
-          ),
-            SizedBox(
-              height: 15,
-            ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Row(
-                  children: [
-                    SizedBox(
-                      width: 10,
-                    ),
-                    Expanded(child: MyDropDown2(items: controller.listKalender)),
-                    SizedBox(
-                      width: 5,
-                    ),
-                    Expanded(
-                      child: TextField(
-                        controller: controller.dateController,
-                        readOnly: true,
-                        onTap: () => DatePicker.showPicker(
-                          Get.context!,
-                          showTitleActions: true,
-                          pickerModel: controller.kalender.value == 'Tahun'
-                              ? CustomYearPicker(
-                            currentTime: DateTime.now(),
-                            minTime: DateTime(2000, 3, 5),
-                            maxTime: DateTime.now(),
-                            locale: LocaleType.id,
-                          )
-                              : controller.kalender.value == 'Bulan'
-                              ? CustomMonthPicker(
-                            currentTime: DateTime.now(),
-                            minTime: DateTime(2000, 3, 5),
-                            maxTime: DateTime.now(),
-                            locale: LocaleType.id,
-                          )
-                              : DatePickerModel(
-                            currentTime: DateTime.now(),
-                            minTime: DateTime(2000, 3, 5),
-                            maxTime: DateTime.now(),
-                            locale: LocaleType.id,
+            padding: const EdgeInsets.only(left: 10, right: 10, top: 20),
+            child: Container(
+              decoration: BoxDecoration(
+                color: const Color(0xff00a7d7),
+                boxShadow: [
+                  BoxShadow(
+                    color: const Color(0xff00a7d7).withOpacity(0.5),
+                    spreadRadius: 1,
+                    blurRadius: 10,
+                    offset: const Offset(2, 1),
+                  ),
+                ],
+                borderRadius: const BorderRadius.only(
+                    topRight: Radius.circular(10.0),
+                    bottomRight: Radius.circular(10.0),
+                    topLeft: Radius.circular(10.0),
+                    bottomLeft: Radius.circular(10.0)),
+              ),
+              child: Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.only(top: 10),
+                    child: Text("Grafik Berdasarkan",
+                        style: GoogleFonts.nunito(
+                            fontSize: 17.0,
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold)),
+                  ),
+                  const SizedBox(
+                    height: 15,
+                  ),
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        children: [
+                          const SizedBox(
+                            width: 10,
                           ),
-                          onChanged: onTanggal,
-                          onConfirm: onTanggal,
-                          // currentTime: DateTime.now(),
-                          locale: LocaleType.id,
-                        ),
-                        // decoration: const InputDecoration(
-                        //   border: OutlineInputBorder(),
-                        // ),
-                        decoration: InputDecoration(
-                          border: OutlineInputBorder(
-                            borderRadius: BorderRadius.all(
-                              Radius.circular(10.0),
-                            ),
-                            borderSide: BorderSide(
-                              width: 0,
-                              style: BorderStyle.none,
+                          Expanded(
+                              child:
+                                  MyDropDown2(items: controller.listKalender)),
+                          const SizedBox(
+                            width: 5,
+                          ),
+                          Expanded(
+                            child: TextField(
+                              controller: controller.dateController,
+                              readOnly: true,
+                              onTap: () => DatePicker.showPicker(
+                                Get.context!,
+                                showTitleActions: true,
+                                pickerModel:
+                                    controller.kalender.value == 'Tahun'
+                                        ? CustomYearPicker(
+                                            currentTime: DateTime.now(),
+                                            minTime: DateTime(2000, 3, 5),
+                                            maxTime: DateTime.now(),
+                                            locale: LocaleType.id,
+                                          )
+                                        : controller.kalender.value == 'Bulan'
+                                            ? CustomMonthPicker(
+                                                currentTime: DateTime.now(),
+                                                minTime: DateTime(2000, 3, 5),
+                                                maxTime: DateTime.now(),
+                                                locale: LocaleType.id,
+                                              )
+                                            : DatePickerModel(
+                                                currentTime: DateTime.now(),
+                                                minTime: DateTime(2000, 3, 5),
+                                                maxTime: DateTime.now(),
+                                                locale: LocaleType.id,
+                                              ),
+                                onChanged: onTanggal,
+                                onConfirm: onTanggal,
+                                // currentTime: DateTime.now(),
+                                locale: LocaleType.id,
+                              ),
+                              // decoration:
+                              // InputDecoration(
+                              //   border: OutlineInputBorder(),
+                              // ),
+                              decoration: const InputDecoration(
+                                border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.all(
+                                    Radius.circular(10.0),
+                                  ),
+                                  borderSide: BorderSide(
+                                    width: 0,
+                                    style: BorderStyle.none,
+                                  ),
+                                ),
+                                fillColor: Color(0xffecf8ff),
+                                filled: true,
+                              ),
                             ),
                           ),
-                          fillColor: Color(0xffecf8ff),
-                          filled: true,
-
-                        ),
+                          const SizedBox(
+                            width: 10,
+                          ),
+                        ],
                       ),
-                    ),
-                    SizedBox(
-                      width: 10,
-                    ),
-                  ],),
-                SizedBox(
-                  height: 10,
-                ),
-              ],),
-          ],),
-          ),
+                      const SizedBox(
+                        height: 10,
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            ),
           ),
           const SizedBox(
             height: 20,
           ),
           Container(
-            padding: EdgeInsets.all(10),
-            margin: EdgeInsets.only(left: 15,right: 15),
+            padding: const EdgeInsets.all(10),
+            margin: const EdgeInsets.only(left: 15, right: 15),
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(10),
@@ -148,90 +158,92 @@ class ChartzView2 extends GetView<ChartzController2> {
                 ),
               ],
             ),
-          child : Column(children: [
-            Text(
-              controller.title.toUpperCase(),
-              style: const TextStyle(
-                color: Colors.black,
-                fontSize: 18,
-                fontWeight: FontWeight.bold,
-              ),
-              textAlign: TextAlign.center,
+            child: Column(
+              children: [
+                Text(
+                  controller.title.toUpperCase(),
+                  style: GoogleFonts.nunito(
+                    color: Colors.black,
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                  ),
+                  textAlign: TextAlign.center,
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                const Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 0),
+                  child: AspectRatio(
+                    aspectRatio: 1,
+                    child: ChartzWidget2(),
+                  ),
+                ),
+              ],
             ),
-            const SizedBox(
-              height: 10,
-            ),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 0),
-            child: AspectRatio(
-              aspectRatio: 1,
-              child: ChartzWidget2(),
-            ),
-          ),
-          ],),
           ),
           const SizedBox(
             height: 10,
           ),
           Row(
-            children: const [
-              SizedBox(
+            children: [
+              const SizedBox(
                 width: 10,
               ),
-              CircleAvatar(
+              const CircleAvatar(
                 backgroundColor: Colors.pink,
                 radius: 5,
               ),
-              SizedBox(
+              const SizedBox(
                 width: 5,
               ),
               Text("Umum",
-                  style: TextStyle(
+                  style: GoogleFonts.nunito(
                       fontSize: 14.0,
                       color: Colors.black45,
                       fontWeight: FontWeight.bold)),
-              SizedBox(
+              const SizedBox(
                 width: 5,
               ),
-              CircleAvatar(
+              const CircleAvatar(
                 backgroundColor: Colors.blue,
                 radius: 5,
               ),
-              SizedBox(
+              const SizedBox(
                 width: 5,
               ),
               Text("Asuransi/Perusahaan",
-                  style: TextStyle(
+                  style: GoogleFonts.nunito(
                       fontSize: 14.0,
                       color: Colors.black45,
                       fontWeight: FontWeight.bold)),
-              SizedBox(
+              const SizedBox(
                 width: 5,
               ),
-              CircleAvatar(
+              const CircleAvatar(
                 backgroundColor: Colors.green,
                 radius: 5,
               ),
-              SizedBox(
+              const SizedBox(
                 width: 5,
               ),
               Text("PBJS",
-                  style: TextStyle(
+                  style: GoogleFonts.nunito(
                       fontSize: 14.0,
                       color: Colors.black45,
                       fontWeight: FontWeight.bold)),
-              SizedBox(
+              const SizedBox(
                 width: 5,
               ),
-              CircleAvatar(
+              const CircleAvatar(
                 backgroundColor: Colors.yellow,
                 radius: 5,
               ),
-              SizedBox(
+              const SizedBox(
                 width: 5,
               ),
               Text("Karyawan",
-                  style: TextStyle(
+                  style: GoogleFonts.nunito(
                       fontSize: 14.0,
                       color: Colors.black45,
                       fontWeight: FontWeight.bold)),
@@ -253,10 +265,10 @@ class ChartzView2 extends GetView<ChartzController2> {
                 ),
               ],
             ),
-          child : Padding(
-            padding: EdgeInsets.only(left: 0, right: 0),
-            child: WidgetListView2(),
-          ),
+            child: Padding(
+              padding: const EdgeInsets.only(left: 0, right: 0),
+              child: WidgetListView2(),
+            ),
           ),
           const SizedBox(
             height: 5,

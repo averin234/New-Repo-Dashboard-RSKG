@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class WidgetTitlelogo extends StatefulWidget {
-  WidgetTitlelogo({Key? key}) : super(key: key);
+  const WidgetTitlelogo({Key? key}) : super(key: key);
 
   @override
   _WidgetTitlelogoState createState() => _WidgetTitlelogoState();
@@ -11,7 +12,7 @@ class _WidgetTitlelogoState extends State<WidgetTitlelogo> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.fromLTRB(0, 10, 10, 0),
+      padding: const EdgeInsets.fromLTRB(0, 10, 10, 0),
       child: Row(
         children: [
           Image.asset(
@@ -19,22 +20,27 @@ class _WidgetTitlelogoState extends State<WidgetTitlelogo> {
             width: 70.0,
             fit: BoxFit.cover,
           ),
-          SizedBox(
-            width: 10,
+          const SizedBox(
+            width: 20,
           ),
-          Container(
+          Expanded(
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
                   "Rumah Sakit Khusus Ginjal",
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  style: GoogleFonts.nunito(
+                      fontSize: 18, fontWeight: FontWeight.bold),
+                  maxLines: 2,
                 ),
-                SizedBox(
-                  height: 10,
+                const SizedBox(
+                  height: 5,
                 ),
                 Text(
-                  "jl. Tubagus Ismail Raya No, Sekeloa, \nKecamatan Coblong",
-                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+                  "jl. Tubagus Ismail Raya No, Sekeloa, Kecamatan Coblong",
+                  style: GoogleFonts.nunito(
+                      fontSize: 14, fontWeight: FontWeight.bold),
+                  maxLines: 2,
                 ),
               ],
             ),

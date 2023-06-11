@@ -3,17 +3,18 @@ import 'package:dashboard_rskg_mobile/app/modules/jenis_pasien/views/jenis_pasie
 import 'package:dashboard_rskg_mobile/app/modules/user/views/user_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import 'package:get/get.dart';
 
 import '../controllers/home_controller.dart';
 
 class HomeView extends GetView<HomeController> {
-   HomeView({Key? key}) : super(key: key);
+  const HomeView({Key? key}) : super(key: key);
 
-  static  TextStyle optionStyle =
-      TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
-  static  List<Widget> _widgetOptions = <Widget>[
+  static TextStyle optionStyle =
+      GoogleFonts.nunito(fontSize: 30, fontWeight: FontWeight.bold);
+  static final List<Widget> _widgetOptions = <Widget>[
     Text(
       'Index 0: Home',
       style: optionStyle,
@@ -33,14 +34,14 @@ class HomeView extends GetView<HomeController> {
     return Scaffold(
       body: Obx(
         () => controller.currentIndex.value == 0
-            ?  HomeBottom()
+            ? const HomeBottom()
             : controller.currentIndex.value == 1
-                ?  JenisPasienView()
-                :  UserView(),
+                ? const JenisPasienView()
+                : const UserView(),
       ),
       bottomNavigationBar: Obx(() {
         return BottomNavigationBar(
-          items:  <BottomNavigationBarItem>[
+          items: const <BottomNavigationBarItem>[
             BottomNavigationBarItem(
               icon: Icon(Icons.home),
               label: 'Home',

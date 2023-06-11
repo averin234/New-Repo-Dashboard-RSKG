@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class CardKiri2 extends StatelessWidget {
   final String title;
@@ -11,7 +12,7 @@ class CardKiri2 extends StatelessWidget {
   final bool isUmum;
   final String path;
   final int? color;
-   CardKiri2({
+  const CardKiri2({
     super.key,
     required this.title,
     required this.value,
@@ -24,11 +25,10 @@ class CardKiri2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      // padding: EdgeInsets.only(top: 2, right: 30,bottom: 0),
-      margin:  EdgeInsets.only(left: 10),
+      margin: const EdgeInsets.only(left: 10, right: 5),
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
-        image:  DecorationImage(
+        borderRadius: BorderRadius.circular(20),
+        image: const DecorationImage(
           image: AssetImage('assets/images/bgmenu.png'),
           fit: BoxFit.fill,
         ),
@@ -52,75 +52,64 @@ class CardKiri2 extends StatelessWidget {
         },
         child: Column(
           mainAxisAlignment: MainAxisAlignment.end,
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-             SizedBox(
+            const SizedBox(
               height: 4,
             ),
             Row(
               children: [
-                Align(
-                  alignment: Alignment.topLeft,
-                  child: CircleAvatar(
-                    radius: 27,
-                    backgroundColor: Colors.white,
-                    child: SvgPicture.asset(
-                      image,
-                      height: 30,
-                      width: 30,
-                      color:  Color(0xff379fff),
-                    ),
+                CircleAvatar(
+                  radius: 27,
+                  backgroundColor: Colors.white,
+                  child: SvgPicture.asset(
+                    image,
+                    height: 30,
+                    width: 30,
+                    color: const Color(0xff379fff),
                   ),
                 ),
-                 SizedBox(
-                  width: 55,
+                Expanded(
+                  child: Text(
+                    "Lihat",
+                    style: GoogleFonts.nunito(
+                      fontSize: 15.0,
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                    ),
+                    textAlign: TextAlign.end,
+                  ),
                 ),
-                 Align(
-                    alignment: Alignment.topLeft,
-                    child: Text(
-                      "Lihat",
-                      style: TextStyle(
-                        fontSize: 15.0,
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    )),
+                const SizedBox(
+                  width: 15,
+                ),
               ],
             ),
-             SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Text(
               value,
-              style:  TextStyle(
-                fontSize: 25.0,
+              style: GoogleFonts.nunito(
+                fontSize: 30.0,
                 color: Colors.white,
                 fontWeight: FontWeight.bold,
               ),
+              textAlign: TextAlign.center,
             ),
-             SizedBox(
+            const SizedBox(
               height: 10,
             ),
-            Container(
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10),
-                  // boxShadow: [
-                  //   BoxShadow(
-                  //     color:  Color(0xffecf8ff).withOpacity(0.5),
-                  //     spreadRadius: 0,
-                  //     blurRadius: 10,
-                  //     offset:  Offset(2, 1),
-                  //   ),
-                  // ],
-                ),
-                child: Text(
-                  title,
-                  style:  TextStyle(
-                    fontSize: 15.0,
-                    color: Colors.white,
-                    fontWeight: FontWeight.bold,
-                  ),
-                )),
+            Text(
+              title,
+              style: GoogleFonts.nunito(
+                fontSize: 15.0,
+                color: Colors.white,
+                fontWeight: FontWeight.bold,
+              ),
+              textAlign: TextAlign.center,
+            ),
+            const SizedBox(height: 10)
           ],
         ),
       ),

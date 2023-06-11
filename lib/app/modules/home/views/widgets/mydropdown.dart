@@ -3,6 +3,7 @@ import 'package:dashboard_rskg_mobile/app/modules/home/controllers/home_controll
 import 'package:flutter/material.dart';
 import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 
 class WidgetTitle3 extends GetView<HomeController> {
@@ -20,7 +21,8 @@ class WidgetTitle3 extends GetView<HomeController> {
         controller: controller.dateController,
         readOnly: true,
         textAlign: TextAlign.justify,
-        style: TextStyle(fontWeight: FontWeight.bold, color: Color(0xff009688)),
+        style: GoogleFonts.nunito(
+            fontWeight: FontWeight.bold, color: Color(0xff009688)),
         onTap: () => DatePicker.showPicker(
           context,
           showTitleActions: true,

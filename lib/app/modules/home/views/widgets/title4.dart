@@ -1,19 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class WidgetTitlePoli3 extends StatelessWidget {
-  WidgetTitlePoli3({Key? key}) : super(key: key);
+  const WidgetTitlePoli3({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.fromLTRB(20, 0, 10, 0),
+      padding: const EdgeInsets.fromLTRB(20, 0, 10, 0),
       child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
         Row(
           children: [
             Expanded(
               child: Text(
                 "Kunjungan Pasien",
-                style: TextStyle(
+                style: GoogleFonts.nunito(
                   fontSize: 20,
                   fontWeight: FontWeight.bold,
                 ),
@@ -21,7 +22,7 @@ class WidgetTitlePoli3 extends StatelessWidget {
             ),
           ],
         ),
-        SizedBox(
+        const SizedBox(
           height: 10,
         ),
       ]),

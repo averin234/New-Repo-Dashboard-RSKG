@@ -5,6 +5,7 @@ import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class DataChart {
   final String key;
@@ -114,7 +115,7 @@ class ChartzController extends GetxController {
           getTooltipItem: (group, groupIndex, rod, rodIndex) {
             return BarTooltipItem(
               '${data.kelompok![rodIndex].namaKelompok}\n',
-              const TextStyle(
+              GoogleFonts.nunito(
                 color: Colors.white,
                 fontWeight: FontWeight.bold,
                 fontSize: 18,
@@ -122,7 +123,7 @@ class ChartzController extends GetxController {
               children: <TextSpan>[
                 TextSpan(
                   text: (rod.toY).toString(),
-                  style: TextStyle(
+                  style: GoogleFonts.nunito(
                     color: Colors.white.withOpacity(0.8),
                     fontSize: 16,
                     fontWeight: FontWeight.w500,
@@ -165,7 +166,7 @@ class ChartzController extends GetxController {
                       .toList()
                       .reduce((value, element) => (value ?? 0) + (element ?? 0))
                       .toString(),
-                  style: const TextStyle(
+                  style: GoogleFonts.nunito(
                     color: Colors.black,
                   ),
                 ),
@@ -184,7 +185,7 @@ class ChartzController extends GetxController {
                       .keys
                       .toList()[value.toInt()]
                       .toString(),
-                  style: const TextStyle(
+                  style: GoogleFonts.nunito(
                     color: Colors.black,
                   ),
                 ),

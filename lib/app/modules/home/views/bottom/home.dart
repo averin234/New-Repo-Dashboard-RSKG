@@ -4,15 +4,13 @@ import 'package:dashboard_rskg_mobile/app/modules/home/views/component_widgets/c
 import 'package:dashboard_rskg_mobile/app/modules/home/views/widgets/card_pendapatan.dart';
 import 'package:dashboard_rskg_mobile/app/modules/home/views/widgets/dashboard.dart';
 import 'package:dashboard_rskg_mobile/app/modules/home/views/widgets/logo.dart';
-import 'package:dashboard_rskg_mobile/app/modules/home/views/widgets/mydropdown.dart';
 import 'package:dashboard_rskg_mobile/app/modules/home/views/widgets/title3.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
-import '../widgets/title4.dart';
 
 class HomeBottom extends GetView<HomeController> {
-  HomeBottom({super.key});
+  const HomeBottom({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -22,15 +20,14 @@ class HomeBottom extends GetView<HomeController> {
           floating: true,
           pinned: true,
           snap: true,
-          toolbarHeight: 10,
+          toolbarHeight: 0,
           centerTitle: true,
-          // title: Text("Dashboard"),
           bottom: AppBar(
-            toolbarHeight: 90,
+            toolbarHeight: 100,
             automaticallyImplyLeading: false,
             elevation: 0,
             title: Column(
-              children: [
+              children: const [
                 WidgetTitlelogo(),
                 SizedBox(height: 10),
               ],
@@ -40,66 +37,61 @@ class HomeBottom extends GetView<HomeController> {
         // Other Sliver Widgets
         SliverList(
           delegate: SliverChildListDelegate([
-            Divider(
+            const Divider(
               color: Colors.black,
               height: 1.5,
             ),
-            Column(
-              children: [
-                FutureBuilder(
-                    future: API.getPendapatan(
-                        date: DateFormat('yyyy-MM-dd').format(DateTime.now())),
-                    builder: (context, snapshot) {
-                      if (snapshot.hasData &&
-                          snapshot.connectionState != ConnectionState.waiting &&
-                          snapshot.data != null) {
-                        return WidgetTitlePendapatan(
-                          pendapatan: snapshot.data!,
-                        );
-                      } else {
-                        return Center(
-                          child: CircularProgressIndicator(),
-                        );
-                      }
-                    }),
-                SizedBox(
-                  height: 10,
-                ),
-                // Text("Pendapatan perInstalasi", style: TextStyle(fontSize: 17, fontWeight: FontWeight.bold),),
-                // WidgetSlider(),
-                Divider(color: Colors.black),
-
-                // WidgetTitlePoli3(),
-                // WidgetTitle3(),
-
-                SizedBox(
-                  height: 8,
-                ),
-                // Homepage(),
-                Obx(() {
-                  return FutureBuilder(
-                    future: API.getPasien(date: controller.stringDate.value),
-                    builder: (context, snapshot) {
-                      if (snapshot.hasData &&
-                          snapshot.connectionState != ConnectionState.waiting &&
-                          snapshot.data != null) {
-                        return DashBoard(pasien: snapshot.data!);
-                      } else {
-                        return Center(
-                          child: CircularProgressIndicator(),
-                        );
-                      }
-                    },
-                  );
+            FutureBuilder(
+                future: API.getPendapatan(
+                    date: DateFormat('yyyy-MM-dd').format(DateTime.now())),
+                builder: (context, snapshot) {
+                  if (snapshot.hasData &&
+                      snapshot.connectionState != ConnectionState.waiting &&
+                      snapshot.data != null) {
+                    return WidgetTitlePendapatan(
+                      pendapatan: snapshot.data!,
+                    );
+                  } else {
+                    return const Center(
+                      child: CircularProgressIndicator(),
+                    );
+                  }
                 }),
-                SizedBox(
-                  height: 10,
-                ),
-                WidgetTitlePoli2(),
-                Homepage2(),
-                // StaticLainnya(),
-              ],
+            const SizedBox(
+              height: 10,
             ),
+            // Text("Pendapatan perInstalasi", style: GoogleFonts.nunito(fontSize: 17, fontWeight: FontWeight.bold),),
+            // WidgetSlider(),
+            const Divider(color: Colors.black),
+
+            // WidgetTitlePoli3(),
+            // WidgetTitle3(),
+
+            const SizedBox(
+              height: 8,
+            ),
+            // Homepage(),
+            Obx(() {
+              return FutureBuilder(
+                future: API.getPasien(date: controller.stringDate.value),
+                builder: (context, snapshot) {
+                  if (snapshot.hasData &&
+                      snapshot.connectionState != ConnectionState.waiting &&
+                      snapshot.data != null) {
+                    return DashBoard(pasien: snapshot.data!);
+                  } else {
+                    return const Center(
+                      child: CircularProgressIndicator(),
+                    );
+                  }
+                },
+              );
+            }),
+            const SizedBox(
+              height: 10,
+            ),
+            const WidgetTitlePoli2(),
+            const Homepage2(),
           ]),
         ),
       ],

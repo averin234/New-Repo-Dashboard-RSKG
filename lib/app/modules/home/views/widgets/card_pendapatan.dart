@@ -2,6 +2,7 @@ import 'package:dashboard_rskg_mobile/app/data/component/app_colors.dart';
 import 'package:dashboard_rskg_mobile/app/data/model/pasien_pendapatan.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class WidgetTitlePendapatan extends StatelessWidget {
   final Pendapatan pendapatan;
@@ -68,7 +69,8 @@ class WidgetTitlePendapatan extends StatelessWidget {
         Container(
           padding: EdgeInsets.only(left: 25),
           child: Text("Pendapatan",
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20)),
+              style: GoogleFonts.nunito(
+                  fontWeight: FontWeight.bold, fontSize: 20)),
         ),
         SizedBox(
           height: 15,
@@ -116,7 +118,7 @@ class WidgetTitlePendapatan extends StatelessWidget {
                       ),
                       child: Text(
                         formatCurrency(pendapatan.harian ?? 0),
-                        style: TextStyle(
+                        style: GoogleFonts.nunito(
                             color: Colors.white,
                             fontWeight: FontWeight.bold,
                             fontSize: 15),
@@ -128,7 +130,7 @@ class WidgetTitlePendapatan extends StatelessWidget {
                     ),
                     Text(
                       "${hariIndo(DateFormat('EEEE').format(DateTime.now()))}\nTanggal ${DateTime.now().day}",
-                      style: TextStyle(
+                      style: GoogleFonts.nunito(
                           fontWeight: FontWeight.bold, color: Colors.white),
                       textAlign: TextAlign.center,
                     ),
@@ -178,7 +180,7 @@ class WidgetTitlePendapatan extends StatelessWidget {
                       ),
                       child: Text(
                         formatCurrency(pendapatan.bulanan ?? 0),
-                        style: TextStyle(
+                        style: GoogleFonts.nunito(
                             color: Colors.white,
                             fontWeight: FontWeight.bold,
                             fontSize: 15),
@@ -190,7 +192,7 @@ class WidgetTitlePendapatan extends StatelessWidget {
                     ),
                     Text(
                       "Bulan\n${bulanIndo(DateTime.now().month)}",
-                      style: TextStyle(
+                      style: GoogleFonts.nunito(
                           fontWeight: FontWeight.bold, color: Colors.white),
                       textAlign: TextAlign.center,
                     ),
@@ -240,7 +242,7 @@ class WidgetTitlePendapatan extends StatelessWidget {
                       ),
                       child: Text(
                         formatCurrency(pendapatan.tahunan ?? 0),
-                        style: TextStyle(
+                        style: GoogleFonts.nunito(
                             color: Colors.white,
                             fontWeight: FontWeight.bold,
                             fontSize: 15),
@@ -252,7 +254,7 @@ class WidgetTitlePendapatan extends StatelessWidget {
                     ),
                     Text(
                       "Tahun\n${DateTime.now().year.toString()}",
-                      style: TextStyle(
+                      style: GoogleFonts.nunito(
                           fontWeight: FontWeight.bold, color: Colors.white),
                       textAlign: TextAlign.center,
                     ),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../controllers/wrapper_controller.dart';
 
@@ -13,10 +14,10 @@ class WrapperView extends GetView<WrapperController> {
         title: const Text('WrapperView'),
         centerTitle: true,
       ),
-      body: const Center(
+      body: Center(
         child: Text(
           'WrapperView is working',
-          style: TextStyle(fontSize: 20),
+          style: GoogleFonts.nunito(fontSize: 20),
         ),
       ),
     );

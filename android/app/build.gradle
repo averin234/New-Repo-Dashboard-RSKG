@@ -47,15 +47,15 @@ android {
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
         applicationId "com.example.dashboard_rskg_mobile"
-        minSdkVersion 25
-        targetSdkVersion 33
+        minSdkVersion flutter.minSdkVersion
+        targetSdkVersion flutter.targetSdkVersion
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
         multiDexEnabled true
     }
     signingConfigs {
         release {
-            storeFile file('C:/Users/irwan/Averin_dev.jks')
+            storeFile file('C:/Users/ekoaj/averin/Averin_dev.jks')
             storePassword '48family'
             keyAlias = 'Averin2023'
             keyPassword '48family'
