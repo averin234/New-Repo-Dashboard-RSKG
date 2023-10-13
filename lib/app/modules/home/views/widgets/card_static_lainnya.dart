@@ -8,7 +8,7 @@ import '../../../../routes/app_pages.dart';
 class CardStaticLainnya extends StatelessWidget {
   final String image;
   final String title;
-  CardStaticLainnya({
+  const CardStaticLainnya({
     super.key,
     required this.image,
     required this.title,
@@ -26,16 +26,16 @@ class CardStaticLainnya extends StatelessWidget {
             child: Container(
               width: MediaQuery.of(context).size.width / 1 - 30,
               padding:
-                  EdgeInsets.only(right: 16, left: 16, bottom: 20, top: 10),
+                  const EdgeInsets.only(right: 16, left: 16, bottom: 20, top: 10),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
                 color: Colors.white,
                 boxShadow: [
                   BoxShadow(
-                    color: Color(0xffd5d7d7).withOpacity(0.5),
+                    color: const Color(0xffd5d7d7).withOpacity(0.5),
                     spreadRadius: 1,
                     blurRadius: 10,
-                    offset: Offset(2, 1),
+                    offset: const Offset(2, 1),
                   ),
                 ],
               ),
@@ -54,7 +54,7 @@ class CardStaticLainnya extends StatelessWidget {
                           width: 30,
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 20,
                       ),
                       Text(

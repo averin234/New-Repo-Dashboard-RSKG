@@ -40,14 +40,14 @@ class DashBoard extends StatelessWidget {
             "Dashboard",
             style: GoogleFonts.nunito(
               fontSize: 20,
-              color: Color(0xff009688),
+              color: const Color(0xff009688),
               fontWeight: FontWeight.bold,
             ),
           ),
           const SizedBox(
             height: 10,
           ),
-          WidgetTitle3(),
+          const WidgetTitle3(),
           const SizedBox(
             height: 10,
           ),

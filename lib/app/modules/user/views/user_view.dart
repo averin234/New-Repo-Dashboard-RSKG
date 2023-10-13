@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -13,7 +12,7 @@ class UserView extends GetView<UserController> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        backgroundColor: Color(0xffecf8ff),
+        backgroundColor: const Color(0xffecf8ff),
         appBar: AppBar(
           title: Text(
             "Settings",
@@ -27,7 +26,7 @@ class UserView extends GetView<UserController> {
           padding: const EdgeInsets.all(10),
           child: ListView(children: [
             Padding(
-              padding: EdgeInsets.only(left: 10),
+              padding: const EdgeInsets.only(left: 10),
               child: Text(
                 "Akun",
                 style: GoogleFonts.nunito(
@@ -35,11 +34,11 @@ class UserView extends GetView<UserController> {
               ),
             ),
             Container(
-              padding: EdgeInsets.only(right: 10, left: 10, top: 10),
+              padding: const EdgeInsets.only(right: 10, left: 10, top: 10),
               child: Column(
                 children: [
                   Container(
-                    padding: EdgeInsets.only(
+                    padding: const EdgeInsets.only(
                         right: 10, left: 10, top: 10, bottom: 10),
                     decoration: BoxDecoration(
                       color: Colors.white,
@@ -47,7 +46,7 @@ class UserView extends GetView<UserController> {
                     ),
                     child: Stack(
                       children: [
-                        CircleAvatar(
+                        const CircleAvatar(
                           radius: 30,
                           backgroundColor: Colors.white,
                           child: CircleAvatar(
@@ -59,7 +58,7 @@ class UserView extends GetView<UserController> {
                           ),
                         ),
                         Padding(
-                          padding: EdgeInsets.only(left: 80, top: 20),
+                          padding: const EdgeInsets.only(left: 80, top: 20),
                           child: Row(
                             children: [
                               Text(
@@ -73,11 +72,11 @@ class UserView extends GetView<UserController> {
                       ],
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   Container(
-                    padding: EdgeInsets.only(
+                    padding: const EdgeInsets.only(
                         right: 10, left: 10, top: 10, bottom: 10),
                     decoration: BoxDecoration(
                       color: Colors.white,
@@ -97,11 +96,11 @@ class UserView extends GetView<UserController> {
                       ],
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   Container(
-                    padding: EdgeInsets.only(
+                    padding: const EdgeInsets.only(
                         right: 10, left: 10, top: 10, bottom: 10),
                     decoration: BoxDecoration(
                       color: Colors.white,
@@ -121,11 +120,11 @@ class UserView extends GetView<UserController> {
                       ],
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   Container(
-                    padding: EdgeInsets.only(
+                    padding: const EdgeInsets.only(
                         right: 10, left: 10, top: 10, bottom: 10),
                     decoration: BoxDecoration(
                       color: Colors.white,
@@ -133,9 +132,9 @@ class UserView extends GetView<UserController> {
                     ),
                     child: Stack(
                       children: [
-                        Icon(Icons.logout_outlined),
+                        const Icon(Icons.logout_outlined),
                         Padding(
-                          padding: EdgeInsets.only(left: 35, top: 4),
+                          padding: const EdgeInsets.only(left: 35, top: 4),
                           child: Row(
                             children: [
                               Text(

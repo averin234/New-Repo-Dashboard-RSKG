@@ -1,11 +1,12 @@
-import 'package:dashboard_rskg_mobile/app/data/component/month_picker.dart';
-import 'package:dashboard_rskg_mobile/app/data/component/year_picker.dart';
+// import 'package:dashboard_rskg_mobile/app/data/component/month_picker.dart';
+// import 'package:dashboard_rskg_mobile/app/data/component/year_picker.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
+// import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 
 import 'package:google_fonts/google_fonts.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
+import 'package:month_year_picker/month_year_picker.dart';
 
 import '../controllers/chartz_controller.dart';
 import 'Widget/BarChartWidget.dart';
@@ -78,35 +79,48 @@ class ChartzView2 extends GetView<ChartzController2> {
                             child: TextField(
                               controller: controller.dateController,
                               readOnly: true,
-                              onTap: () => DatePicker.showPicker(
-                                Get.context!,
-                                showTitleActions: true,
-                                pickerModel:
-                                    controller.kalender.value == 'Tahun'
-                                        ? CustomYearPicker(
-                                            currentTime: DateTime.now(),
-                                            minTime: DateTime(2000, 3, 5),
-                                            maxTime: DateTime.now(),
-                                            locale: LocaleType.id,
-                                          )
-                                        : controller.kalender.value == 'Bulan'
-                                            ? CustomMonthPicker(
-                                                currentTime: DateTime.now(),
-                                                minTime: DateTime(2000, 3, 5),
-                                                maxTime: DateTime.now(),
-                                                locale: LocaleType.id,
-                                              )
-                                            : DatePickerModel(
-                                                currentTime: DateTime.now(),
-                                                minTime: DateTime(2000, 3, 5),
-                                                maxTime: DateTime.now(),
-                                                locale: LocaleType.id,
-                                              ),
-                                onChanged: onTanggal,
-                                onConfirm: onTanggal,
-                                // currentTime: DateTime.now(),
-                                locale: LocaleType.id,
-                              ),
+                              onTap: () async {
+                                final datetime = await showMonthYearPicker(
+                                  context: Get.context!,
+                                  firstDate: DateTime(2000, 3, 5),
+                                  lastDate: DateTime.now(),
+                                  initialDate: DateTime.now(),
+                                  initialMonthYearPickerMode:
+                                      controller.kalender.value == 'Tahun'
+                                          ? MonthYearPickerMode.year
+                                          : MonthYearPickerMode.month,
+                                );
+                                onTanggal(datetime ?? DateTime.now());
+                              },
+                              // onTap: () => DatePicker.showPicker(
+                              //   Get.context!,
+                              //   showTitleActions: true,
+                              //   pickerModel:
+                              //       controller.kalender.value == 'Tahun'
+                              //           ? CustomYearPicker(
+                              //               currentTime: DateTime.now(),
+                              //               minTime: DateTime(2000, 3, 5),
+                              //               maxTime: DateTime.now(),
+                              //               locale: LocaleType.id,
+                              //             )
+                              //           : controller.kalender.value == 'Bulan'
+                              //               ? CustomMonthPicker(
+                              //                   currentTime: DateTime.now(),
+                              //                   minTime: DateTime(2000, 3, 5),
+                              //                   maxTime: DateTime.now(),
+                              //                   locale: LocaleType.id,
+                              //                 )
+                              //               : DatePickerModel(
+                              //                   currentTime: DateTime.now(),
+                              //                   minTime: DateTime(2000, 3, 5),
+                              //                   maxTime: DateTime.now(),
+                              //                   locale: LocaleType.id,
+                              //                 ),
+                              //   onChanged: onTanggal,
+                              //   onConfirm: onTanggal,
+                              //   // currentTime: DateTime.now(),
+                              //   locale: LocaleType.id,
+                              // ),
                               // decoration:
                               // InputDecoration(
                               //   border: OutlineInputBorder(),
@@ -265,8 +279,8 @@ class ChartzView2 extends GetView<ChartzController2> {
                 ),
               ],
             ),
-            child: Padding(
-              padding: const EdgeInsets.only(left: 0, right: 0),
+            child: const Padding(
+              padding: EdgeInsets.only(left: 0, right: 0),
               child: WidgetListView2(),
             ),
           ),

@@ -10,12 +10,12 @@ class JenisPasienView extends GetView<JenisPasienController> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xffecf8ff),
+      backgroundColor: const Color(0xffecf8ff),
       appBar: AppBar(
         elevation: 0,
         title: const Text('Instalasi'),
       ),
-      body: SingleChildScrollView(
+      body: const SingleChildScrollView(
     child : Column(
       children: [
     Homepage(),

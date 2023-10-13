@@ -6,7 +6,7 @@ import 'package:google_fonts/google_fonts.dart';
 
 class WidgetTitlePendapatan extends StatelessWidget {
   final Pendapatan pendapatan;
-  WidgetTitlePendapatan({Key? key, required this.pendapatan}) : super(key: key);
+  const WidgetTitlePendapatan({Key? key, required this.pendapatan}) : super(key: key);
 
   String hariIndo(String eeee) {
     String hari = '';
@@ -63,23 +63,23 @@ class WidgetTitlePendapatan extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        SizedBox(
+        const SizedBox(
           height: 10,
         ),
         Container(
-          padding: EdgeInsets.only(left: 25),
+          padding: const EdgeInsets.only(left: 25),
           child: Text("Pendapatan",
               style: GoogleFonts.nunito(
                   fontWeight: FontWeight.bold, fontSize: 20)),
         ),
-        SizedBox(
+        const SizedBox(
           height: 15,
         ),
         Row(
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            SizedBox(
+            const SizedBox(
               width: 10,
             ),
             Expanded(
@@ -89,13 +89,13 @@ class WidgetTitlePendapatan extends StatelessWidget {
                   borderRadius: BorderRadius.circular(10),
                   boxShadow: [
                     BoxShadow(
-                      color: Color(0xffff7171).withOpacity(0.5),
+                      color: const Color(0xffff7171).withOpacity(0.5),
                       spreadRadius: 1,
                       blurRadius: 4,
-                      offset: Offset(0, 1), // changes position of shadow
+                      offset: const Offset(0, 1), // changes position of shadow
                     ),
                   ],
-                  gradient: LinearGradient(
+                  gradient: const LinearGradient(
                     begin: Alignment.topRight,
                     end: Alignment.bottomLeft,
                     stops: [0.1, 0.5, 0.7, 0.9],
@@ -111,7 +111,7 @@ class WidgetTitlePendapatan extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
                     Container(
-                      padding: EdgeInsets.all(5),
+                      padding: const EdgeInsets.all(5),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
                         color: Colors.blue,
@@ -125,7 +125,7 @@ class WidgetTitlePendapatan extends StatelessWidget {
                         textAlign: TextAlign.center,
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
                     Text(
@@ -134,14 +134,14 @@ class WidgetTitlePendapatan extends StatelessWidget {
                           fontWeight: FontWeight.bold, color: Colors.white),
                       textAlign: TextAlign.center,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
                   ],
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               width: 10,
             ),
             Expanded(
@@ -151,13 +151,13 @@ class WidgetTitlePendapatan extends StatelessWidget {
                   borderRadius: BorderRadius.circular(10),
                   boxShadow: [
                     BoxShadow(
-                      color: Color(0xff379fff).withOpacity(0.5),
+                      color: const Color(0xff379fff).withOpacity(0.5),
                       spreadRadius: 1,
                       blurRadius: 4,
-                      offset: Offset(0, 1), // changes position of shadow
+                      offset: const Offset(0, 1), // changes position of shadow
                     ),
                   ],
-                  gradient: LinearGradient(
+                  gradient: const LinearGradient(
                     begin: Alignment.topRight,
                     end: Alignment.bottomLeft,
                     stops: [0.1, 0.5, 0.7, 0.9],
@@ -173,7 +173,7 @@ class WidgetTitlePendapatan extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
                     Container(
-                      padding: EdgeInsets.all(5),
+                      padding: const EdgeInsets.all(5),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
                         color: Colors.blue,
@@ -187,7 +187,7 @@ class WidgetTitlePendapatan extends StatelessWidget {
                         textAlign: TextAlign.center,
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
                     Text(
@@ -196,14 +196,14 @@ class WidgetTitlePendapatan extends StatelessWidget {
                           fontWeight: FontWeight.bold, color: Colors.white),
                       textAlign: TextAlign.center,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
                   ],
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               width: 10,
             ),
             Expanded(
@@ -213,13 +213,13 @@ class WidgetTitlePendapatan extends StatelessWidget {
                   borderRadius: BorderRadius.circular(10),
                   boxShadow: [
                     BoxShadow(
-                      color: Color(0xff009688).withOpacity(0.5),
+                      color: const Color(0xff009688).withOpacity(0.5),
                       spreadRadius: 1,
                       blurRadius: 4,
-                      offset: Offset(0, 1), // changes position of shadow
+                      offset: const Offset(0, 1), // changes position of shadow
                     ),
                   ],
-                  gradient: LinearGradient(
+                  gradient: const LinearGradient(
                     begin: Alignment.topRight,
                     end: Alignment.bottomLeft,
                     stops: [0.1, 0.5, 0.7, 0.9],
@@ -235,7 +235,7 @@ class WidgetTitlePendapatan extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
                     Container(
-                      padding: EdgeInsets.all(5),
+                      padding: const EdgeInsets.all(5),
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
                         color: Colors.blue,
@@ -249,7 +249,7 @@ class WidgetTitlePendapatan extends StatelessWidget {
                         textAlign: TextAlign.center,
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
                     Text(
@@ -258,14 +258,14 @@ class WidgetTitlePendapatan extends StatelessWidget {
                           fontWeight: FontWeight.bold, color: Colors.white),
                       textAlign: TextAlign.center,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
                   ],
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               width: 10,
             ),
           ],

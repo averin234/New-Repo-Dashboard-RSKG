@@ -2,7 +2,6 @@ import 'package:dashboard_rskg_mobile/app/modules/home/views/bottom/home.dart';
 import 'package:dashboard_rskg_mobile/app/modules/jenis_pasien/views/jenis_pasien_view.dart';
 import 'package:dashboard_rskg_mobile/app/modules/user/views/user_view.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import 'package:get/get.dart';

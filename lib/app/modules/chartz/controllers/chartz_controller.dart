@@ -145,7 +145,7 @@ class ChartzController extends GetxController {
       ),
       titlesData: FlTitlesData(
         show: true,
-        rightTitles: AxisTitles(
+        rightTitles: const AxisTitles(
           sideTitles: SideTitles(
             showTitles: false,
           ),
@@ -194,7 +194,7 @@ class ChartzController extends GetxController {
             reservedSize: 38,
           ),
         ),
-        leftTitles: AxisTitles(
+        leftTitles: const AxisTitles(
           sideTitles: SideTitles(showTitles: false),
         ),
       ),
@@ -211,7 +211,7 @@ class ChartzController extends GetxController {
                   indexData, indexKelompok, data.kelompok![indexKelompok])),
         ),
       ),
-      gridData: FlGridData(show: true),
+      gridData: const FlGridData(show: true),
     );
   }
 

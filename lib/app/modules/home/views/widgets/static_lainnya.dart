@@ -2,11 +2,11 @@ import 'package:dashboard_rskg_mobile/app/modules/home/views/widgets/card_static
 import 'package:flutter/material.dart';
 
 class StaticLainnya extends StatelessWidget {
-  StaticLainnya({super.key});
+  const StaticLainnya({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return const Column(
       children: [
         SizedBox(height: 15),
         CardStaticLainnya(

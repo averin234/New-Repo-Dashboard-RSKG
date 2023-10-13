@@ -1,13 +1,14 @@
-import 'package:dashboard_rskg_mobile/app/data/component/month_picker.dart';
+// import 'package:dashboard_rskg_mobile/app/data/component/month_picker.dart';
 import 'package:dashboard_rskg_mobile/app/modules/home/controllers/home_controller.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
+// import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
+import 'package:month_year_picker/month_year_picker.dart';
 
 class WidgetTitle3 extends GetView<HomeController> {
-  WidgetTitle3({Key? key}) : super(key: key);
+  const WidgetTitle3({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -16,27 +17,38 @@ class WidgetTitle3 extends GetView<HomeController> {
         // color: Color(0xffededed),
         borderRadius: BorderRadius.circular(10),
       ),
-      margin: EdgeInsets.only(left: 15, right: 10),
+      margin: const EdgeInsets.only(left: 15, right: 10),
       child: TextField(
         controller: controller.dateController,
         readOnly: true,
         textAlign: TextAlign.justify,
         style: GoogleFonts.nunito(
-            fontWeight: FontWeight.bold, color: Color(0xff009688)),
-        onTap: () => DatePicker.showPicker(
-          context,
-          showTitleActions: true,
-          pickerModel: CustomMonthPicker(
-            currentTime: DateTime.parse(controller.stringDate.value),
-            minTime: DateTime(2000),
-            maxTime: DateTime.now(),
-            locale: LocaleType.id,
-          ),
-          onChanged: onTanggal,
-          onConfirm: onTanggal,
-          locale: LocaleType.id,
-        ),
-        decoration: InputDecoration(
+            fontWeight: FontWeight.bold, color: const Color(0xff009688)),
+        onTap: () async {
+          final datetime = await showMonthYearPicker(
+            context: context,
+            firstDate: DateTime(2000),
+            lastDate: DateTime.now(),
+            // initialDate: DateTime.now(),
+            initialDate: DateTime.parse(controller.stringDate.value),
+            initialMonthYearPickerMode: MonthYearPickerMode.month,
+          );
+          onTanggal(datetime ?? DateTime.now());
+        },
+        // onTap: () => DatePicker.showPicker(
+        //   context,
+        //   showTitleActions: true,
+        //   pickerModel: CustomMonthPicker(
+        //     currentTime: ,
+        //     minTime: DateTime(2000),
+        //     maxTime: DateTime.now(),
+        //     locale: LocaleType.id,
+        //   ),
+        //   onChanged: onTanggal,
+        //   onConfirm: onTanggal,
+        //   locale: LocaleType.id,
+        // ),
+        decoration: const InputDecoration(
           // enabledBorder: OutlineInputBorder(
           //   borderSide: BorderSide(color: Color(0xff009688), width: 2.0),
           // ),

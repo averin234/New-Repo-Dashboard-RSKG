@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -8,25 +7,25 @@ class WidgetSlider extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.symmetric(vertical: 10.0),
+      margin: const EdgeInsets.symmetric(vertical: 10.0),
       height: 120.0,
       child: ListView(
         // This next line does the trick.
         scrollDirection: Axis.horizontal,
         children: <Widget>[
           Padding(
-            padding: EdgeInsets.all(10),
+            padding: const EdgeInsets.all(10),
             child: Container(
-              padding: EdgeInsets.all(10),
+              padding: const EdgeInsets.all(10),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
                 color: Colors.white,
                 boxShadow: [
                   BoxShadow(
-                    color: Color(0xffd5d7d7).withOpacity(0.5),
+                    color: const Color(0xffd5d7d7).withOpacity(0.5),
                     spreadRadius: 1,
                     blurRadius: 10,
-                    offset: Offset(2, 1),
+                    offset: const Offset(2, 1),
                   ),
                 ],
               ),
@@ -38,7 +37,7 @@ class WidgetSlider extends StatelessWidget {
                     style: GoogleFonts.nunito(
                         fontSize: 14, fontWeight: FontWeight.bold),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   Text(
@@ -46,7 +45,7 @@ class WidgetSlider extends StatelessWidget {
                     style: GoogleFonts.nunito(
                         fontSize: 20, fontWeight: FontWeight.bold),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   Text(
@@ -59,18 +58,18 @@ class WidgetSlider extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: EdgeInsets.all(10),
+            padding: const EdgeInsets.all(10),
             child: Container(
-              padding: EdgeInsets.all(10),
+              padding: const EdgeInsets.all(10),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
                 color: Colors.white,
                 boxShadow: [
                   BoxShadow(
-                    color: Color(0xffd5d7d7).withOpacity(0.5),
+                    color: const Color(0xffd5d7d7).withOpacity(0.5),
                     spreadRadius: 1,
                     blurRadius: 10,
-                    offset: Offset(2, 1),
+                    offset: const Offset(2, 1),
                   ),
                 ],
               ),
@@ -82,7 +81,7 @@ class WidgetSlider extends StatelessWidget {
                     style: GoogleFonts.nunito(
                         fontSize: 14, fontWeight: FontWeight.bold),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   Text(
@@ -90,7 +89,7 @@ class WidgetSlider extends StatelessWidget {
                     style: GoogleFonts.nunito(
                         fontSize: 20, fontWeight: FontWeight.bold),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   Text(
@@ -103,18 +102,18 @@ class WidgetSlider extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: EdgeInsets.all(10),
+            padding: const EdgeInsets.all(10),
             child: Container(
-              padding: EdgeInsets.all(10),
+              padding: const EdgeInsets.all(10),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
                 color: Colors.white,
                 boxShadow: [
                   BoxShadow(
-                    color: Color(0xffd5d7d7).withOpacity(0.5),
+                    color: const Color(0xffd5d7d7).withOpacity(0.5),
                     spreadRadius: 1,
                     blurRadius: 10,
-                    offset: Offset(2, 1),
+                    offset: const Offset(2, 1),
                   ),
                 ],
               ),
@@ -126,7 +125,7 @@ class WidgetSlider extends StatelessWidget {
                     style: GoogleFonts.nunito(
                         fontSize: 14, fontWeight: FontWeight.bold),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   Text(
@@ -134,7 +133,7 @@ class WidgetSlider extends StatelessWidget {
                     style: GoogleFonts.nunito(
                         fontSize: 20, fontWeight: FontWeight.bold),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   Text(
@@ -147,18 +146,18 @@ class WidgetSlider extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: EdgeInsets.all(10),
+            padding: const EdgeInsets.all(10),
             child: Container(
-              padding: EdgeInsets.all(10),
+              padding: const EdgeInsets.all(10),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
                 color: Colors.white,
                 boxShadow: [
                   BoxShadow(
-                    color: Color(0xffd5d7d7).withOpacity(0.5),
+                    color: const Color(0xffd5d7d7).withOpacity(0.5),
                     spreadRadius: 1,
                     blurRadius: 10,
-                    offset: Offset(2, 1),
+                    offset: const Offset(2, 1),
                   ),
                 ],
               ),
@@ -170,7 +169,7 @@ class WidgetSlider extends StatelessWidget {
                     style: GoogleFonts.nunito(
                         fontSize: 14, fontWeight: FontWeight.bold),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   Text(
@@ -178,7 +177,7 @@ class WidgetSlider extends StatelessWidget {
                     style: GoogleFonts.nunito(
                         fontSize: 20, fontWeight: FontWeight.bold),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   Text(
@@ -191,9 +190,9 @@ class WidgetSlider extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: EdgeInsets.all(10),
+            padding: const EdgeInsets.all(10),
             child: Container(
-              padding: EdgeInsets.all(10),
+              padding: const EdgeInsets.all(10),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
                 color: Colors.white,
@@ -214,7 +213,7 @@ class WidgetSlider extends StatelessWidget {
                     style: GoogleFonts.nunito(
                         fontSize: 14, fontWeight: FontWeight.bold),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   Text(
@@ -222,7 +221,7 @@ class WidgetSlider extends StatelessWidget {
                     style: GoogleFonts.nunito(
                         fontSize: 20, fontWeight: FontWeight.bold),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   Text(
@@ -235,9 +234,9 @@ class WidgetSlider extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: EdgeInsets.all(10),
+            padding: const EdgeInsets.all(10),
             child: Container(
-              padding: EdgeInsets.all(10),
+              padding: const EdgeInsets.all(10),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(10),
                 color: Colors.white,
@@ -258,7 +257,7 @@ class WidgetSlider extends StatelessWidget {
                     style: GoogleFonts.nunito(
                         fontSize: 14, fontWeight: FontWeight.bold),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   Text(
@@ -266,7 +265,7 @@ class WidgetSlider extends StatelessWidget {
                     style: GoogleFonts.nunito(
                         fontSize: 20, fontWeight: FontWeight.bold),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10,
                   ),
                   Text(

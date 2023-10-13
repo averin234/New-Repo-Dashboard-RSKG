@@ -1,5 +1,4 @@
 import 'package:dashboard_rskg_mobile/app/data/component/fetch_data.dart';
-import 'package:dashboard_rskg_mobile/app/modules/chartz/controllers/chartz_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';

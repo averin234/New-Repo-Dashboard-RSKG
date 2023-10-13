@@ -26,8 +26,8 @@ class HomeBottom extends GetView<HomeController> {
             toolbarHeight: 100,
             automaticallyImplyLeading: false,
             elevation: 0,
-            title: Column(
-              children: const [
+            title: const Column(
+              children: [
                 WidgetTitlelogo(),
                 SizedBox(height: 10),
               ],

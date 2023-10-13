@@ -125,7 +125,7 @@ class Pendapatan {
   }
 
   Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = Map<String, dynamic>();
+    final Map<String, dynamic> data = <String, dynamic>{};
     data['harian'] = harian;
     data['bulanan'] = bulanan;
     data['tahunan'] = tahunan;

@@ -15,7 +15,7 @@ class CardWidget2 extends StatelessWidget {
   final String pathKanan;
   final bool isUmumKiri;
   final String pathKiri;
-  CardWidget2({
+  const CardWidget2({
     super.key,
     required this.titleKanan,
     required this.valueKanan,

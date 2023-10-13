@@ -3,7 +3,7 @@ import 'package:dashboard_rskg_mobile/app/data/model/pasien_pendapatan.dart';
 import 'package:dio/dio.dart';
 
 class API {
-  static const url = 'https://rskg-ainun.sirs.co.id';
+  static const url = 'https://rskg.sirs.co.id';
   static const baseUrl = '$url/api/v1';
   static Future<ModelDetail> getDetail(
       {required String path, required String date}) async {

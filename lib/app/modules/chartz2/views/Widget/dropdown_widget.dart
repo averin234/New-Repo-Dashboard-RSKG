@@ -17,7 +17,7 @@ class MyDropDown2 extends StatelessWidget {
       Container(
       padding: const EdgeInsets.all(5),
       decoration: BoxDecoration(
-        color: Color(0xfff0fff0),
+        color: const Color(0xfff0fff0),
         borderRadius: BorderRadius.circular(10),
       ),
       child: DropdownSearch<String>(
