@@ -13,6 +13,7 @@ class API {
         options: Options(headers: {'content-Type': 'application/json'}));
     if (response.statusCode == 200) {
       final json = response.data as Map<String, dynamic>;
+      print(json);
       final obj = ModelDetail.fromJson(json);
       return obj;
     } else {
@@ -28,6 +29,7 @@ class API {
     );
     if (response.statusCode == 200) {
       final json = response.data as Map<String, dynamic>;
+      print(json);
       final obj = MenuDashboard.fromJson(json).data!.pasien!;
       return obj;
     } else {
@@ -43,6 +45,7 @@ class API {
     );
     if (response.statusCode == 200) {
       final json = response.data as Map<String, dynamic>;
+      print(json);
       final obj = MenuDashboard.fromJson(json).data!.pendapatan!;
       return obj;
     } else {

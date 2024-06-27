@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
-import 'package:month_year_picker/month_year_picker.dart';
+// import 'package:month_year_picker/month_year_picker.dart';
 
 import '../controllers/chartz_controller.dart';
 import 'Widget/BarChartWidget.dart';
@@ -80,17 +80,17 @@ class ChartzView extends GetView<ChartzController> {
                               controller: controller.dateController,
                               readOnly: true,
                               onTap: () async {
-                                final datetime = await showMonthYearPicker(
-                                  context: Get.context!,
-                                  firstDate: DateTime(2000, 3, 5),
-                                  lastDate: DateTime.now(),
-                                  initialDate: DateTime.now(),
-                                  initialMonthYearPickerMode:
-                                      controller.kalender.value == 'Tahun'
-                                          ? MonthYearPickerMode.year
-                                          : MonthYearPickerMode.month,
-                                );
-                                onTanggal(datetime ?? DateTime.now());
+                                // final datetime = await showMonthYearPicker(
+                                //   context: Get.context!,
+                                //   firstDate: DateTime(2000, 3, 5),
+                                //   lastDate: DateTime.now(),
+                                //   initialDate: DateTime.now(),
+                                //   initialMonthYearPickerMode:
+                                //       controller.kalender.value == 'Tahun'
+                                //           ? MonthYearPickerMode.year
+                                //           : MonthYearPickerMode.month,
+                                // );
+                                // onTanggal(datetime ?? DateTime.now());
                               },
                               // decoration: InputDecoration(
                               //   border: OutlineInputBorder(),

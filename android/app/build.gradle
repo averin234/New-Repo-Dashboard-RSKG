@@ -55,7 +55,7 @@ android {
     }
     signingConfigs {
         release {
-            storeFile file('C:/Users/ekoaj/averin/Averin_dev.jks')
+            storeFile file('C:/Users/ayu/Downloads/Averin_dev.jks')
             storePassword '48family'
             keyAlias = 'Averin2023'
             keyPassword '48family'

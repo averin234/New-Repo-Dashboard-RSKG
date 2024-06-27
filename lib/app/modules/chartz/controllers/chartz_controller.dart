@@ -109,7 +109,7 @@ class ChartzController extends GetxController {
     return BarChartData(
       barTouchData: BarTouchData(
         touchTooltipData: BarTouchTooltipData(
-          tooltipBgColor: Colors.blueGrey,
+          // tooltipBgColor: Colors.blueGrey,
           tooltipHorizontalAlignment: FLHorizontalAlignment.right,
           tooltipMargin: 10,
           getTooltipItem: (group, groupIndex, rod, rodIndex) {

@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
-import 'package:month_year_picker/month_year_picker.dart';
+// import 'package:month_year_picker/month_year_picker.dart';
 
 class WidgetTitle3 extends GetView<HomeController> {
   const WidgetTitle3({Key? key}) : super(key: key);
@@ -25,15 +25,15 @@ class WidgetTitle3 extends GetView<HomeController> {
         style: GoogleFonts.nunito(
             fontWeight: FontWeight.bold, color: const Color(0xff009688)),
         onTap: () async {
-          final datetime = await showMonthYearPicker(
-            context: context,
-            firstDate: DateTime(2000),
-            lastDate: DateTime.now(),
-            // initialDate: DateTime.now(),
-            initialDate: DateTime.parse(controller.stringDate.value),
-            initialMonthYearPickerMode: MonthYearPickerMode.month,
-          );
-          onTanggal(datetime ?? DateTime.now());
+          // final datetime = await showMonthYearPicker(
+          //   context: context,
+          //   firstDate: DateTime(2000),
+          //   lastDate: DateTime.now(),
+          //   // initialDate: DateTime.now(),
+          //   initialDate: DateTime.parse(controller.stringDate.value),
+          //   initialMonthYearPickerMode: MonthYearPickerMode.month,
+          // );
+          // onTanggal(datetime ?? DateTime.now());
         },
         // onTap: () => DatePicker.showPicker(
         //   context,
